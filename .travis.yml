@@ -1,0 +1,9 @@
+language: java
+
+jdk:
+  - openjdk6
+  - openjdk7
+  - oraclejdk7
+
+install: true
+script: "mvn clean compile test"
