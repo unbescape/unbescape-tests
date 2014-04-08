@@ -42,42 +42,42 @@ public class HtmlEscapeTestUtil {
     public static void testEscapeHtml5Decimal0(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML5_NAMED_REFERENCES_DEFAULT_TO_DECIMAL,
-                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_WITHOUT_APOS);
+                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_EXCEPT_APOS);
     }
 
 
     public static void testEscapeHtml5Hexa0(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML5_NAMED_REFERENCES_DEFAULT_TO_HEXA,
-                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_WITHOUT_APOS);
+                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_EXCEPT_APOS);
     }
 
 
     public static void testEscapeHtml4Decimal0(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML4_NAMED_REFERENCES_DEFAULT_TO_DECIMAL,
-                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_WITHOUT_APOS);
+                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_EXCEPT_APOS);
     }
 
 
     public static void testEscapeHtml4Hexa0(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML4_NAMED_REFERENCES_DEFAULT_TO_HEXA,
-                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_WITHOUT_APOS);
+                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_EXCEPT_APOS);
     }
 
 
     public static void testEscapeDecimal0(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.DECIMAL_REFERENCES,
-                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_WITHOUT_APOS);
+                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_EXCEPT_APOS);
     }
 
 
     public static void testEscapeHexa0(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HEXADECIMAL_REFERENCES,
-                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_WITHOUT_APOS);
+                HtmlEscapeLevel.LEVEL_0_ONLY_MARKUP_SIGNIFICANT_EXCEPT_APOS);
     }
 
 
@@ -86,42 +86,42 @@ public class HtmlEscapeTestUtil {
     public static void testEscapeHtml5Decimal1(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML5_NAMED_REFERENCES_DEFAULT_TO_DECIMAL,
-                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT);
     }
 
 
     public static void testEscapeHtml5Hexa1(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML5_NAMED_REFERENCES_DEFAULT_TO_HEXA,
-                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT);
     }
 
 
     public static void testEscapeHtml4Decimal1(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML4_NAMED_REFERENCES_DEFAULT_TO_DECIMAL,
-                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT);
     }
 
 
     public static void testEscapeHtml4Hexa1(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML4_NAMED_REFERENCES_DEFAULT_TO_HEXA,
-                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT);
     }
 
 
     public static void testEscapeDecimal1(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.DECIMAL_REFERENCES,
-                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT);
     }
 
 
     public static void testEscapeHexa1(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HEXADECIMAL_REFERENCES,
-                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_1_ONLY_MARKUP_SIGNIFICANT);
     }
 
 
@@ -130,42 +130,42 @@ public class HtmlEscapeTestUtil {
     public static void testEscapeHtml5Decimal2(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML5_NAMED_REFERENCES_DEFAULT_TO_DECIMAL,
-                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT);
     }
 
 
     public static void testEscapeHtml5Hexa2(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML5_NAMED_REFERENCES_DEFAULT_TO_HEXA,
-                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT);
     }
 
 
     public static void testEscapeHtml4Decimal2(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML4_NAMED_REFERENCES_DEFAULT_TO_DECIMAL,
-                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT);
     }
 
 
     public static void testEscapeHtml4Hexa2(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HTML4_NAMED_REFERENCES_DEFAULT_TO_HEXA,
-                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT);
     }
 
 
     public static void testEscapeDecimal2(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.DECIMAL_REFERENCES,
-                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT);
     }
 
 
     public static void testEscapeHexa2(final String text, final String expected)
             throws IOException {
         testEscape(text, expected, HtmlEscapeType.HEXADECIMAL_REFERENCES,
-                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT_WITH_APOS);
+                HtmlEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_MARKUP_SIGNIFICANT);
     }
 
 
