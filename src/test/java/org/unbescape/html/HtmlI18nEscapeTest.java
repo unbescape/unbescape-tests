@@ -51,6 +51,7 @@ import static org.unbescape.html.HtmlEscapeTestUtil.testEscapeHtml5Hexa1;
 import static org.unbescape.html.HtmlEscapeTestUtil.testEscapeHtml5Hexa2;
 import static org.unbescape.html.HtmlEscapeTestUtil.testEscapeHtml5Hexa3;
 import static org.unbescape.html.HtmlEscapeTestUtil.testEscapeHtml5Hexa4;
+import static org.unbescape.html.HtmlEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -103,6 +104,12 @@ public class HtmlI18nEscapeTest {
         testEscapeHtml5Decimal3(TEXT, textHtml5DecLevel3);
         testEscapeHtml5Decimal4(TEXT, textHtml5DecLevel4);
 
+        testUnescape(textHtml5DecLevel0, TEXT);
+        testUnescape(textHtml5DecLevel1, TEXT);
+        testUnescape(textHtml5DecLevel2, TEXT);
+        testUnescape(textHtml5DecLevel3, TEXT);
+        testUnescape(textHtml5DecLevel4, TEXT);
+
 
         final String textHtml5HexaLevel0 = TEXT;
         final String textHtml5HexaLevel1 = TEXT;
@@ -133,6 +140,12 @@ public class HtmlI18nEscapeTest {
         testEscapeHtml5Hexa2(TEXT, textHtml5HexaLevel2);
         testEscapeHtml5Hexa3(TEXT, textHtml5HexaLevel3);
         testEscapeHtml5Hexa4(TEXT, textHtml5HexaLevel4);
+
+        testUnescape(textHtml5HexaLevel0, TEXT);
+        testUnescape(textHtml5HexaLevel1, TEXT);
+        testUnescape(textHtml5HexaLevel2, TEXT);
+        testUnescape(textHtml5HexaLevel3, TEXT);
+        testUnescape(textHtml5HexaLevel4, TEXT);
 
     }
 
@@ -170,6 +183,12 @@ public class HtmlI18nEscapeTest {
         testEscapeHtml4Decimal3(TEXT, textHtml4DecLevel3);
         testEscapeHtml4Decimal4(TEXT, textHtml4DecLevel4);
 
+        testUnescape(textHtml4DecLevel0, TEXT);
+        testUnescape(textHtml4DecLevel1, TEXT);
+        testUnescape(textHtml4DecLevel2, TEXT);
+        testUnescape(textHtml4DecLevel3, TEXT);
+        testUnescape(textHtml4DecLevel4, TEXT);
+
 
         final String textHtml4HexaLevel0 = TEXT;
         final String textHtml4HexaLevel1 = TEXT;
@@ -200,6 +219,12 @@ public class HtmlI18nEscapeTest {
         testEscapeHtml4Hexa2(TEXT, textHtml4HexaLevel2);
         testEscapeHtml4Hexa3(TEXT, textHtml4HexaLevel3);
         testEscapeHtml4Hexa4(TEXT, textHtml4HexaLevel4);
+
+        testUnescape(textHtml4HexaLevel0, TEXT);
+        testUnescape(textHtml4HexaLevel1, TEXT);
+        testUnescape(textHtml4HexaLevel2, TEXT);
+        testUnescape(textHtml4HexaLevel3, TEXT);
+        testUnescape(textHtml4HexaLevel4, TEXT);
 
     }
 
@@ -236,6 +261,12 @@ public class HtmlI18nEscapeTest {
         testEscapeDecimal2(TEXT, textDecLevel2);
         testEscapeDecimal3(TEXT, textDecLevel3);
         testEscapeDecimal4(TEXT, textDecLevel4);
+
+        testUnescape(textDecLevel0, TEXT);
+        testUnescape(textDecLevel1, TEXT);
+        testUnescape(textDecLevel2, TEXT);
+        testUnescape(textDecLevel3, TEXT);
+        testUnescape(textDecLevel4, TEXT);
 
     }
 
@@ -275,6 +306,12 @@ public class HtmlI18nEscapeTest {
         testEscapeHexa2(TEXT, textHexaLevel2);
         testEscapeHexa3(TEXT, textHexaLevel3);
         testEscapeHexa4(TEXT, textHexaLevel4);
+
+        testUnescape(textHexaLevel0, TEXT);
+        testUnescape(textHexaLevel1, TEXT);
+        testUnescape(textHexaLevel2, TEXT);
+        testUnescape(textHexaLevel3, TEXT);
+        testUnescape(textHexaLevel4, TEXT);
 
     }
 
