@@ -37,7 +37,7 @@ import org.springframework.web.util.HtmlUtils;
  * @since 1.0
  *
  */
-public final class Benchmark {
+public final class HtmlBenchmark {
 
     private static final int BENCHMARK_EXECS = 1000000;
 
@@ -277,7 +277,7 @@ public final class Benchmark {
     }
 
 
-    public Benchmark() {
+    public HtmlBenchmark() {
         super();
     }
 
