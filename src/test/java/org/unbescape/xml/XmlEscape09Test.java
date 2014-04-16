@@ -23,7 +23,6 @@ import org.junit.Test;
 
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10Hexa1;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml11Hexa1;
-import static org.unbescape.xml.XmlEscapeTestUtil.testUnescape;
 
 /**
  * 
