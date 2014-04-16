@@ -46,11 +46,11 @@ import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class JavaScriptEscape02Test {
+public class JavaScriptEscape13Test {
 
 
-    private static final String TEXT =
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789";
+    // LineTerminators: not allowed in JavaScript strings -> must be escaped always.
+    private static final String TEXT = "\n\r\u2028\u2029";
 
 
 
@@ -58,15 +58,10 @@ public class JavaScriptEscape02Test {
     @Test
     public void testSECXHexaUHexa() throws Exception {
 
-        final String textSECXHexaUHexaLevel1 = TEXT;
-        final String textSECXHexaUHexaLevel2 = TEXT;
-        final String textSECXHexaUHexaLevel3 =
-                "ABCDEFGHIJKLMNOPQRSTUVWXYZ\\x20abcdefghijklmnopqrstuvwxyz\\x200123456789";
-        final String textSECXHexaUHexaLevel4 =
-                "\\x41\\x42\\x43\\x44\\x45\\x46\\x47\\x48\\x49\\x4A\\x4B\\x4C\\x4D\\x4E\\x4F\\x50\\x51" +
-                "\\x52\\x53\\x54\\x55\\x56\\x57\\x58\\x59\\x5A\\x20\\x61\\x62\\x63\\x64\\x65\\x66\\x67" +
-                "\\x68\\x69\\x6A\\x6B\\x6C\\x6D\\x6E\\x6F\\x70\\x71\\x72\\x73\\x74\\x75\\x76\\x77\\x78" +
-                "\\x79\\x7A\\x20\\x30\\x31\\x32\\x33\\x34\\x35\\x36\\x37\\x38\\x39";
+        final String textSECXHexaUHexaLevel1 = "\\n\\r\\u2028\\u2029";
+        final String textSECXHexaUHexaLevel2 = "\\n\\r\\u2028\\u2029";
+        final String textSECXHexaUHexaLevel3 = "\\n\\r\\u2028\\u2029";
+        final String textSECXHexaUHexaLevel4 = "\\n\\r\\u2028\\u2029";
 
         testEscapeSECXHexaUHexa1(TEXT, textSECXHexaUHexaLevel1);
         testEscapeSECXHexaUHexa2(TEXT, textSECXHexaUHexaLevel2);
@@ -87,17 +82,10 @@ public class JavaScriptEscape02Test {
     @Test
     public void testSECUHexa() throws Exception {
 
-        final String textSECUHexaLevel1 = TEXT;
-        final String textSECUHexaLevel2 = TEXT;
-        final String textSECUHexaLevel3 =
-                "ABCDEFGHIJKLMNOPQRSTUVWXYZ\\u0020abcdefghijklmnopqrstuvwxyz\\u00200123456789";
-        final String textSECUHexaLevel4 =
-                "\\u0041\\u0042\\u0043\\u0044\\u0045\\u0046\\u0047\\u0048\\u0049\\u004A\\u004B" +
-                "\\u004C\\u004D\\u004E\\u004F\\u0050\\u0051\\u0052\\u0053\\u0054\\u0055\\u0056" +
-                "\\u0057\\u0058\\u0059\\u005A\\u0020\\u0061\\u0062\\u0063\\u0064\\u0065\\u0066" +
-                "\\u0067\\u0068\\u0069\\u006A\\u006B\\u006C\\u006D\\u006E\\u006F\\u0070\\u0071" +
-                "\\u0072\\u0073\\u0074\\u0075\\u0076\\u0077\\u0078\\u0079\\u007A\\u0020\\u0030" +
-                "\\u0031\\u0032\\u0033\\u0034\\u0035\\u0036\\u0037\\u0038\\u0039";
+        final String textSECUHexaLevel1 = "\\n\\r\\u2028\\u2029";
+        final String textSECUHexaLevel2 = "\\n\\r\\u2028\\u2029";
+        final String textSECUHexaLevel3 = "\\n\\r\\u2028\\u2029";
+        final String textSECUHexaLevel4 = "\\n\\r\\u2028\\u2029";
 
         testEscapeSECUHexa1(TEXT, textSECUHexaLevel1);
         testEscapeSECUHexa2(TEXT, textSECUHexaLevel2);
@@ -118,15 +106,10 @@ public class JavaScriptEscape02Test {
     @Test
     public void testXHexaUHexa() throws Exception {
 
-        final String textXHexaUHexaLevel1 = TEXT;
-        final String textXHexaUHexaLevel2 = TEXT;
-        final String textXHexaUHexaLevel3 =
-                "ABCDEFGHIJKLMNOPQRSTUVWXYZ\\x20abcdefghijklmnopqrstuvwxyz\\x200123456789";
-        final String textXHexaUHexaLevel4 =
-                "\\x41\\x42\\x43\\x44\\x45\\x46\\x47\\x48\\x49\\x4A\\x4B\\x4C\\x4D\\x4E\\x4F\\x50\\x51" +
-                "\\x52\\x53\\x54\\x55\\x56\\x57\\x58\\x59\\x5A\\x20\\x61\\x62\\x63\\x64\\x65\\x66\\x67" +
-                "\\x68\\x69\\x6A\\x6B\\x6C\\x6D\\x6E\\x6F\\x70\\x71\\x72\\x73\\x74\\x75\\x76\\x77\\x78" +
-                "\\x79\\x7A\\x20\\x30\\x31\\x32\\x33\\x34\\x35\\x36\\x37\\x38\\x39";
+        final String textXHexaUHexaLevel1 = "\\x0A\\x0D\\u2028\\u2029";
+        final String textXHexaUHexaLevel2 = "\\x0A\\x0D\\u2028\\u2029";
+        final String textXHexaUHexaLevel3 = "\\x0A\\x0D\\u2028\\u2029";
+        final String textXHexaUHexaLevel4 = "\\x0A\\x0D\\u2028\\u2029";
 
         testEscapeXHexaUHexa1(TEXT, textXHexaUHexaLevel1);
         testEscapeXHexaUHexa2(TEXT, textXHexaUHexaLevel2);
@@ -147,17 +130,10 @@ public class JavaScriptEscape02Test {
     @Test
     public void testUHexa() throws Exception {
 
-        final String textUHexaLevel1 = TEXT;
-        final String textUHexaLevel2 = TEXT;
-        final String textUHexaLevel3 =
-                "ABCDEFGHIJKLMNOPQRSTUVWXYZ\\u0020abcdefghijklmnopqrstuvwxyz\\u00200123456789";
-        final String textUHexaLevel4 =
-                "\\u0041\\u0042\\u0043\\u0044\\u0045\\u0046\\u0047\\u0048\\u0049\\u004A\\u004B\\u004C" +
-                "\\u004D\\u004E\\u004F\\u0050\\u0051\\u0052\\u0053\\u0054\\u0055\\u0056\\u0057\\u0058" +
-                "\\u0059\\u005A\\u0020\\u0061\\u0062\\u0063\\u0064\\u0065\\u0066\\u0067\\u0068\\u0069" +
-                "\\u006A\\u006B\\u006C\\u006D\\u006E\\u006F\\u0070\\u0071\\u0072\\u0073\\u0074\\u0075" +
-                "\\u0076\\u0077\\u0078\\u0079\\u007A\\u0020\\u0030\\u0031\\u0032\\u0033\\u0034\\u0035" +
-                "\\u0036\\u0037\\u0038\\u0039";
+        final String textUHexaLevel1 = "\\u000A\\u000D\\u2028\\u2029";
+        final String textUHexaLevel2 = "\\u000A\\u000D\\u2028\\u2029";
+        final String textUHexaLevel3 = "\\u000A\\u000D\\u2028\\u2029";
+        final String textUHexaLevel4 = "\\u000A\\u000D\\u2028\\u2029";
 
         testEscapeUHexa1(TEXT, textUHexaLevel1);
         testEscapeUHexa2(TEXT, textUHexaLevel2);
@@ -178,7 +154,7 @@ public class JavaScriptEscape02Test {
 
 
 
-    public JavaScriptEscape02Test() {
+    public JavaScriptEscape13Test() {
         super();
     }
 

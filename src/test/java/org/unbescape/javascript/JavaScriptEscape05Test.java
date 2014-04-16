@@ -21,14 +21,6 @@ package org.unbescape.javascript;
 
 import org.junit.Test;
 
-import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeXHexaUHexa1;
-import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeXHexaUHexa2;
-import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeXHexaUHexa3;
-import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeXHexaUHexa4;
-import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeUHexa1;
-import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeUHexa2;
-import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeUHexa3;
-import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeUHexa4;
 import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeSECUHexa1;
 import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeSECUHexa2;
 import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeSECUHexa3;
@@ -37,6 +29,14 @@ import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeSECXHe
 import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeSECXHexaUHexa2;
 import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeSECXHexaUHexa3;
 import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeSECXHexaUHexa4;
+import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeUHexa1;
+import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeUHexa2;
+import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeUHexa3;
+import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeUHexa4;
+import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeXHexaUHexa1;
+import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeXHexaUHexa2;
+import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeXHexaUHexa3;
+import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testEscapeXHexaUHexa4;
 import static org.unbescape.javascript.JavaScriptEscapeTestUtil.testUnescape;
 
 /**
