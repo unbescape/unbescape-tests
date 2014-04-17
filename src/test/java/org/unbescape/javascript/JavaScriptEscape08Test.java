@@ -40,7 +40,7 @@ public class JavaScriptEscape08Test {
     private static final String TEXT_UNESC_1 = "az";
 
     private static final String TEXT_ESC_2 = "\\u";
-    private static final String TEXT_UNESC_2 = "u";
+    private static final String TEXT_UNESC_2 = "\\u";
 
     // '\\u' and '\\x' are invalid because the slash is forbidden in JavaScript strings, but they are not valid escape sequences, so it's up to the JavaScript engine to raise an error.
     private static final String TEXT_ESC_3 = "\\a\\b\\c\\d\\e\\f\\g\\h\\i\\j\\k\\l\\m\\n\\o\\p\\q\\r\\s\\t\\u\\v\\w\\x\\y\\z";
@@ -54,6 +54,9 @@ public class JavaScriptEscape08Test {
     private static final String TEXT_ESC_5 = "\\\n\\\r\\\u2028\\\u2029";
     private static final String TEXT_UNESC_5 = "\\\n\\\r\\\u2028\\\u2029";
 
+    private static final String TEXT_ESC_6 = "\\x";
+    private static final String TEXT_UNESC_6 = "\\x";
+
 
 
 
@@ -66,6 +69,7 @@ public class JavaScriptEscape08Test {
         testUnescape(TEXT_ESC_3, TEXT_UNESC_3);
         testUnescape(TEXT_ESC_4, TEXT_UNESC_4);
         testUnescape(TEXT_ESC_5, TEXT_UNESC_5);
+        testUnescape(TEXT_ESC_6, TEXT_UNESC_6);
 
     }
 
