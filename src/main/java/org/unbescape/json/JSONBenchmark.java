@@ -17,7 +17,7 @@
  * 
  * =============================================================================
  */
-package org.unbescape.javascript;
+package org.unbescape.json;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -32,7 +32,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
  * @since 1.0
  *
  */
-public final class JavaScriptBenchmark {
+public final class JSONBenchmark {
 
     private static final int BENCHMARK_EXECS = 1000000;
 
@@ -72,10 +72,10 @@ public final class JavaScriptBenchmark {
         // Compute textual escape results
         for (int i = 0; i < ESCAPE_TEXTS.length; i++) {
 
-            ESCAPE_TEXTS_UNBESCAPE[i] = JavaScriptEscape.escapeJavaScript(ESCAPE_TEXTS[i]);
+            ESCAPE_TEXTS_UNBESCAPE[i] = JSONEscape.escapeJSON(ESCAPE_TEXTS[i]);
             ESCAPE_NEW_OBJECT_UNBESCAPE[i] = (ESCAPE_TEXTS[i] == ESCAPE_TEXTS_UNBESCAPE[i]);
 
-            ESCAPE_TEXTS_STRING_ESCAPE_UTILS[i] = StringEscapeUtils.escapeEcmaScript(ESCAPE_TEXTS[i]);
+            ESCAPE_TEXTS_STRING_ESCAPE_UTILS[i] = StringEscapeUtils.escapeJson(ESCAPE_TEXTS[i]);
             ESCAPE_NEW_OBJECT_STRING_ESCAPE_UTILS[i] = (ESCAPE_TEXTS[i] == ESCAPE_TEXTS_STRING_ESCAPE_UTILS[i]);
 
         }
@@ -83,10 +83,10 @@ public final class JavaScriptBenchmark {
         // Compute textual unescape results
         for (int i = 0; i < UNESCAPE_TEXTS.length; i++) {
 
-            UNESCAPE_TEXTS_UNBESCAPE[i] = JavaScriptEscape.unescapeJavaScript(UNESCAPE_TEXTS[i]);
+            UNESCAPE_TEXTS_UNBESCAPE[i] = JSONEscape.unescapeJSON(UNESCAPE_TEXTS[i]);
             UNESCAPE_NEW_OBJECT_UNBESCAPE[i] = (UNESCAPE_TEXTS[i] == UNESCAPE_TEXTS_UNBESCAPE[i]);
 
-            UNESCAPE_TEXTS_STRING_ESCAPE_UTILS[i] = StringEscapeUtils.unescapeEcmaScript(UNESCAPE_TEXTS[i]);
+            UNESCAPE_TEXTS_STRING_ESCAPE_UTILS[i] = StringEscapeUtils.unescapeJson(UNESCAPE_TEXTS[i]);
             UNESCAPE_NEW_OBJECT_STRING_ESCAPE_UTILS[i] = (UNESCAPE_TEXTS[i] == UNESCAPE_TEXTS_STRING_ESCAPE_UTILS[i]);
 
         }
@@ -97,16 +97,16 @@ public final class JavaScriptBenchmark {
 
     private static void warmup(final Writer writer) throws IOException {
         final int warmupIters = 10000;
-        writer.write(String.format("[WARMUP] Starting warmup (%d iterations)\n", Integer.valueOf(warmupIters))); writer.flush();
+        writer.write(String.format("[BENCHMARK][WARMUP] Starting warmup (%d iterations)\n", Integer.valueOf(warmupIters))); writer.flush();
         for (int i = 0; i < warmupIters; i++) {
-            final String res01 = JavaScriptEscape.escapeJavaScript(ESCAPE_TEXTS[i % ESCAPE_TEXTS.length]);
-            final String res02 = StringEscapeUtils.escapeEcmaScript(ESCAPE_TEXTS[i % ESCAPE_TEXTS.length]);
+            final String res01 = JSONEscape.escapeJSON(ESCAPE_TEXTS[i % ESCAPE_TEXTS.length]);
+            final String res02 = StringEscapeUtils.escapeJson(ESCAPE_TEXTS[i % ESCAPE_TEXTS.length]);
         }
         for (int i = 0; i < warmupIters; i++) {
-            final String res01 = JavaScriptEscape.unescapeJavaScript(UNESCAPE_TEXTS[i % UNESCAPE_TEXTS.length]);
-            final String res02 = StringEscapeUtils.unescapeEcmaScript(UNESCAPE_TEXTS[i % UNESCAPE_TEXTS.length]);
+            final String res01 = JSONEscape.unescapeJSON(UNESCAPE_TEXTS[i % UNESCAPE_TEXTS.length]);
+            final String res02 = StringEscapeUtils.unescapeJson(UNESCAPE_TEXTS[i % UNESCAPE_TEXTS.length]);
         }
-        writer.write(String.format("[WARMUP] Finished warmup (%d iterations)\n", Integer.valueOf(warmupIters))); writer.flush();
+        writer.write(String.format("[BENCHMARK][WARMUP] Finished warmup (%d iterations)\n", Integer.valueOf(warmupIters))); writer.flush();
     }
 
 
@@ -120,13 +120,13 @@ public final class JavaScriptBenchmark {
 
         final long ustart = System.nanoTime();
         for (int i = 0; i < BENCHMARK_EXECS; i++) {
-            final String result = JavaScriptEscape.escapeJavaScript(ESCAPE_TEXTS[n]);
+            final String result = JSONEscape.escapeJSON(ESCAPE_TEXTS[n]);
         }
         final long ufinish = System.nanoTime();
 
         final long cstart = System.nanoTime();
         for (int i = 0; i < BENCHMARK_EXECS; i++) {
-            final String result = StringEscapeUtils.escapeEcmaScript(ESCAPE_TEXTS[n]);
+            final String result = StringEscapeUtils.escapeJson(ESCAPE_TEXTS[n]);
         }
         final long cfinish = System.nanoTime();
 
@@ -157,13 +157,13 @@ public final class JavaScriptBenchmark {
 
         final long ustart = System.nanoTime();
         for (int i = 0; i < BENCHMARK_EXECS; i++) {
-            final String result = JavaScriptEscape.unescapeJavaScript(UNESCAPE_TEXTS[n]);
+            final String result = JSONEscape.unescapeJSON(UNESCAPE_TEXTS[n]);
         }
         final long ufinish = System.nanoTime();
 
         final long cstart = System.nanoTime();
         for (int i = 0; i < BENCHMARK_EXECS; i++) {
-            final String result = StringEscapeUtils.unescapeEcmaScript(UNESCAPE_TEXTS[n]);
+            final String result = StringEscapeUtils.unescapeJson(UNESCAPE_TEXTS[n]);
         }
         final long cfinish = System.nanoTime();
 
@@ -189,6 +189,11 @@ public final class JavaScriptBenchmark {
 
         final Writer writer = new PrintWriter(System.out, true);
 
+        writer.write("\n");
+        writer.write("[BENCHMARK] --------------------------------------\n");
+        writer.write("[BENCHMARK] STARTING UNBESCAPE BENCHMARK FOR: JSON\n");
+        writer.write("[BENCHMARK] --------------------------------------\n");
+
         warmup(writer);
 
         for (int i = 0; i < ESCAPE_TEXTS.length; i++) {
@@ -204,7 +209,7 @@ public final class JavaScriptBenchmark {
     }
 
 
-    public JavaScriptBenchmark() {
+    public JSONBenchmark() {
         super();
     }
 
