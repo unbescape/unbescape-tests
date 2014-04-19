@@ -110,12 +110,12 @@ public class JSONEscapeTestUtil {
                                    final JSONEscapeType type, final JSONEscapeLevel level)
                                    throws IOException {
 
-        final String resultStr = JSONEscape.escapeJSON(text, type, level);
+        final String resultStr = JSONEscapeUtil.escape(text, type, level);
         Assert.assertEquals(expected, resultStr);
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        JSONEscape.escapeJSON(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, type, level);
+        JSONEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, type, level);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -138,7 +138,7 @@ public class JSONEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            JSONEscape.escapeJSON(array, i, textCharArray.length, stringWriter, type, level);
+            JSONEscapeUtil.escape(array, i, textCharArray.length, stringWriter, type, level);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {

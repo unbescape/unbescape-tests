@@ -266,12 +266,12 @@ public class HtmlEscapeTestUtil {
                                    final HtmlEscapeType type, final HtmlEscapeLevel level)
                                    throws IOException {
 
-        final String resultStr = HtmlEscape.escapeHtml(text, type, level);
+        final String resultStr = HtmlEscapeUtil.escape(text, type, level);
         Assert.assertEquals(expected, resultStr);
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        HtmlEscape.escapeHtml(textCharArray, 0, (textCharArray == null? 0 : textCharArray.length), stringWriter, type, level);
+        HtmlEscapeUtil.escape(textCharArray, 0, (textCharArray == null? 0 : textCharArray.length), stringWriter, type, level);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -294,7 +294,7 @@ public class HtmlEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            HtmlEscape.escapeHtml(array, i, textCharArray.length, stringWriter, type, level);
+            HtmlEscapeUtil.escape(array, i, textCharArray.length, stringWriter, type, level);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
@@ -313,12 +313,12 @@ public class HtmlEscapeTestUtil {
     public static void testUnescape(final String text, final String expected)
             throws IOException {
 
-        final String resultStr = HtmlEscape.unescapeHtml(text);
+        final String resultStr = HtmlEscapeUtil.unescape(text);
         Assert.assertEquals(expected, resultStr);
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        HtmlEscape.unescapeHtml(textCharArray, 0, (textCharArray == null? 0 : textCharArray.length), stringWriter);
+        HtmlEscapeUtil.unescape(textCharArray, 0, (textCharArray == null? 0 : textCharArray.length), stringWriter);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -341,7 +341,7 @@ public class HtmlEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            HtmlEscape.unescapeHtml(array, i, textCharArray.length, stringWriter);
+            HtmlEscapeUtil.unescape(array, i, textCharArray.length, stringWriter);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {

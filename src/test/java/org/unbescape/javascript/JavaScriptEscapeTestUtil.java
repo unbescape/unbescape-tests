@@ -166,12 +166,12 @@ public class JavaScriptEscapeTestUtil {
                                    final JavaScriptEscapeType type, final JavaScriptEscapeLevel level)
                                    throws IOException {
 
-        final String resultStr = JavaScriptEscape.escapeJavaScript(text, type, level);
+        final String resultStr = JavaScriptEscapeUtil.escape(text, type, level);
         Assert.assertEquals(expected, resultStr);
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        JavaScriptEscape.escapeJavaScript(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, type, level);
+        JavaScriptEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, type, level);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -194,7 +194,7 @@ public class JavaScriptEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            JavaScriptEscape.escapeJavaScript(array, i, textCharArray.length, stringWriter, type, level);
+            JavaScriptEscapeUtil.escape(array, i, textCharArray.length, stringWriter, type, level);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
@@ -213,12 +213,12 @@ public class JavaScriptEscapeTestUtil {
     public static void testUnescape(final String text, final String expected)
                                     throws IOException {
 
-        final String resultStr = JavaScriptEscape.unescapeJavaScript(text);
+        final String resultStr = JavaScriptEscapeUtil.unescape(text);
         Assert.assertEquals(expected, resultStr);
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        JavaScriptEscape.unescapeJavaScript(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
+        JavaScriptEscapeUtil.unescape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -241,7 +241,7 @@ public class JavaScriptEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            JavaScriptEscape.unescapeJavaScript(array, i, textCharArray.length, stringWriter);
+            JavaScriptEscapeUtil.unescape(array, i, textCharArray.length, stringWriter);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
