@@ -43,6 +43,10 @@ public class CSSIdentifierEscape10Test {
     private static final String TEXT_UNESC_4 = "\u0000h";
     private static final String TEXT_ESC_5 = "\\0 h";
     private static final String TEXT_UNESC_5 = "\u0000h";
+    private static final String TEXT_ESC_6 = "\\000000 0";
+    private static final String TEXT_UNESC_6 = "\u00000";
+    private static final String TEXT_ESC_7 = "\\000000 h";
+    private static final String TEXT_UNESC_7 = "\u0000h";
 
 
 
@@ -55,6 +59,8 @@ public class CSSIdentifierEscape10Test {
         testUnescape(TEXT_ESC_3, TEXT_UNESC_3);
         testUnescape(TEXT_ESC_4, TEXT_UNESC_4);
         testUnescape(TEXT_ESC_5, TEXT_UNESC_5);
+        testUnescape(TEXT_ESC_6, TEXT_UNESC_6);
+        testUnescape(TEXT_ESC_7, TEXT_UNESC_7);
 
     }
 

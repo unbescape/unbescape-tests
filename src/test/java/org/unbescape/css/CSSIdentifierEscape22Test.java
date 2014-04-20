@@ -46,11 +46,11 @@ import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class CSSIdentifierEscape13Test {
+public class CSSIdentifierEscape22Test {
 
 
-    // LineTerminators: not allowed in JavaScript strings -> must be escaped always.
-    private static final String TEXT = "\n\r\u2028\u2029\f";
+    // Decimal numbers at the beginning of the identifier should be escaped
+    private static final String TEXT = "a0123456789";
 
 
 
@@ -58,10 +58,10 @@ public class CSSIdentifierEscape13Test {
     @Test
     public void testBECompact() throws Exception {
 
-        final String textBECompactLevel1 = "\\A \\D \u2028\u2029\\C ";
-        final String textBECompactLevel2 = "\\A \\D \\2028 \\2029 \\C ";
-        final String textBECompactLevel3 = "\\A \\D \\2028 \\2029 \\C ";
-        final String textBECompactLevel4 = "\\A \\D \\2028 \\2029 \\C ";
+        final String textBECompactLevel1 = "a0123456789";
+        final String textBECompactLevel2 = "a0123456789";
+        final String textBECompactLevel3 = "a0123456789";
+        final String textBECompactLevel4 = "\\61 \\30 \\31 \\32 \\33 \\34 \\35 \\36 \\37 \\38 \\39 ";
 
         testEscapeBECompact1(TEXT, textBECompactLevel1);
         testEscapeBECompact2(TEXT, textBECompactLevel2);
@@ -82,10 +82,10 @@ public class CSSIdentifierEscape13Test {
     @Test
     public void testBESixDigit() throws Exception {
 
-        final String textBESixDigitLevel1 = "\\00000A\\00000D\u2028\u2029\\00000C";
-        final String textBESixDigitLevel2 = "\\00000A\\00000D\\002028\\002029\\00000C";
-        final String textBESixDigitLevel3 = "\\00000A\\00000D\\002028\\002029\\00000C";
-        final String textBESixDigitLevel4 = "\\00000A\\00000D\\002028\\002029\\00000C";
+        final String textBESixDigitLevel1 = "a0123456789";
+        final String textBESixDigitLevel2 = "a0123456789";
+        final String textBESixDigitLevel3 = "a0123456789";
+        final String textBESixDigitLevel4 = "\\000061\\000030\\000031\\000032\\000033\\000034\\000035\\000036\\000037\\000038\\000039";
 
         testEscapeBESixDigit1(TEXT, textBESixDigitLevel1);
         testEscapeBESixDigit2(TEXT, textBESixDigitLevel2);
@@ -106,10 +106,10 @@ public class CSSIdentifierEscape13Test {
     @Test
     public void testCompact() throws Exception {
 
-        final String textCompactLevel1 = "\\A \\D \u2028\u2029\\C ";
-        final String textCompactLevel2 = "\\A \\D \\2028 \\2029 \\C ";
-        final String textCompactLevel3 = "\\A \\D \\2028 \\2029 \\C ";
-        final String textCompactLevel4 = "\\A \\D \\2028 \\2029 \\C ";
+        final String textCompactLevel1 = "a0123456789";
+        final String textCompactLevel2 = "a0123456789";
+        final String textCompactLevel3 = "a0123456789";
+        final String textCompactLevel4 = "\\61 \\30 \\31 \\32 \\33 \\34 \\35 \\36 \\37 \\38 \\39 ";
 
         testEscapeCompact1(TEXT, textCompactLevel1);
         testEscapeCompact2(TEXT, textCompactLevel2);
@@ -130,10 +130,10 @@ public class CSSIdentifierEscape13Test {
     @Test
     public void testSixDigit() throws Exception {
 
-        final String textSixDigitLevel1 = "\\00000A\\00000D\u2028\u2029\\00000C";
-        final String textSixDigitLevel2 = "\\00000A\\00000D\\002028\\002029\\00000C";
-        final String textSixDigitLevel3 = "\\00000A\\00000D\\002028\\002029\\00000C";
-        final String textSixDigitLevel4 = "\\00000A\\00000D\\002028\\002029\\00000C";
+        final String textSixDigitLevel1 = "a0123456789";
+        final String textSixDigitLevel2 = "a0123456789";
+        final String textSixDigitLevel3 = "a0123456789";
+        final String textSixDigitLevel4 = "\\000061\\000030\\000031\\000032\\000033\\000034\\000035\\000036\\000037\\000038\\000039";
 
         testEscapeSixDigit1(TEXT, textSixDigitLevel1);
         testEscapeSixDigit2(TEXT, textSixDigitLevel2);
@@ -154,7 +154,7 @@ public class CSSIdentifierEscape13Test {
 
 
 
-    public CSSIdentifierEscape13Test() {
+    public CSSIdentifierEscape22Test() {
         super();
     }
 
