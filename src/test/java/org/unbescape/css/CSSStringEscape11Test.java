@@ -21,9 +21,9 @@ package org.unbescape.css;
 
 import org.junit.Test;
 
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeBECompact1;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeBECompact2;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testUnescape;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBECompact1;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBECompact2;
+import static org.unbescape.css.CssStringEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -32,7 +32,7 @@ import static org.unbescape.css.CSSStringEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class CSSStringEscape11Test {
+public class CssStringEscape11Test {
 
 
     private static final String TEXT_UNESC;
@@ -51,7 +51,7 @@ public class CSSStringEscape11Test {
         for (int i = 0; i <= '~'; i++) {
 
             if (i < 0x20) {
-                textEscBuilder.append("\\" + new String(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4)));
+                textEscBuilder.append("\\" + new String(CssIdentifierEscapeUtil.toCompactHexa(i, (char) 0x0, 4)));
                 continue;
             } else {
                 switch(i) {
@@ -88,7 +88,7 @@ public class CSSStringEscape11Test {
 
 
 
-    public CSSStringEscape11Test() {
+    public CssStringEscape11Test() {
         super();
     }
 

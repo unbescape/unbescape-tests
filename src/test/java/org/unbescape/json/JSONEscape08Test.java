@@ -21,7 +21,7 @@ package org.unbescape.json;
 
 import org.junit.Test;
 
-import static org.unbescape.json.JSONEscapeTestUtil.testUnescape;
+import static org.unbescape.json.JsonEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -30,7 +30,7 @@ import static org.unbescape.json.JSONEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class JSONEscape08Test {
+public class JsonEscape08Test {
 
 
     private static final String TEXT_ESC_0 = "\\a";
@@ -73,7 +73,7 @@ public class JSONEscape08Test {
 
 
 
-    public JSONEscape08Test() {
+    public JsonEscape08Test() {
         super();
     }
 

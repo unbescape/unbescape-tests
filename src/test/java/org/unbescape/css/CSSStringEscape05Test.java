@@ -21,23 +21,23 @@ package org.unbescape.css;
 
 import org.junit.Test;
 
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeBECompact1;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeBECompact2;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeBECompact3;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeBECompact4;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeBESixDigit1;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeBESixDigit2;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeBESixDigit3;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeBESixDigit4;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeCompact1;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeCompact2;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeCompact3;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeCompact4;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeSixDigit1;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeSixDigit2;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeSixDigit3;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testEscapeSixDigit4;
-import static org.unbescape.css.CSSStringEscapeTestUtil.testUnescape;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBECompact1;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBECompact2;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBECompact3;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBECompact4;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBESixDigit1;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBESixDigit2;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBESixDigit3;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBESixDigit4;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeCompact1;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeCompact2;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeCompact3;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeCompact4;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeSixDigit1;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeSixDigit2;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeSixDigit3;
+import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeSixDigit4;
+import static org.unbescape.css.CssStringEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -46,7 +46,7 @@ import static org.unbescape.css.CSSStringEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class CSSStringEscape05Test {
+public class CssStringEscape05Test {
 
 
     private static final String TEXT =
@@ -170,7 +170,7 @@ public class CSSStringEscape05Test {
 
 
 
-    public CSSStringEscape05Test() {
+    public CssStringEscape05Test() {
         super();
     }
 

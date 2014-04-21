@@ -26,7 +26,7 @@ then
 fi
 if [ "$LANGUAGE" == 'json' ];
 then
-  BENCHMARK_CLASS="org.unbescape.json.JSONBenchmark";
+  BENCHMARK_CLASS="org.unbescape.json.JsonBenchmark";
 fi
 
 if [ "$BENCHMARK_CLASS" == '' ];

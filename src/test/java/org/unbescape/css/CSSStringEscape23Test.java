@@ -21,7 +21,7 @@ package org.unbescape.css;
 
 import org.junit.Test;
 
-import static org.unbescape.css.CSSStringEscapeTestUtil.testUnescape;
+import static org.unbescape.css.CssStringEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -30,7 +30,7 @@ import static org.unbescape.css.CSSStringEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class CSSStringEscape23Test {
+public class CssStringEscape23Test {
 
 
     // This should verify that not only the 'standard' >U+FFFF syntax works when unescaping, but also the
@@ -55,7 +55,7 @@ public class CSSStringEscape23Test {
 
 
 
-    public CSSStringEscape23Test() {
+    public CssStringEscape23Test() {
         super();
     }
 

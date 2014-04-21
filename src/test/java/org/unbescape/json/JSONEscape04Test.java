@@ -21,15 +21,15 @@ package org.unbescape.json;
 
 import org.junit.Test;
 
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeSECUHexa1;
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeSECUHexa2;
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeSECUHexa3;
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeSECUHexa4;
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeUHexa1;
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeUHexa2;
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeUHexa3;
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeUHexa4;
-import static org.unbescape.json.JSONEscapeTestUtil.testUnescape;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeSECUHexa1;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeSECUHexa2;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeSECUHexa3;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeSECUHexa4;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeUHexa1;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeUHexa2;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeUHexa3;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeUHexa4;
+import static org.unbescape.json.JsonEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -38,7 +38,7 @@ import static org.unbescape.json.JSONEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class JSONEscape04Test {
+public class JsonEscape04Test {
 
 
     private static final String TEXT =
@@ -120,7 +120,7 @@ public class JSONEscape04Test {
 
 
 
-    public JSONEscape04Test() {
+    public JsonEscape04Test() {
         super();
     }
 

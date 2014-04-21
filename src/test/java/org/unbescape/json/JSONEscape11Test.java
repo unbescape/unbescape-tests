@@ -21,11 +21,11 @@ package org.unbescape.json;
 
 import org.junit.Test;
 
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeSECUHexa1;
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeSECUHexa2;
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeSECUHexa3;
-import static org.unbescape.json.JSONEscapeTestUtil.testEscapeSECUHexa4;
-import static org.unbescape.json.JSONEscapeTestUtil.testUnescape;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeSECUHexa1;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeSECUHexa2;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeSECUHexa3;
+import static org.unbescape.json.JsonEscapeTestUtil.testEscapeSECUHexa4;
+import static org.unbescape.json.JsonEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -34,7 +34,7 @@ import static org.unbescape.json.JSONEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class JSONEscape11Test {
+public class JsonEscape11Test {
 
 
     private static final String TEXT_UNESC;
@@ -72,7 +72,7 @@ public class JSONEscape11Test {
                 continue;
             }
             textEscBuilder.append("\\u");
-            textEscBuilder.append(JSONEscapeUtil.toUHexa(i));
+            textEscBuilder.append(JsonEscapeUtil.toUHexa(i));
         }
         TEXT_ESC = textEscBuilder.toString();
 
@@ -104,7 +104,7 @@ public class JSONEscape11Test {
 
 
 
-    public JSONEscape11Test() {
+    public JsonEscape11Test() {
         super();
     }
 

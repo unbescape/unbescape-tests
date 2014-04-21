@@ -32,7 +32,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
  * @since 1.0
  *
  */
-public final class JSONBenchmark {
+public final class JsonBenchmark {
 
     private static final int BENCHMARK_EXECS = 1000000;
 
@@ -72,7 +72,7 @@ public final class JSONBenchmark {
         // Compute textual escape results
         for (int i = 0; i < ESCAPE_TEXTS.length; i++) {
 
-            ESCAPE_TEXTS_UNBESCAPE[i] = JSONEscape.escapeJSON(ESCAPE_TEXTS[i]);
+            ESCAPE_TEXTS_UNBESCAPE[i] = JsonEscape.escapeJson(ESCAPE_TEXTS[i]);
             ESCAPE_NEW_OBJECT_UNBESCAPE[i] = (ESCAPE_TEXTS[i] == ESCAPE_TEXTS_UNBESCAPE[i]);
 
             ESCAPE_TEXTS_STRING_ESCAPE_UTILS[i] = StringEscapeUtils.escapeJson(ESCAPE_TEXTS[i]);
@@ -83,7 +83,7 @@ public final class JSONBenchmark {
         // Compute textual unescape results
         for (int i = 0; i < UNESCAPE_TEXTS.length; i++) {
 
-            UNESCAPE_TEXTS_UNBESCAPE[i] = JSONEscape.unescapeJSON(UNESCAPE_TEXTS[i]);
+            UNESCAPE_TEXTS_UNBESCAPE[i] = JsonEscape.unescapeJson(UNESCAPE_TEXTS[i]);
             UNESCAPE_NEW_OBJECT_UNBESCAPE[i] = (UNESCAPE_TEXTS[i] == UNESCAPE_TEXTS_UNBESCAPE[i]);
 
             UNESCAPE_TEXTS_STRING_ESCAPE_UTILS[i] = StringEscapeUtils.unescapeJson(UNESCAPE_TEXTS[i]);
@@ -99,11 +99,11 @@ public final class JSONBenchmark {
         final int warmupIters = 10000;
         writer.write(String.format("[BENCHMARK][WARMUP] Starting warmup (%d iterations)\n", Integer.valueOf(warmupIters))); writer.flush();
         for (int i = 0; i < warmupIters; i++) {
-            final String res01 = JSONEscape.escapeJSON(ESCAPE_TEXTS[i % ESCAPE_TEXTS.length]);
+            final String res01 = JsonEscape.escapeJson(ESCAPE_TEXTS[i % ESCAPE_TEXTS.length]);
             final String res02 = StringEscapeUtils.escapeJson(ESCAPE_TEXTS[i % ESCAPE_TEXTS.length]);
         }
         for (int i = 0; i < warmupIters; i++) {
-            final String res01 = JSONEscape.unescapeJSON(UNESCAPE_TEXTS[i % UNESCAPE_TEXTS.length]);
+            final String res01 = JsonEscape.unescapeJson(UNESCAPE_TEXTS[i % UNESCAPE_TEXTS.length]);
             final String res02 = StringEscapeUtils.unescapeJson(UNESCAPE_TEXTS[i % UNESCAPE_TEXTS.length]);
         }
         writer.write(String.format("[BENCHMARK][WARMUP] Finished warmup (%d iterations)\n", Integer.valueOf(warmupIters))); writer.flush();
@@ -120,7 +120,7 @@ public final class JSONBenchmark {
 
         final long ustart = System.nanoTime();
         for (int i = 0; i < BENCHMARK_EXECS; i++) {
-            final String result = JSONEscape.escapeJSON(ESCAPE_TEXTS[n]);
+            final String result = JsonEscape.escapeJson(ESCAPE_TEXTS[n]);
         }
         final long ufinish = System.nanoTime();
 
@@ -157,7 +157,7 @@ public final class JSONBenchmark {
 
         final long ustart = System.nanoTime();
         for (int i = 0; i < BENCHMARK_EXECS; i++) {
-            final String result = JSONEscape.unescapeJSON(UNESCAPE_TEXTS[n]);
+            final String result = JsonEscape.unescapeJson(UNESCAPE_TEXTS[n]);
         }
         final long ufinish = System.nanoTime();
 
@@ -209,7 +209,7 @@ public final class JSONBenchmark {
     }
 
 
-    public JSONBenchmark() {
+    public JsonBenchmark() {
         super();
     }
 

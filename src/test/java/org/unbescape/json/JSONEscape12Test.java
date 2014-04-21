@@ -21,7 +21,7 @@ package org.unbescape.json;
 
 import org.junit.Test;
 
-import static org.unbescape.json.JSONEscapeTestUtil.testUnescape;
+import static org.unbescape.json.JsonEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -30,7 +30,7 @@ import static org.unbescape.json.JSONEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class JSONEscape12Test {
+public class JsonEscape12Test {
 
 
     private static final String TEXT_UNESC;
@@ -63,7 +63,7 @@ public class JSONEscape12Test {
                 continue;
             }
             textEscBuilder.append("\\u");
-            textEscBuilder.append(JSONEscapeUtil.toUHexa(i));
+            textEscBuilder.append(JsonEscapeUtil.toUHexa(i));
         }
         TEXT_ESC = textEscBuilder.toString();
 
@@ -88,7 +88,7 @@ public class JSONEscape12Test {
 
 
 
-    public JSONEscape12Test() {
+    public JsonEscape12Test() {
         super();
     }
 

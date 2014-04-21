@@ -21,7 +21,7 @@ package org.unbescape.css;
 
 import org.junit.Test;
 
-import static org.unbescape.css.CSSStringEscapeTestUtil.testUnescape;
+import static org.unbescape.css.CssStringEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -30,7 +30,7 @@ import static org.unbescape.css.CSSStringEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class CSSStringEscape10Test {
+public class CssStringEscape10Test {
 
 
     private static final String TEXT_ESC_1 = "\\00";
@@ -67,7 +67,7 @@ public class CSSStringEscape10Test {
 
 
 
-    public CSSStringEscape10Test() {
+    public CssStringEscape10Test() {
         super();
     }
 

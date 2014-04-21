@@ -21,10 +21,10 @@ package org.unbescape.css;
 
 import org.junit.Test;
 
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBECompact1;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBECompact2;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBECompact3;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testUnescape;
+import static org.unbescape.css.CssIdentifierEscapeTestUtil.testEscapeBECompact1;
+import static org.unbescape.css.CssIdentifierEscapeTestUtil.testEscapeBECompact2;
+import static org.unbescape.css.CssIdentifierEscapeTestUtil.testEscapeBECompact3;
+import static org.unbescape.css.CssIdentifierEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -33,7 +33,7 @@ import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class CSSIdentifierEscape11Test {
+public class CssIdentifierEscape11Test {
 
 
     private static final String TEXT_UNESC;
@@ -54,8 +54,8 @@ public class CSSIdentifierEscape11Test {
         for (int i = 0; i <= '~'; i++) {
 
             if (i < 0x20) {
-                textEscBuilder.append("\\" + new String(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4)));
-                textEsc3Builder.append("\\" + new String(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4)));
+                textEscBuilder.append("\\" + new String(CssIdentifierEscapeUtil.toCompactHexa(i, (char) 0x0, 4)));
+                textEsc3Builder.append("\\" + new String(CssIdentifierEscapeUtil.toCompactHexa(i, (char) 0x0, 4)));
                 continue;
             } else {
                 switch(i) {
@@ -90,7 +90,7 @@ public class CSSIdentifierEscape11Test {
                     case '}':
                     case '~': textEscBuilder.append("\\" + (char)i); textEsc3Builder.append("\\" + (char)i); continue;
                     // colon: will not be used for escaping: not recognized by IE < 8
-                    case ':': final String hexa = new String(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4));
+                    case ':': final String hexa = new String(CssIdentifierEscapeUtil.toCompactHexa(i, (char) 0x0, 4));
                               textEscBuilder.append("\\" + hexa);
                               textEsc3Builder.append("\\" + hexa);
                               continue;
@@ -134,7 +134,7 @@ public class CSSIdentifierEscape11Test {
 
 
 
-    public CSSIdentifierEscape11Test() {
+    public CssIdentifierEscape11Test() {
         super();
     }
 

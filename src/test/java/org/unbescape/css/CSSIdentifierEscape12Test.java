@@ -21,11 +21,11 @@ package org.unbescape.css;
 
 import org.junit.Test;
 
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBECompact1;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBECompact2;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBECompact3;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBECompact4;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testUnescape;
+import static org.unbescape.css.CssIdentifierEscapeTestUtil.testEscapeBECompact1;
+import static org.unbescape.css.CssIdentifierEscapeTestUtil.testEscapeBECompact2;
+import static org.unbescape.css.CssIdentifierEscapeTestUtil.testEscapeBECompact3;
+import static org.unbescape.css.CssIdentifierEscapeTestUtil.testEscapeBECompact4;
+import static org.unbescape.css.CssIdentifierEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -34,7 +34,7 @@ import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class CSSIdentifierEscape12Test {
+public class CssIdentifierEscape12Test {
 
 
     private static final String TEXT_UNESC;
@@ -51,7 +51,7 @@ public class CSSIdentifierEscape12Test {
 
         final StringBuilder textEscBuilder = new StringBuilder();
         for (int i = 0x7F; i <= 0x9F; i++) {
-            textEscBuilder.append("\\" + new String(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4)));
+            textEscBuilder.append("\\" + new String(CssIdentifierEscapeUtil.toCompactHexa(i, (char) 0x0, 4)));
         }
         TEXT_ESC = textEscBuilder.toString();
 
@@ -82,7 +82,7 @@ public class CSSIdentifierEscape12Test {
 
 
 
-    public CSSIdentifierEscape12Test() {
+    public CssIdentifierEscape12Test() {
         super();
     }
 

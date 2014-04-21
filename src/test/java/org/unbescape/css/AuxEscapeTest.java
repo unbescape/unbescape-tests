@@ -46,7 +46,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0; i <= 0x02FF; i++) {
-                strBuilder.append(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4));
+                strBuilder.append(CssIdentifierEscapeUtil.toCompactHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -59,7 +59,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0xFE00; i <= 0xFFFF; i++) {
-                strBuilder.append(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4));
+                strBuilder.append(CssIdentifierEscapeUtil.toCompactHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -72,7 +72,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0xFFE00; i <= 0x100020; i++) {
-                strBuilder.append(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4));
+                strBuilder.append(CssIdentifierEscapeUtil.toCompactHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -85,7 +85,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0x10FE00; i <= 0x10FFFF; i++) {
-                strBuilder.append(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4));
+                strBuilder.append(CssIdentifierEscapeUtil.toCompactHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -105,7 +105,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0; i <= 0x02FF; i++) {
-                strBuilder.append(CSSIdentifierEscapeUtil.toSixDigitHexa(i,(char)0x0,4));
+                strBuilder.append(CssIdentifierEscapeUtil.toSixDigitHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -118,7 +118,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0xFE00; i <= 0xFFFF; i++) {
-                strBuilder.append(CSSIdentifierEscapeUtil.toSixDigitHexa(i,(char)0x0,4));
+                strBuilder.append(CssIdentifierEscapeUtil.toSixDigitHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -131,7 +131,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0xFFE00; i <= 0x100020; i++) {
-                strBuilder.append(CSSIdentifierEscapeUtil.toSixDigitHexa(i,(char)0x0,4));
+                strBuilder.append(CssIdentifierEscapeUtil.toSixDigitHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -145,7 +145,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0x10FE00; i <= 0x10FFFF; i++) {
-                strBuilder.append(CSSIdentifierEscapeUtil.toSixDigitHexa(i,(char)0x0,4));
+                strBuilder.append(CssIdentifierEscapeUtil.toSixDigitHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -168,7 +168,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0; i <= 0x02FF; i++) {
-                strBuilder.append(CSSStringEscapeUtil.toCompactHexa(i,(char)0x0,4));
+                strBuilder.append(CssStringEscapeUtil.toCompactHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -181,7 +181,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0xFE00; i <= 0xFFFF; i++) {
-                strBuilder.append(CSSStringEscapeUtil.toCompactHexa(i,(char)0x0,4));
+                strBuilder.append(CssStringEscapeUtil.toCompactHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -194,7 +194,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0xFFE00; i <= 0x100020; i++) {
-                strBuilder.append(CSSStringEscapeUtil.toCompactHexa(i,(char)0x0,4));
+                strBuilder.append(CssStringEscapeUtil.toCompactHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -207,7 +207,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0x10FE00; i <= 0x10FFFF; i++) {
-                strBuilder.append(CSSStringEscapeUtil.toCompactHexa(i,(char)0x0,4));
+                strBuilder.append(CssStringEscapeUtil.toCompactHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -227,7 +227,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0; i <= 0x02FF; i++) {
-                strBuilder.append(CSSStringEscapeUtil.toSixDigitHexa(i,(char)0x0,4));
+                strBuilder.append(CssStringEscapeUtil.toSixDigitHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -240,7 +240,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0xFE00; i <= 0xFFFF; i++) {
-                strBuilder.append(CSSStringEscapeUtil.toSixDigitHexa(i,(char)0x0,4));
+                strBuilder.append(CssStringEscapeUtil.toSixDigitHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -253,7 +253,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0xFFE00; i <= 0x100020; i++) {
-                strBuilder.append(CSSStringEscapeUtil.toSixDigitHexa(i,(char)0x0,4));
+                strBuilder.append(CssStringEscapeUtil.toSixDigitHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();
@@ -267,7 +267,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0x10FE00; i <= 0x10FFFF; i++) {
-                strBuilder.append(CSSStringEscapeUtil.toSixDigitHexa(i,(char)0x0,4));
+                strBuilder.append(CssStringEscapeUtil.toSixDigitHexa(i, (char) 0x0, 4));
             }
 
             final String result = strBuilder.toString();

@@ -31,7 +31,7 @@ import org.junit.Assert;
  * @since 1.0
  *
  */
-public class JSONEscapeTestUtil {
+public class JsonEscapeTestUtil {
 
 
 
@@ -41,15 +41,15 @@ public class JSONEscapeTestUtil {
 
     public static void testEscapeSECUHexa1(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, JSONEscapeType.SINGLE_ESCAPE_CHARS_DEFAULT_TO_UHEXA,
-                JSONEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
+        testEscape(text, expected, JsonEscapeType.SINGLE_ESCAPE_CHARS_DEFAULT_TO_UHEXA,
+                JsonEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
     }
 
 
     public static void testEscapeUHexa1(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, JSONEscapeType.UHEXA,
-                JSONEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
+        testEscape(text, expected, JsonEscapeType.UHEXA,
+                JsonEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
     }
 
 
@@ -57,15 +57,15 @@ public class JSONEscapeTestUtil {
 
     public static void testEscapeSECUHexa2(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, JSONEscapeType.SINGLE_ESCAPE_CHARS_DEFAULT_TO_UHEXA,
-                JSONEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
+        testEscape(text, expected, JsonEscapeType.SINGLE_ESCAPE_CHARS_DEFAULT_TO_UHEXA,
+                JsonEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
     }
 
 
     public static void testEscapeUHexa2(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, JSONEscapeType.UHEXA,
-                JSONEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
+        testEscape(text, expected, JsonEscapeType.UHEXA,
+                JsonEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
     }
 
 
@@ -73,15 +73,15 @@ public class JSONEscapeTestUtil {
 
     public static void testEscapeSECUHexa3(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, JSONEscapeType.SINGLE_ESCAPE_CHARS_DEFAULT_TO_UHEXA,
-                JSONEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
+        testEscape(text, expected, JsonEscapeType.SINGLE_ESCAPE_CHARS_DEFAULT_TO_UHEXA,
+                JsonEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
     }
 
 
     public static void testEscapeUHexa3(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, JSONEscapeType.UHEXA,
-                JSONEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
+        testEscape(text, expected, JsonEscapeType.UHEXA,
+                JsonEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
     }
 
 
@@ -89,15 +89,15 @@ public class JSONEscapeTestUtil {
 
     public static void testEscapeSECUHexa4(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, JSONEscapeType.SINGLE_ESCAPE_CHARS_DEFAULT_TO_UHEXA,
-                JSONEscapeLevel.LEVEL_4_ALL_CHARACTERS);
+        testEscape(text, expected, JsonEscapeType.SINGLE_ESCAPE_CHARS_DEFAULT_TO_UHEXA,
+                JsonEscapeLevel.LEVEL_4_ALL_CHARACTERS);
     }
 
 
     public static void testEscapeUHexa4(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, JSONEscapeType.UHEXA,
-                JSONEscapeLevel.LEVEL_4_ALL_CHARACTERS);
+        testEscape(text, expected, JsonEscapeType.UHEXA,
+                JsonEscapeLevel.LEVEL_4_ALL_CHARACTERS);
     }
 
 
@@ -107,15 +107,15 @@ public class JSONEscapeTestUtil {
 
 
     public static void testEscape(final String text, final String expected,
-                                   final JSONEscapeType type, final JSONEscapeLevel level)
+                                   final JsonEscapeType type, final JsonEscapeLevel level)
                                    throws IOException {
 
-        final String resultStr = JSONEscapeUtil.escape(text, type, level);
+        final String resultStr = JsonEscapeUtil.escape(text, type, level);
         Assert.assertEquals(expected, resultStr);
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        JSONEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, type, level);
+        JsonEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, type, level);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -138,7 +138,7 @@ public class JSONEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            JSONEscapeUtil.escape(array, i, textCharArray.length, stringWriter, type, level);
+            JsonEscapeUtil.escape(array, i, textCharArray.length, stringWriter, type, level);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
@@ -157,12 +157,12 @@ public class JSONEscapeTestUtil {
     public static void testUnescape(final String text, final String expected)
                                     throws IOException {
 
-        final String resultStr = JSONEscape.unescapeJSON(text);
+        final String resultStr = JsonEscape.unescapeJson(text);
         Assert.assertEquals(expected, resultStr);
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        JSONEscape.unescapeJSON(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
+        JsonEscape.unescapeJson(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -185,7 +185,7 @@ public class JSONEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            JSONEscape.unescapeJSON(array, i, textCharArray.length, stringWriter);
+            JsonEscape.unescapeJson(array, i, textCharArray.length, stringWriter);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
@@ -200,7 +200,7 @@ public class JSONEscapeTestUtil {
 
 
 
-    private JSONEscapeTestUtil() {
+    private JsonEscapeTestUtil() {
         super();
     }
 

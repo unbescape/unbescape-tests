@@ -31,7 +31,7 @@ import org.junit.Assert;
  * @since 1.0
  *
  */
-public class CSSIdentifierEscapeTestUtil {
+public class CssIdentifierEscapeTestUtil {
 
 
 
@@ -41,29 +41,29 @@ public class CSSIdentifierEscapeTestUtil {
 
     public static void testEscapeBECompact1(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_COMPACT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
+        testEscape(text, expected, CssIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_COMPACT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
     }
 
 
     public static void testEscapeBESixDigit1(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_SIX_DIGIT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
+        testEscape(text, expected, CssIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_SIX_DIGIT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
     }
 
 
     public static void testEscapeCompact1(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.COMPACT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
+        testEscape(text, expected, CssIdentifierEscapeType.COMPACT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
     }
 
 
     public static void testEscapeSixDigit1(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.SIX_DIGIT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
+        testEscape(text, expected, CssIdentifierEscapeType.SIX_DIGIT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
     }
 
 
@@ -71,29 +71,29 @@ public class CSSIdentifierEscapeTestUtil {
 
     public static void testEscapeBECompact2(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_COMPACT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
+        testEscape(text, expected, CssIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_COMPACT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
     }
 
 
     public static void testEscapeBESixDigit2(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_SIX_DIGIT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
+        testEscape(text, expected, CssIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_SIX_DIGIT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
     }
 
 
     public static void testEscapeCompact2(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.COMPACT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
+        testEscape(text, expected, CssIdentifierEscapeType.COMPACT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
     }
 
 
     public static void testEscapeSixDigit2(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.SIX_DIGIT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
+        testEscape(text, expected, CssIdentifierEscapeType.SIX_DIGIT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
     }
 
 
@@ -101,29 +101,29 @@ public class CSSIdentifierEscapeTestUtil {
 
     public static void testEscapeBECompact3(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_COMPACT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
+        testEscape(text, expected, CssIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_COMPACT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
     }
 
 
     public static void testEscapeBESixDigit3(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_SIX_DIGIT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
+        testEscape(text, expected, CssIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_SIX_DIGIT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
     }
 
 
     public static void testEscapeCompact3(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.COMPACT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
+        testEscape(text, expected, CssIdentifierEscapeType.COMPACT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
     }
 
 
     public static void testEscapeSixDigit3(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.SIX_DIGIT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
+        testEscape(text, expected, CssIdentifierEscapeType.SIX_DIGIT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
     }
 
 
@@ -131,29 +131,29 @@ public class CSSIdentifierEscapeTestUtil {
 
     public static void testEscapeBECompact4(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_COMPACT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_4_ALL_CHARACTERS);
+        testEscape(text, expected, CssIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_COMPACT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_4_ALL_CHARACTERS);
     }
 
 
     public static void testEscapeBESixDigit4(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_SIX_DIGIT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_4_ALL_CHARACTERS);
+        testEscape(text, expected, CssIdentifierEscapeType.BACKSLASH_ESCAPES_DEFAULT_TO_SIX_DIGIT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_4_ALL_CHARACTERS);
     }
 
 
     public static void testEscapeCompact4(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.COMPACT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_4_ALL_CHARACTERS);
+        testEscape(text, expected, CssIdentifierEscapeType.COMPACT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_4_ALL_CHARACTERS);
     }
 
 
     public static void testEscapeSixDigit4(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, CSSIdentifierEscapeType.SIX_DIGIT_HEXA,
-                CSSIdentifierEscapeLevel.LEVEL_4_ALL_CHARACTERS);
+        testEscape(text, expected, CssIdentifierEscapeType.SIX_DIGIT_HEXA,
+                CssIdentifierEscapeLevel.LEVEL_4_ALL_CHARACTERS);
     }
 
 
@@ -163,15 +163,15 @@ public class CSSIdentifierEscapeTestUtil {
 
 
     public static void testEscape(final String text, final String expected,
-                                   final CSSIdentifierEscapeType type, final CSSIdentifierEscapeLevel level)
+                                   final CssIdentifierEscapeType type, final CssIdentifierEscapeLevel level)
                                    throws IOException {
 
-        final String resultStr = CSSIdentifierEscapeUtil.escape(text, type, level);
+        final String resultStr = CssIdentifierEscapeUtil.escape(text, type, level);
         Assert.assertEquals(expected, resultStr);
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        CSSIdentifierEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, type, level);
+        CssIdentifierEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, type, level);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -194,7 +194,7 @@ public class CSSIdentifierEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            CSSIdentifierEscapeUtil.escape(array, i, textCharArray.length, stringWriter, type, level);
+            CssIdentifierEscapeUtil.escape(array, i, textCharArray.length, stringWriter, type, level);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
@@ -213,12 +213,12 @@ public class CSSIdentifierEscapeTestUtil {
     public static void testUnescape(final String text, final String expected)
                                     throws IOException {
 
-        final String resultStr = CSSUnescapeUtil.unescape(text);
+        final String resultStr = CssUnescapeUtil.unescape(text);
         Assert.assertEquals(expected, resultStr);
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        CSSUnescapeUtil.unescape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
+        CssUnescapeUtil.unescape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -241,7 +241,7 @@ public class CSSIdentifierEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            CSSUnescapeUtil.unescape(array, i, textCharArray.length, stringWriter);
+            CssUnescapeUtil.unescape(array, i, textCharArray.length, stringWriter);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
@@ -256,7 +256,7 @@ public class CSSIdentifierEscapeTestUtil {
 
 
 
-    private CSSIdentifierEscapeTestUtil() {
+    private CssIdentifierEscapeTestUtil() {
         super();
     }
 

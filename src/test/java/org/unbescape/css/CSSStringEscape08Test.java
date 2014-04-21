@@ -21,7 +21,7 @@ package org.unbescape.css;
 
 import org.junit.Test;
 
-import static org.unbescape.css.CSSStringEscapeTestUtil.testUnescape;
+import static org.unbescape.css.CssStringEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -30,7 +30,7 @@ import static org.unbescape.css.CSSStringEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class CSSStringEscape08Test {
+public class CssStringEscape08Test {
 
 
     private static final String TEXT_ESC_0 = "\\a";
@@ -76,7 +76,7 @@ public class CSSStringEscape08Test {
 
 
 
-    public CSSStringEscape08Test() {
+    public CssStringEscape08Test() {
         super();
     }
 
