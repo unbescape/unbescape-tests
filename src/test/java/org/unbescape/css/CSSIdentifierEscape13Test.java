@@ -58,10 +58,10 @@ public class CSSIdentifierEscape13Test {
     @Test
     public void testBECompact() throws Exception {
 
-        final String textBECompactLevel1 = "\\A \\D \u2028\u2029\\C ";
-        final String textBECompactLevel2 = "\\A \\D \\2028 \\2029 \\C ";
-        final String textBECompactLevel3 = "\\A \\D \\2028 \\2029 \\C ";
-        final String textBECompactLevel4 = "\\A \\D \\2028 \\2029 \\C ";
+        final String textBECompactLevel1 = "\\A\\D\u2028\u2029\\C";
+        final String textBECompactLevel2 = "\\A\\D\\2028\\2029\\C";
+        final String textBECompactLevel3 = "\\A\\D\\2028\\2029\\C";
+        final String textBECompactLevel4 = "\\A\\D\\2028\\2029\\C";
 
         testEscapeBECompact1(TEXT, textBECompactLevel1);
         testEscapeBECompact2(TEXT, textBECompactLevel2);
@@ -106,10 +106,10 @@ public class CSSIdentifierEscape13Test {
     @Test
     public void testCompact() throws Exception {
 
-        final String textCompactLevel1 = "\\A \\D \u2028\u2029\\C ";
-        final String textCompactLevel2 = "\\A \\D \\2028 \\2029 \\C ";
-        final String textCompactLevel3 = "\\A \\D \\2028 \\2029 \\C ";
-        final String textCompactLevel4 = "\\A \\D \\2028 \\2029 \\C ";
+        final String textCompactLevel1 = "\\A\\D\u2028\u2029\\C";
+        final String textCompactLevel2 = "\\A\\D\\2028\\2029\\C";
+        final String textCompactLevel3 = "\\A\\D\\2028\\2029\\C";
+        final String textCompactLevel4 = "\\A\\D\\2028\\2029\\C";
 
         testEscapeCompact1(TEXT, textCompactLevel1);
         testEscapeCompact2(TEXT, textCompactLevel2);

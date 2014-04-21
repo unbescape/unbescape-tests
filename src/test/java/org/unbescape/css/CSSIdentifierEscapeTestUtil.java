@@ -213,12 +213,12 @@ public class CSSIdentifierEscapeTestUtil {
     public static void testUnescape(final String text, final String expected)
                                     throws IOException {
 
-        final String resultStr = CSSIdentifierEscapeUtil.unescape(text);
+        final String resultStr = CSSUnescapeUtil.unescape(text);
         Assert.assertEquals(expected, resultStr);
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        CSSIdentifierEscapeUtil.unescape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
+        CSSUnescapeUtil.unescape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -241,7 +241,7 @@ public class CSSIdentifierEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            CSSIdentifierEscapeUtil.unescape(array, i, textCharArray.length, stringWriter);
+            CSSUnescapeUtil.unescape(array, i, textCharArray.length, stringWriter);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {

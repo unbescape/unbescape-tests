@@ -54,8 +54,8 @@ public class CSSIdentifierEscape11Test {
         for (int i = 0; i <= '~'; i++) {
 
             if (i < 0x20) {
-                textEscBuilder.append("\\" + new String(CSSIdentifierEscapeUtil.toCompactHexa(i)));
-                textEsc3Builder.append("\\" + new String(CSSIdentifierEscapeUtil.toCompactHexa(i)));
+                textEscBuilder.append("\\" + new String(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4)));
+                textEsc3Builder.append("\\" + new String(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4)));
                 continue;
             } else {
                 switch(i) {
@@ -90,7 +90,7 @@ public class CSSIdentifierEscape11Test {
                     case '}':
                     case '~': textEscBuilder.append("\\" + (char)i); textEsc3Builder.append("\\" + (char)i); continue;
                     // colon: will not be used for escaping: not recognized by IE < 8
-                    case ':': final String hexa = new String(CSSIdentifierEscapeUtil.toCompactHexa(i));
+                    case ':': final String hexa = new String(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4));
                               textEscBuilder.append("\\" + hexa);
                               textEsc3Builder.append("\\" + hexa);
                               continue;

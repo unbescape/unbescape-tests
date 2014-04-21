@@ -59,10 +59,10 @@ public class CSSIdentifierEscape14Test {
     @Test
     public void testBECompact() throws Exception {
 
-        final String textBECompactLevel1 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\3A \\/\\/example\\.com";
-        final String textBECompactLevel2 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\3A \\/\\/example\\.com";
-        final String textBECompactLevel3 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\3A \\/\\/example\\.com";
-        final String textBECompactLevel4 = "\\/\\73 \\6F \\6D \\65 \\74 \\68 \\69 \\6E \\67 \\<\\/\\73 \\63 \\72 \\69 \\70 \\74 \\>\\<\\/\\61 \\6E \\79 \\74 \\68 \\69 \\6E \\67 \\>\\ \\62 \\75 \\74 \\ \\68 \\74 \\74 \\70 \\3A \\/\\/\\65 \\78 \\61 \\6D \\70 \\6C \\65 \\.\\63 \\6F \\6D ";
+        final String textBECompactLevel1 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\3A\\/\\/example\\.com";
+        final String textBECompactLevel2 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\3A\\/\\/example\\.com";
+        final String textBECompactLevel3 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\3A\\/\\/example\\.com";
+        final String textBECompactLevel4 = "\\/\\73\\6F\\6D\\65\\74\\68\\69\\6E\\67\\<\\/\\73\\63\\72\\69\\70\\74\\>\\<\\/\\61\\6E\\79\\74\\68\\69\\6E\\67\\>\\ \\62\\75\\74\\ \\68\\74\\74\\70\\3A\\/\\/\\65\\78\\61\\6D\\70\\6C\\65\\.\\63\\6F\\6D";
 
         testEscapeBECompact1(TEXT, textBECompactLevel1);
         testEscapeBECompact2(TEXT, textBECompactLevel2);
@@ -107,10 +107,10 @@ public class CSSIdentifierEscape14Test {
     @Test
     public void testCompact() throws Exception {
 
-        final String textCompactLevel1 = "\\2F something\\3C \\2F script\\3E \\3C \\2F anything\\3E \\20 but\\20 http\\3A \\2F \\2F example\\2E com";
-        final String textCompactLevel2 = "\\2F something\\3C \\2F script\\3E \\3C \\2F anything\\3E \\20 but\\20 http\\3A \\2F \\2F example\\2E com";
-        final String textCompactLevel3 = "\\2F something\\3C \\2F script\\3E \\3C \\2F anything\\3E \\20 but\\20 http\\3A \\2F \\2F example\\2E com";
-        final String textCompactLevel4 = "\\2F \\73 \\6F \\6D \\65 \\74 \\68 \\69 \\6E \\67 \\3C \\2F \\73 \\63 \\72 \\69 \\70 \\74 \\3E \\3C \\2F \\61 \\6E \\79 \\74 \\68 \\69 \\6E \\67 \\3E \\20 \\62 \\75 \\74 \\20 \\68 \\74 \\74 \\70 \\3A \\2F \\2F \\65 \\78 \\61 \\6D \\70 \\6C \\65 \\2E \\63 \\6F \\6D ";
+        final String textCompactLevel1 = "\\2Fsomething\\3C\\2Fscript\\3E\\3C\\2F anything\\3E\\20 but\\20http\\3A\\2F\\2F example\\2E com";
+        final String textCompactLevel2 = "\\2Fsomething\\3C\\2Fscript\\3E\\3C\\2F anything\\3E\\20 but\\20http\\3A\\2F\\2F example\\2E com";
+        final String textCompactLevel3 = "\\2Fsomething\\3C\\2Fscript\\3E\\3C\\2F anything\\3E\\20 but\\20http\\3A\\2F\\2F example\\2E com";
+        final String textCompactLevel4 = "\\2F\\73\\6F\\6D\\65\\74\\68\\69\\6E\\67\\3C\\2F\\73\\63\\72\\69\\70\\74\\3E\\3C\\2F\\61\\6E\\79\\74\\68\\69\\6E\\67\\3E\\20\\62\\75\\74\\20\\68\\74\\74\\70\\3A\\2F\\2F\\65\\78\\61\\6D\\70\\6C\\65\\2E\\63\\6F\\6D";
 
         testEscapeCompact1(TEXT, textCompactLevel1);
         testEscapeCompact2(TEXT, textCompactLevel2);

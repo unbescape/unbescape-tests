@@ -57,10 +57,10 @@ public class CSSIdentifierEscape06Test {
     @Test
     public void testBECompact() throws Exception {
 
-        final String textBECompactLevel1 = "\\A ";
-        final String textBECompactLevel2 = "\\A ";
-        final String textBECompactLevel3 = "\\A ";
-        final String textBECompactLevel4 = "\\A ";
+        final String textBECompactLevel1 = "\\A";
+        final String textBECompactLevel2 = "\\A";
+        final String textBECompactLevel3 = "\\A";
+        final String textBECompactLevel4 = "\\A";
 
         testEscapeBECompact1(TEXT, textBECompactLevel1);
         testEscapeBECompact2(TEXT, textBECompactLevel2);
@@ -105,10 +105,10 @@ public class CSSIdentifierEscape06Test {
     @Test
     public void testCompact() throws Exception {
 
-        final String textCompactLevel1 = "\\A ";
-        final String textCompactLevel2 = "\\A ";
-        final String textCompactLevel3 = "\\A ";
-        final String textCompactLevel4 = "\\A ";
+        final String textCompactLevel1 = "\\A";
+        final String textCompactLevel2 = "\\A";
+        final String textCompactLevel3 = "\\A";
+        final String textCompactLevel4 = "\\A";
 
         testEscapeCompact1(TEXT, textCompactLevel1);
         testEscapeCompact2(TEXT, textCompactLevel2);

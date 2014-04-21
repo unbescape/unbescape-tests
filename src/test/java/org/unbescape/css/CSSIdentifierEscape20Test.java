@@ -61,7 +61,7 @@ public class CSSIdentifierEscape20Test {
         final String textBECompactLevel1 = "-a";
         final String textBECompactLevel2 = "-a";
         final String textBECompactLevel3 = "\\-a";
-        final String textBECompactLevel4 = "\\-\\61 ";
+        final String textBECompactLevel4 = "\\-\\61";
 
         testEscapeBECompact1(TEXT, textBECompactLevel1);
         testEscapeBECompact2(TEXT, textBECompactLevel2);
@@ -109,7 +109,7 @@ public class CSSIdentifierEscape20Test {
         final String textCompactLevel1 = "-a";
         final String textCompactLevel2 = "-a";
         final String textCompactLevel3 = "\\2D a";
-        final String textCompactLevel4 = "\\2D \\61 ";
+        final String textCompactLevel4 = "\\2D\\61";
 
         testEscapeCompact1(TEXT, textCompactLevel1);
         testEscapeCompact2(TEXT, textCompactLevel2);

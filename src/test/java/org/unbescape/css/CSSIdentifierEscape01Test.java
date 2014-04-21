@@ -62,10 +62,10 @@ public class CSSIdentifierEscape01Test {
         final String textBECompactLevel2 = TEXT;
         final String textBECompactLevel3 = TEXT;
         final String textBECompactLevel4 =
-                "\\41 \\42 \\43 \\44 \\45 \\46 \\47 \\48 \\49 \\4A \\4B \\4C \\4D \\4E \\4F \\50 \\51 \\52 " +
-                "\\53 \\54 \\55 \\56 \\57 \\58 \\59 \\5A \\61 \\62 \\63 \\64 \\65 \\66 \\67 \\68 \\69 \\6A " +
-                "\\6B \\6C \\6D \\6E \\6F \\70 \\71 \\72 \\73 \\74 \\75 \\76 \\77 \\78 \\79 \\7A \\30 \\31 " +
-                "\\32 \\33 \\34 \\35 \\36 \\37 \\38 \\39 ";
+                "\\41\\42\\43\\44\\45\\46\\47\\48\\49\\4A\\4B\\4C\\4D\\4E\\4F\\50\\51\\52" +
+                "\\53\\54\\55\\56\\57\\58\\59\\5A\\61\\62\\63\\64\\65\\66\\67\\68\\69\\6A" +
+                "\\6B\\6C\\6D\\6E\\6F\\70\\71\\72\\73\\74\\75\\76\\77\\78\\79\\7A\\30\\31" +
+                "\\32\\33\\34\\35\\36\\37\\38\\39";
 
         testEscapeBECompact1(TEXT, textBECompactLevel1);
         testEscapeBECompact2(TEXT, textBECompactLevel2);
@@ -120,10 +120,10 @@ public class CSSIdentifierEscape01Test {
         final String textCompactLevel2 = TEXT;
         final String textCompactLevel3 = TEXT;
         final String textCompactLevel4 =
-                "\\41 \\42 \\43 \\44 \\45 \\46 \\47 \\48 \\49 \\4A \\4B \\4C \\4D \\4E \\4F \\50 \\51 \\52 " +
-                "\\53 \\54 \\55 \\56 \\57 \\58 \\59 \\5A \\61 \\62 \\63 \\64 \\65 \\66 \\67 \\68 \\69 \\6A " +
-                "\\6B \\6C \\6D \\6E \\6F \\70 \\71 \\72 \\73 \\74 \\75 \\76 \\77 \\78 \\79 \\7A \\30 \\31 " +
-                "\\32 \\33 \\34 \\35 \\36 \\37 \\38 \\39 ";
+                "\\41\\42\\43\\44\\45\\46\\47\\48\\49\\4A\\4B\\4C\\4D\\4E\\4F\\50\\51\\52" +
+                "\\53\\54\\55\\56\\57\\58\\59\\5A\\61\\62\\63\\64\\65\\66\\67\\68\\69\\6A" +
+                "\\6B\\6C\\6D\\6E\\6F\\70\\71\\72\\73\\74\\75\\76\\77\\78\\79\\7A\\30\\31" +
+                "\\32\\33\\34\\35\\36\\37\\38\\39";
 
         testEscapeCompact1(TEXT, textCompactLevel1);
         testEscapeCompact2(TEXT, textCompactLevel2);

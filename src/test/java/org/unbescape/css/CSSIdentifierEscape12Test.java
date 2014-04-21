@@ -51,7 +51,7 @@ public class CSSIdentifierEscape12Test {
 
         final StringBuilder textEscBuilder = new StringBuilder();
         for (int i = 0x7F; i <= 0x9F; i++) {
-            textEscBuilder.append("\\" + new String(CSSIdentifierEscapeUtil.toCompactHexa(i)));
+            textEscBuilder.append("\\" + new String(CSSIdentifierEscapeUtil.toCompactHexa(i,(char)0x0,4)));
         }
         TEXT_ESC = textEscBuilder.toString();
 

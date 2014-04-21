@@ -61,7 +61,7 @@ public class CSSIdentifierEscape21Test {
         final String textBECompactLevel1 = "\\30 123456789";
         final String textBECompactLevel2 = "\\30 123456789";
         final String textBECompactLevel3 = "\\30 123456789";
-        final String textBECompactLevel4 = "\\30 \\31 \\32 \\33 \\34 \\35 \\36 \\37 \\38 \\39 ";
+        final String textBECompactLevel4 = "\\30\\31\\32\\33\\34\\35\\36\\37\\38\\39";
 
         testEscapeBECompact1(TEXT, textBECompactLevel1);
         testEscapeBECompact2(TEXT, textBECompactLevel2);
@@ -109,7 +109,7 @@ public class CSSIdentifierEscape21Test {
         final String textCompactLevel1 = "\\30 123456789";
         final String textCompactLevel2 = "\\30 123456789";
         final String textCompactLevel3 = "\\30 123456789";
-        final String textCompactLevel4 = "\\30 \\31 \\32 \\33 \\34 \\35 \\36 \\37 \\38 \\39 ";
+        final String textCompactLevel4 = "\\30\\31\\32\\33\\34\\35\\36\\37\\38\\39";
 
         testEscapeCompact1(TEXT, textCompactLevel1);
         testEscapeCompact2(TEXT, textCompactLevel2);

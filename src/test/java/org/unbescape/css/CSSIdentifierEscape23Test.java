@@ -21,22 +21,6 @@ package org.unbescape.css;
 
 import org.junit.Test;
 
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBECompact1;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBECompact2;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBECompact3;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBECompact4;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBESixDigit1;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBESixDigit2;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBESixDigit3;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeBESixDigit4;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeCompact1;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeCompact2;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeCompact3;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeCompact4;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeSixDigit1;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeSixDigit2;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeSixDigit3;
-import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testEscapeSixDigit4;
 import static org.unbescape.css.CSSIdentifierEscapeTestUtil.testUnescape;
 
 /**
@@ -52,7 +36,7 @@ public class CSSIdentifierEscape23Test {
     // This should verify that not only the 'standard' >U+FFFF syntax works when unescaping, but also the
     // non standard (older Webkit) surrogate-based one.
     private static final String TEXT_ESC =
-            "\\<\\>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ \\<\\>\\&\\'\\\"\\ \\163 \\D840 \\DC00 \\D835 \\DCCD -\\163 -\\20000 -\\1D4CD \\E0 \\E1 \\E2 \\E3 \\E4 \\E5 \\E6 abcdefghijklmnopqrstuvwxyz\\ \\<\\&\\'\\\"\\>\\ 0123456789\\&\\<\\'\\\"\\>";
+            "\\<\\>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ \\<\\>\\&\\'\\\"\\ \\163 \\D840 \\DC00 \\D835 \\DCCD -\\163 -\\20000 -\\1D4CD \\E0\\E1\\E2\\E3\\E4\\E5\\E6 abcdefghijklmnopqrstuvwxyz\\ \\<\\&\\'\\\"\\>\\ 0123456789\\&\\<\\'\\\"\\>";
     private static final String TEXT_UNESC =
             "<>&'\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&'\" \u0163\uD840\uDC00\ud835\udccd-\u0163-\uD840\uDC00-\ud835\udccd\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <&'\"> 0123456789&<'\">";
 

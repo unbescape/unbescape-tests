@@ -61,11 +61,11 @@ public class CSSIdentifierEscape04Test {
         final String textBECompactLevel1 =
                 "\\<\\>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ \\<\\>\\&\\'\\\"\\ \u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz\\ \\<\\&\\'\\\"\\>\\ 0123456789\\&\\<\\'\\\"\\>";
         final String textBECompactLevel2 =
-                "\\<\\>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ \\<\\>\\&\\'\\\"\\ \\E0 \\E1 \\E2 \\E3 \\E4 \\E5 \\E6 abcdefghijklmnopqrstuvwxyz\\ \\<\\&\\'\\\"\\>\\ 0123456789\\&\\<\\'\\\"\\>";
+                "\\<\\>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ \\<\\>\\&\\'\\\"\\ \\E0\\E1\\E2\\E3\\E4\\E5\\E6 abcdefghijklmnopqrstuvwxyz\\ \\<\\&\\'\\\"\\>\\ 0123456789\\&\\<\\'\\\"\\>";
         final String textBECompactLevel3 =
-                "\\<\\>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ \\<\\>\\&\\'\\\"\\ \\E0 \\E1 \\E2 \\E3 \\E4 \\E5 \\E6 abcdefghijklmnopqrstuvwxyz\\ \\<\\&\\'\\\"\\>\\ 0123456789\\&\\<\\'\\\"\\>";
+                "\\<\\>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ \\<\\>\\&\\'\\\"\\ \\E0\\E1\\E2\\E3\\E4\\E5\\E6 abcdefghijklmnopqrstuvwxyz\\ \\<\\&\\'\\\"\\>\\ 0123456789\\&\\<\\'\\\"\\>";
         final String textBECompactLevel4 =
-                "\\<\\>\\&\\'\\\"\\41 \\42 \\43 \\44 \\45 \\46 \\47 \\48 \\49 \\4A \\4B \\4C \\4D \\4E \\4F \\50 \\51 \\52 \\53 \\54 \\55 \\56 \\57 \\58 \\59 \\5A \\ \\<\\>\\&\\'\\\"\\ \\E0 \\E1 \\E2 \\E3 \\E4 \\E5 \\E6 \\61 \\62 \\63 \\64 \\65 \\66 \\67 \\68 \\69 \\6A \\6B \\6C \\6D \\6E \\6F \\70 \\71 \\72 \\73 \\74 \\75 \\76 \\77 \\78 \\79 \\7A \\ \\<\\&\\'\\\"\\>\\ \\30 \\31 \\32 \\33 \\34 \\35 \\36 \\37 \\38 \\39 \\&\\<\\'\\\"\\>";
+                "\\<\\>\\&\\'\\\"\\41\\42\\43\\44\\45\\46\\47\\48\\49\\4A\\4B\\4C\\4D\\4E\\4F\\50\\51\\52\\53\\54\\55\\56\\57\\58\\59\\5A\\ \\<\\>\\&\\'\\\"\\ \\E0\\E1\\E2\\E3\\E4\\E5\\E6\\61\\62\\63\\64\\65\\66\\67\\68\\69\\6A\\6B\\6C\\6D\\6E\\6F\\70\\71\\72\\73\\74\\75\\76\\77\\78\\79\\7A\\ \\<\\&\\'\\\"\\>\\ \\30\\31\\32\\33\\34\\35\\36\\37\\38\\39\\&\\<\\'\\\"\\>";
 
         testEscapeBECompact1(TEXT, textBECompactLevel1);
         testEscapeBECompact2(TEXT, textBECompactLevel2);
@@ -115,13 +115,13 @@ public class CSSIdentifierEscape04Test {
     public void testCompact() throws Exception {
 
         final String textCompactLevel1 =
-                "\\3C \\3E \\26 \\27 \\22 ABCDEFGHIJKLMNOPQRSTUVWXYZ\\20 \\3C \\3E \\26 \\27 \\22 \\20 \u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz\\20 \\3C \\26 \\27 \\22 \\3E \\20 0123456789\\26 \\3C \\27 \\22 \\3E ";
+                "\\3C\\3E\\26\\27\\22 ABCDEFGHIJKLMNOPQRSTUVWXYZ\\20\\3C\\3E\\26\\27\\22\\20\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz\\20\\3C\\26\\27\\22\\3E\\20 0123456789\\26\\3C\\27\\22\\3E";
         final String textCompactLevel2 =
-                "\\3C \\3E \\26 \\27 \\22 ABCDEFGHIJKLMNOPQRSTUVWXYZ\\20 \\3C \\3E \\26 \\27 \\22 \\20 \\E0 \\E1 \\E2 \\E3 \\E4 \\E5 \\E6 abcdefghijklmnopqrstuvwxyz\\20 \\3C \\26 \\27 \\22 \\3E \\20 0123456789\\26 \\3C \\27 \\22 \\3E ";
+                "\\3C\\3E\\26\\27\\22 ABCDEFGHIJKLMNOPQRSTUVWXYZ\\20\\3C\\3E\\26\\27\\22\\20\\E0\\E1\\E2\\E3\\E4\\E5\\E6 abcdefghijklmnopqrstuvwxyz\\20\\3C\\26\\27\\22\\3E\\20 0123456789\\26\\3C\\27\\22\\3E";
         final String textCompactLevel3 =
-                "\\3C \\3E \\26 \\27 \\22 ABCDEFGHIJKLMNOPQRSTUVWXYZ\\20 \\3C \\3E \\26 \\27 \\22 \\20 \\E0 \\E1 \\E2 \\E3 \\E4 \\E5 \\E6 abcdefghijklmnopqrstuvwxyz\\20 \\3C \\26 \\27 \\22 \\3E \\20 0123456789\\26 \\3C \\27 \\22 \\3E ";
+                "\\3C\\3E\\26\\27\\22 ABCDEFGHIJKLMNOPQRSTUVWXYZ\\20\\3C\\3E\\26\\27\\22\\20\\E0\\E1\\E2\\E3\\E4\\E5\\E6 abcdefghijklmnopqrstuvwxyz\\20\\3C\\26\\27\\22\\3E\\20 0123456789\\26\\3C\\27\\22\\3E";
         final String textCompactLevel4 =
-                "\\3C \\3E \\26 \\27 \\22 \\41 \\42 \\43 \\44 \\45 \\46 \\47 \\48 \\49 \\4A \\4B \\4C \\4D \\4E \\4F \\50 \\51 \\52 \\53 \\54 \\55 \\56 \\57 \\58 \\59 \\5A \\20 \\3C \\3E \\26 \\27 \\22 \\20 \\E0 \\E1 \\E2 \\E3 \\E4 \\E5 \\E6 \\61 \\62 \\63 \\64 \\65 \\66 \\67 \\68 \\69 \\6A \\6B \\6C \\6D \\6E \\6F \\70 \\71 \\72 \\73 \\74 \\75 \\76 \\77 \\78 \\79 \\7A \\20 \\3C \\26 \\27 \\22 \\3E \\20 \\30 \\31 \\32 \\33 \\34 \\35 \\36 \\37 \\38 \\39 \\26 \\3C \\27 \\22 \\3E ";
+                "\\3C\\3E\\26\\27\\22\\41\\42\\43\\44\\45\\46\\47\\48\\49\\4A\\4B\\4C\\4D\\4E\\4F\\50\\51\\52\\53\\54\\55\\56\\57\\58\\59\\5A\\20\\3C\\3E\\26\\27\\22\\20\\E0\\E1\\E2\\E3\\E4\\E5\\E6\\61\\62\\63\\64\\65\\66\\67\\68\\69\\6A\\6B\\6C\\6D\\6E\\6F\\70\\71\\72\\73\\74\\75\\76\\77\\78\\79\\7A\\20\\3C\\26\\27\\22\\3E\\20\\30\\31\\32\\33\\34\\35\\36\\37\\38\\39\\26\\3C\\27\\22\\3E";
 
         testEscapeCompact1(TEXT, textCompactLevel1);
         testEscapeCompact2(TEXT, textCompactLevel2);

@@ -106,10 +106,10 @@ public class CSSIdentifierEscape18Test {
     @Test
     public void testCompact() throws Exception {
 
-        final String textCompactLevel1 = "\\2D -";
-        final String textCompactLevel2 = "\\2D -";
-        final String textCompactLevel3 = "\\2D \\2D ";
-        final String textCompactLevel4 = "\\2D \\2D ";
+        final String textCompactLevel1 = "\\2D-";
+        final String textCompactLevel2 = "\\2D-";
+        final String textCompactLevel3 = "\\2D\\2D";
+        final String textCompactLevel4 = "\\2D\\2D";
 
         testEscapeCompact1(TEXT, textCompactLevel1);
         testEscapeCompact2(TEXT, textCompactLevel2);
