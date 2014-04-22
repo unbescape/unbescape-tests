@@ -112,6 +112,9 @@ public class JsonEscapeTestUtil {
 
         final String resultStr = JsonEscapeUtil.escape(text, type, level);
         Assert.assertEquals(expected, resultStr);
+        if (resultStr != null && resultStr.equals(text)) {
+            Assert.assertSame(text, resultStr);
+        }
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
@@ -157,12 +160,15 @@ public class JsonEscapeTestUtil {
     public static void testUnescape(final String text, final String expected)
                                     throws IOException {
 
-        final String resultStr = JsonEscape.unescapeJson(text);
+        final String resultStr = JsonEscapeUtil.unescape(text);
         Assert.assertEquals(expected, resultStr);
+        if (resultStr != null && resultStr.equals(text)) {
+            Assert.assertSame(text, resultStr);
+        }
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        JsonEscape.unescapeJson(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
+        JsonEscapeUtil.unescape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -185,7 +191,7 @@ public class JsonEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            JsonEscape.unescapeJson(array, i, textCharArray.length, stringWriter);
+            JsonEscapeUtil.unescape(array, i, textCharArray.length, stringWriter);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {

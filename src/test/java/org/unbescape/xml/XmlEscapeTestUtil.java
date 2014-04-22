@@ -240,6 +240,9 @@ public class XmlEscapeTestUtil {
 
         final String resultStr = XmlEscape.escapeXml11(text, type, level);
         Assert.assertEquals(expected, resultStr);
+        if (resultStr != null && resultStr.equals(text)) {
+            Assert.assertSame(text, resultStr);
+        }
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
@@ -284,6 +287,9 @@ public class XmlEscapeTestUtil {
 
         final String resultStr = XmlEscape.escapeXml10(text, type, level);
         Assert.assertEquals(expected, resultStr);
+        if (resultStr != null && resultStr.equals(text)) {
+            Assert.assertSame(text, resultStr);
+        }
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
@@ -331,6 +337,9 @@ public class XmlEscapeTestUtil {
 
         final String resultStr = XmlEscape.unescapeXml(text);
         Assert.assertEquals(expected, resultStr);
+        if (resultStr != null && resultStr.equals(text)) {
+            Assert.assertSame(text, resultStr);
+        }
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();

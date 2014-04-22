@@ -168,6 +168,9 @@ public class JavaScriptEscapeTestUtil {
 
         final String resultStr = JavaScriptEscapeUtil.escape(text, type, level);
         Assert.assertEquals(expected, resultStr);
+        if (resultStr != null && resultStr.equals(text)) {
+            Assert.assertSame(text, resultStr);
+        }
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
@@ -215,6 +218,9 @@ public class JavaScriptEscapeTestUtil {
 
         final String resultStr = JavaScriptEscapeUtil.unescape(text);
         Assert.assertEquals(expected, resultStr);
+        if (resultStr != null && resultStr.equals(text)) {
+            Assert.assertSame(text, resultStr);
+        }
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
