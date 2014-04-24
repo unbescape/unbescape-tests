@@ -190,9 +190,9 @@ public final class CsvBenchmark {
         final Writer writer = new PrintWriter(System.out, true);
 
         writer.write("\n");
-        writer.write("[BENCHMARK] --------------------------------------\n");
-        writer.write("[BENCHMARK] STARTING UNBESCAPE BENCHMARK FOR: JSON\n");
-        writer.write("[BENCHMARK] --------------------------------------\n");
+        writer.write("[BENCHMARK] -------------------------------------\n");
+        writer.write("[BENCHMARK] STARTING UNBESCAPE BENCHMARK FOR: CSV\n");
+        writer.write("[BENCHMARK] -------------------------------------\n");
 
         warmup(writer);
 
