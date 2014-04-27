@@ -7,7 +7,7 @@ LANGUAGE="$1";
 if [ "$LANGUAGE" == ''  ];
 then
   echo 'Bad syntax: "./benchmark.sh {language}"'
-  echo '(language = "html" | "xml" | "javascript" | "json" | "csv")'
+  echo '(language = "html" | "xml" | "javascript" | "json" | "csv" | "java")'
   exit 1;
 fi
 
@@ -31,6 +31,10 @@ fi
 if [ "$LANGUAGE" == 'csv' ];
 then
   BENCHMARK_CLASS="org.unbescape.csv.CsvBenchmark";
+fi
+if [ "$LANGUAGE" == 'java' ];
+then
+  BENCHMARK_CLASS="org.unbescape.java.JavaBenchmark";
 fi
 
 if [ "$BENCHMARK_CLASS" == '' ];
