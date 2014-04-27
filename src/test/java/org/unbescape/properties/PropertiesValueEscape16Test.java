@@ -21,7 +21,7 @@ package org.unbescape.properties;
 
 import org.junit.Test;
 
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -30,7 +30,7 @@ import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class PropertiesEscape16Test {
+public class PropertiesValueEscape16Test {
 
 
     private static final String TEXT_ESC_1 = "\\u00E1";
@@ -73,7 +73,7 @@ public class PropertiesEscape16Test {
 
 
 
-    public PropertiesEscape16Test() {
+    public PropertiesValueEscape16Test() {
         super();
     }
 

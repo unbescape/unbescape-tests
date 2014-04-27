@@ -21,11 +21,11 @@ package org.unbescape.properties;
 
 import org.junit.Test;
 
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape1;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape2;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape3;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape4;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testEscape1;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testEscape2;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testEscape3;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testEscape4;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -34,7 +34,7 @@ import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class PropertiesI18nEscapeTest {
+public class PropertiesValueI18nEscapeTest {
 
 
 
@@ -94,7 +94,7 @@ public class PropertiesI18nEscapeTest {
 
 
 
-    public PropertiesI18nEscapeTest() {
+    public PropertiesValueI18nEscapeTest() {
         super();
     }
 

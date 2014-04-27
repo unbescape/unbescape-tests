@@ -21,11 +21,11 @@ package org.unbescape.properties;
 
 import org.junit.Test;
 
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape1;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape2;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape3;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape4;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape1;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape2;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape3;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape4;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -34,10 +34,10 @@ import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class PropertiesEscape06Test {
+public class PropertiesKeyEscape07Test {
 
 
-    private static final String TEXT = "\n";
+    private static final String TEXT = "a";
 
 
 
@@ -45,10 +45,10 @@ public class PropertiesEscape06Test {
     @Test
     public void test() throws Exception {
 
-        final String textLevel1 = "\\n";
-        final String textLevel2 = "\\n";
-        final String textLevel3 = "\\n";
-        final String textLevel4 = "\\n";
+        final String textLevel1 = "a";
+        final String textLevel2 = "a";
+        final String textLevel3 = "a";
+        final String textLevel4 = "\\u0061";
 
         testEscape1(TEXT, textLevel1);
         testEscape2(TEXT, textLevel2);
@@ -69,7 +69,7 @@ public class PropertiesEscape06Test {
 
 
 
-    public PropertiesEscape06Test() {
+    public PropertiesKeyEscape07Test() {
         super();
     }
 

@@ -20,9 +20,8 @@
 package org.unbescape.properties;
 
 import org.junit.Test;
-import org.unbescape.properties.PropertiesEscapeUtil;
 
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -31,7 +30,7 @@ import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class PropertiesEscape12Test {
+public class PropertiesValueEscape12Test {
 
 
     private static final String TEXT_UNESC;
@@ -60,7 +59,7 @@ public class PropertiesEscape12Test {
                 continue;
             }
             textEscBuilder.append("\\u");
-            textEscBuilder.append(PropertiesEscapeUtil.toUHexa(i));
+            textEscBuilder.append(PropertiesValueEscapeUtil.toUHexa(i));
         }
         TEXT_ESC = textEscBuilder.toString();
 
@@ -85,7 +84,7 @@ public class PropertiesEscape12Test {
 
 
 
-    public PropertiesEscape12Test() {
+    public PropertiesValueEscape12Test() {
         super();
     }
 

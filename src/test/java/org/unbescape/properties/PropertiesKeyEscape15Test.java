@@ -21,7 +21,7 @@ package org.unbescape.properties;
 
 import org.junit.Test;
 
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -30,29 +30,25 @@ import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class PropertiesEscape08Test {
+public class PropertiesKeyEscape15Test {
 
 
-    private static final String TEXT_ESC_0 = "\\a";
-    private static final String TEXT_UNESC_0 = "a";
-
-    private static final String TEXT_ESC_1 = "\\a\\z";
-    private static final String TEXT_UNESC_1 = "az";
-
-    private static final String TEXT_ESC_2 = "\\u";
-    private static final String TEXT_UNESC_2 = "\\u";
-
-    private static final String TEXT_ESC_3 = "\\a\\b\\c\\d\\e\\f\\g\\h\\i\\j\\k\\l\\m\\n\\o\\p\\q\\r\\s\\t\\u\\v\\w\\x\\y\\z";
-    private static final String TEXT_UNESC_3 = "abcde\fghijklm\nopq\rs\t\\uvwxyz";
-
-    private static final String TEXT_ESC_4 = "\\0\\1\\2\\3\\4\\5\\6\\7\\8\\9";
-    private static final String TEXT_UNESC_4 = "0123456789";
-
-    private static final String TEXT_ESC_5 = "\\\n\\\r\\\u2028\\\u2029";
-    private static final String TEXT_UNESC_5 = "\n\r\u2028\u2029";
-
-    private static final String TEXT_ESC_6 = "\\x";
-    private static final String TEXT_UNESC_6 = "x";
+    private static final String TEXT_ESC_1 = "\\u0E1";
+    private static final String TEXT_UNESC_1 = "\\u0E1";
+    private static final String TEXT_ESC_2 = "\\u0E1o";
+    private static final String TEXT_UNESC_2 = "\\u0E1o";
+    private static final String TEXT_ESC_3 = "\\x0";
+    private static final String TEXT_UNESC_3 = "x0";
+    private static final String TEXT_ESC_4 = "\\x0o";
+    private static final String TEXT_UNESC_4 = "x0o";
+    private static final String TEXT_ESC_5 = "o\\u0E1";
+    private static final String TEXT_UNESC_5 = "o\\u0E1";
+    private static final String TEXT_ESC_6 = "o\\u0E1o";
+    private static final String TEXT_UNESC_6 = "o\\u0E1o";
+    private static final String TEXT_ESC_7 = "o\\x0";
+    private static final String TEXT_UNESC_7 = "ox0";
+    private static final String TEXT_ESC_8 = "o\\x0o";
+    private static final String TEXT_UNESC_8 = "ox0o";
 
 
 
@@ -60,20 +56,21 @@ public class PropertiesEscape08Test {
     @Test
     public void testUnescape01() throws Exception {
 
-        testUnescape(TEXT_ESC_0, TEXT_UNESC_0);
         testUnescape(TEXT_ESC_1, TEXT_UNESC_1);
         testUnescape(TEXT_ESC_2, TEXT_UNESC_2);
         testUnescape(TEXT_ESC_3, TEXT_UNESC_3);
         testUnescape(TEXT_ESC_4, TEXT_UNESC_4);
         testUnescape(TEXT_ESC_5, TEXT_UNESC_5);
         testUnescape(TEXT_ESC_6, TEXT_UNESC_6);
+        testUnescape(TEXT_ESC_7, TEXT_UNESC_7);
+        testUnescape(TEXT_ESC_8, TEXT_UNESC_8);
 
     }
 
 
 
 
-    public PropertiesEscape08Test() {
+    public PropertiesKeyEscape15Test() {
         super();
     }
 

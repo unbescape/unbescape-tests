@@ -21,11 +21,11 @@ package org.unbescape.properties;
 
 import org.junit.Test;
 
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape1;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape2;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape3;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape4;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape1;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape2;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape3;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape4;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -34,7 +34,7 @@ import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class PropertiesEscape02Test {
+public class PropertiesKeyEscape02Test {
 
 
     private static final String TEXT =
@@ -46,16 +46,18 @@ public class PropertiesEscape02Test {
     @Test
     public void test() throws Exception {
 
-        final String textLevel1 = TEXT;
-        final String textLevel2 = TEXT;
+        final String textLevel1 =
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ abcdefghijklmnopqrstuvwxyz\\ 0123456789";
+        final String textLevel2 =
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ abcdefghijklmnopqrstuvwxyz\\ 0123456789";
         final String textLevel3 =
-                "ABCDEFGHIJKLMNOPQRSTUVWXYZ\\u0020abcdefghijklmnopqrstuvwxyz\\u00200123456789";
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ abcdefghijklmnopqrstuvwxyz\\ 0123456789";
         final String textLevel4 =
                 "\\u0041\\u0042\\u0043\\u0044\\u0045\\u0046\\u0047\\u0048\\u0049\\u004A\\u004B" +
                 "\\u004C\\u004D\\u004E\\u004F\\u0050\\u0051\\u0052\\u0053\\u0054\\u0055\\u0056" +
-                "\\u0057\\u0058\\u0059\\u005A\\u0020\\u0061\\u0062\\u0063\\u0064\\u0065\\u0066" +
+                "\\u0057\\u0058\\u0059\\u005A\\ \\u0061\\u0062\\u0063\\u0064\\u0065\\u0066" +
                 "\\u0067\\u0068\\u0069\\u006A\\u006B\\u006C\\u006D\\u006E\\u006F\\u0070\\u0071" +
-                "\\u0072\\u0073\\u0074\\u0075\\u0076\\u0077\\u0078\\u0079\\u007A\\u0020\\u0030" +
+                "\\u0072\\u0073\\u0074\\u0075\\u0076\\u0077\\u0078\\u0079\\u007A\\ \\u0030" +
                 "\\u0031\\u0032\\u0033\\u0034\\u0035\\u0036\\u0037\\u0038\\u0039";
 
         testEscape1(TEXT, textLevel1);
@@ -74,7 +76,7 @@ public class PropertiesEscape02Test {
 
 
 
-    public PropertiesEscape02Test() {
+    public PropertiesKeyEscape02Test() {
         super();
     }
 

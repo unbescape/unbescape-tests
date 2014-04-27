@@ -21,7 +21,7 @@ package org.unbescape.properties;
 
 import org.junit.Test;
 
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -30,11 +30,17 @@ import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class PropertiesEscape09Test {
+public class PropertiesKeyEscape17Test {
 
 
-    private static final String TEXT_ESC = "\\0";
-    private static final String TEXT_UNESC = "0";
+    private static final String TEXT_ESC_1 = "\\341";
+    private static final String TEXT_UNESC_1 = "341";
+    private static final String TEXT_ESC_2 = "a\\341a";
+    private static final String TEXT_UNESC_2 = "a341a";
+    private static final String TEXT_ESC_3 = "a\\378a";
+    private static final String TEXT_UNESC_3 = "a378a";
+    private static final String TEXT_ESC_4 = "a\\005a";
+    private static final String TEXT_UNESC_4 = "a005a";
 
 
 
@@ -42,14 +48,17 @@ public class PropertiesEscape09Test {
     @Test
     public void testUnescape01() throws Exception {
 
-        testUnescape(TEXT_ESC, TEXT_UNESC);
+        testUnescape(TEXT_ESC_1, TEXT_UNESC_1);
+        testUnescape(TEXT_ESC_2, TEXT_UNESC_2);
+        testUnescape(TEXT_ESC_3, TEXT_UNESC_3);
+        testUnescape(TEXT_ESC_4, TEXT_UNESC_4);
 
     }
 
 
 
 
-    public PropertiesEscape09Test() {
+    public PropertiesKeyEscape17Test() {
         super();
     }
 

@@ -21,11 +21,11 @@ package org.unbescape.properties;
 
 import org.junit.Test;
 
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape1;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape2;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape3;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape4;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testEscape1;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testEscape2;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testEscape3;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testEscape4;
+import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -34,21 +34,22 @@ import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class PropertiesEscape07Test {
+public class PropertiesValueEscape13Test {
 
 
-    private static final String TEXT = "a";
+    // LineTerminators: not allowed in JavaScript strings -> must be escaped always.
+    private static final String TEXT = "\n\r\u2028\u2029";
 
 
 
 
     @Test
-    public void test() throws Exception {
+    public void testSECXHexaUHexa() throws Exception {
 
-        final String textLevel1 = "a";
-        final String textLevel2 = "a";
-        final String textLevel3 = "a";
-        final String textLevel4 = "\\u0061";
+        final String textLevel1 = "\\n\\r\u2028\u2029";
+        final String textLevel2 = "\\n\\r\\u2028\\u2029";
+        final String textLevel3 = "\\n\\r\\u2028\\u2029";
+        final String textLevel4 = "\\n\\r\\u2028\\u2029";
 
         testEscape1(TEXT, textLevel1);
         testEscape2(TEXT, textLevel2);
@@ -67,9 +68,7 @@ public class PropertiesEscape07Test {
 
 
 
-
-
-    public PropertiesEscape07Test() {
+    public PropertiesValueEscape13Test() {
         super();
     }
 

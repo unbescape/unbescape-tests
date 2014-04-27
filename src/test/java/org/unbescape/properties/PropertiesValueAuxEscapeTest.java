@@ -21,7 +21,6 @@ package org.unbescape.properties;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.unbescape.properties.PropertiesEscapeUtil;
 
 /**
  * 
@@ -30,7 +29,7 @@ import org.unbescape.properties.PropertiesEscapeUtil;
  * @since 1.0
  *
  */
-public class AuxEscapeTest {
+public class PropertiesValueAuxEscapeTest {
 
 
 
@@ -47,7 +46,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0; i <= 0x02FF; i++) {
-                strBuilder.append(PropertiesEscapeUtil.toUHexa(i));
+                strBuilder.append(PropertiesValueEscapeUtil.toUHexa(i));
             }
 
             final String result = strBuilder.toString();
@@ -60,7 +59,7 @@ public class AuxEscapeTest {
 
             final StringBuilder strBuilder = new StringBuilder();
             for (int i = 0xFE00; i <= 0xFFFF; i++) {
-                strBuilder.append(PropertiesEscapeUtil.toUHexa(i));
+                strBuilder.append(PropertiesValueEscapeUtil.toUHexa(i));
             }
 
             final String result = strBuilder.toString();
@@ -72,7 +71,7 @@ public class AuxEscapeTest {
 
 
 
-    public AuxEscapeTest() {
+    public PropertiesValueAuxEscapeTest() {
         super();
     }
 

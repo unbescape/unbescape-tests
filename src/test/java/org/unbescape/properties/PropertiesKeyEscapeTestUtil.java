@@ -31,7 +31,7 @@ import org.junit.Assert;
  * @since 1.0
  *
  */
-public class PropertiesEscapeTestUtil {
+public class PropertiesKeyEscapeTestUtil {
 
 
 
@@ -41,7 +41,7 @@ public class PropertiesEscapeTestUtil {
 
     public static void testEscape1(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, PropertiesEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
+        testEscape(text, expected, PropertiesKeyEscapeLevel.LEVEL_1_BASIC_ESCAPE_SET);
     }
 
 
@@ -49,7 +49,7 @@ public class PropertiesEscapeTestUtil {
 
     public static void testEscape2(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, PropertiesEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
+        testEscape(text, expected, PropertiesKeyEscapeLevel.LEVEL_2_ALL_NON_ASCII_PLUS_BASIC_ESCAPE_SET);
     }
 
 
@@ -57,7 +57,7 @@ public class PropertiesEscapeTestUtil {
 
     public static void testEscape3(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, PropertiesEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
+        testEscape(text, expected, PropertiesKeyEscapeLevel.LEVEL_3_ALL_NON_ALPHANUMERIC);
     }
 
 
@@ -65,7 +65,7 @@ public class PropertiesEscapeTestUtil {
 
     public static void testEscape4(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, PropertiesEscapeLevel.LEVEL_4_ALL_CHARACTERS);
+        testEscape(text, expected, PropertiesKeyEscapeLevel.LEVEL_4_ALL_CHARACTERS);
     }
 
 
@@ -74,10 +74,10 @@ public class PropertiesEscapeTestUtil {
 
 
 
-    public static void testEscape(final String text, final String expected, final PropertiesEscapeLevel level)
+    public static void testEscape(final String text, final String expected, final PropertiesKeyEscapeLevel level)
                                   throws IOException {
 
-        final String resultStr = PropertiesEscapeUtil.escape(text, level);
+        final String resultStr = PropertiesKeyEscapeUtil.escape(text, level);
         Assert.assertEquals(expected, resultStr);
         if (resultStr != null && resultStr.equals(text)) {
             Assert.assertSame(text, resultStr);
@@ -85,7 +85,7 @@ public class PropertiesEscapeTestUtil {
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        PropertiesEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, level);
+        PropertiesKeyEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, level);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -108,7 +108,7 @@ public class PropertiesEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            PropertiesEscapeUtil.escape(array, i, textCharArray.length, stringWriter, level);
+            PropertiesKeyEscapeUtil.escape(array, i, textCharArray.length, stringWriter, level);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
@@ -127,7 +127,7 @@ public class PropertiesEscapeTestUtil {
     public static void testUnescape(final String text, final String expected)
                                     throws IOException {
 
-        final String resultStr = PropertiesEscapeUtil.unescape(text);
+        final String resultStr = PropertiesUnescapeUtil.unescape(text);
         Assert.assertEquals(expected, resultStr);
         if (resultStr != null && resultStr.equals(text)) {
             Assert.assertSame(text, resultStr);
@@ -135,7 +135,7 @@ public class PropertiesEscapeTestUtil {
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        PropertiesEscapeUtil.unescape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
+        PropertiesUnescapeUtil.unescape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
@@ -158,7 +158,7 @@ public class PropertiesEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            PropertiesEscapeUtil.unescape(array, i, textCharArray.length, stringWriter);
+            PropertiesUnescapeUtil.unescape(array, i, textCharArray.length, stringWriter);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
@@ -173,7 +173,7 @@ public class PropertiesEscapeTestUtil {
 
 
 
-    private PropertiesEscapeTestUtil() {
+    private PropertiesKeyEscapeTestUtil() {
         super();
     }
 

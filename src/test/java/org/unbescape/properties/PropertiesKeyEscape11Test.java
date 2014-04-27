@@ -20,13 +20,12 @@
 package org.unbescape.properties;
 
 import org.junit.Test;
-import org.unbescape.properties.PropertiesEscapeUtil;
 
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape1;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape2;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape3;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape4;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape1;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape2;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape3;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape4;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -35,7 +34,7 @@ import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class PropertiesEscape11Test {
+public class PropertiesKeyEscape11Test {
 
 
     private static final String TEXT_UNESC;
@@ -69,7 +68,7 @@ public class PropertiesEscape11Test {
                 continue;
             }
             textEscBuilder.append("\\u");
-            textEscBuilder.append(PropertiesEscapeUtil.toUHexa(i));
+            textEscBuilder.append(PropertiesKeyEscapeUtil.toUHexa(i));
         }
         TEXT_ESC = textEscBuilder.toString();
 
@@ -101,7 +100,7 @@ public class PropertiesEscape11Test {
 
 
 
-    public PropertiesEscape11Test() {
+    public PropertiesKeyEscape11Test() {
         super();
     }
 

@@ -21,7 +21,7 @@ package org.unbescape.properties;
 
 import org.junit.Test;
 
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -30,7 +30,7 @@ import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class PropertiesEscape10Test {
+public class PropertiesKeyEscape10Test {
 
 
     private static final String TEXT_ESC = "\\00";
@@ -49,7 +49,7 @@ public class PropertiesEscape10Test {
 
 
 
-    public PropertiesEscape10Test() {
+    public PropertiesKeyEscape10Test() {
         super();
     }
 

@@ -21,11 +21,11 @@ package org.unbescape.properties;
 
 import org.junit.Test;
 
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape1;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape2;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape3;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testEscape4;
-import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape1;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape2;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape3;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testEscape4;
+import static org.unbescape.properties.PropertiesKeyEscapeTestUtil.testUnescape;
 
 /**
  * 
@@ -34,22 +34,21 @@ import static org.unbescape.properties.PropertiesEscapeTestUtil.testUnescape;
  * @since 1.0
  *
  */
-public class PropertiesEscape13Test {
+public class PropertiesKeyEscape00Test {
 
 
-    // LineTerminators: not allowed in JavaScript strings -> must be escaped always.
-    private static final String TEXT = "\n\r\u2028\u2029";
+    private static final String TEXT = null;
 
 
 
 
     @Test
-    public void testSECXHexaUHexa() throws Exception {
+    public void test() throws Exception {
 
-        final String textLevel1 = "\\n\\r\u2028\u2029";
-        final String textLevel2 = "\\n\\r\\u2028\\u2029";
-        final String textLevel3 = "\\n\\r\\u2028\\u2029";
-        final String textLevel4 = "\\n\\r\\u2028\\u2029";
+        final String textLevel1 = TEXT;
+        final String textLevel2 = TEXT;
+        final String textLevel3 = TEXT;
+        final String textLevel4 = TEXT;
 
         testEscape1(TEXT, textLevel1);
         testEscape2(TEXT, textLevel2);
@@ -68,7 +67,9 @@ public class PropertiesEscape13Test {
 
 
 
-    public PropertiesEscape13Test() {
+
+
+    public PropertiesKeyEscape00Test() {
         super();
     }
 
