@@ -47,9 +47,9 @@ public class JavaEscape03Test {
     public void test() throws Exception {
 
         final String textLevel1 =
-                "<>&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\'\\\" abcdefghijklmnopqrstuvwxyz <&\\'\\\"> 0123456789&<\\'\\\">";
+                "<>&'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&'\\\" abcdefghijklmnopqrstuvwxyz <&'\\\"> 0123456789&<'\\\">";
         final String textLevel2 =
-                "<>&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\'\\\" abcdefghijklmnopqrstuvwxyz <&\\'\\\"> 0123456789&<\\'\\\">";
+                "<>&'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&'\\\" abcdefghijklmnopqrstuvwxyz <&'\\\"> 0123456789&<'\\\">";
         final String textLevel3 =
                 "\\u003C\\u003E\\u0026\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\u0020\\u003C\\u003E\\u0026\\'\\\"\\u0020abcdefghijklmnopqrstuvwxyz\\u0020\\u003C\\u0026\\'\\\"\\u003E\\u00200123456789\\u0026\\u003C\\'\\\"\\u003E";
         final String textLevel4 =

@@ -47,9 +47,9 @@ public class JavaEscape05Test {
     public void test() throws Exception {
 
         final String textLevel1 =
-                "<>&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\'\\\" \u0163\uD840\uDC00\ud835\udccd-\u0163-\uD840\uDC00-\ud835\udccd\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <&\\'\\\"> 0123456789&<\\'\\\">";
+                "<>&'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&'\\\" \u0163\uD840\uDC00\ud835\udccd-\u0163-\uD840\uDC00-\ud835\udccd\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <&'\\\"> 0123456789&<'\\\">";
         final String textLevel2 =
-                "<>&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\'\\\" \\u0163\\uD840\\uDC00\\uD835\\uDCCD-\\u0163-\\uD840\\uDC00-\\uD835\\uDCCD\\u00E0\\u00E1\\u00E2\\u00E3\\u00E4\\u00E5\\u00E6abcdefghijklmnopqrstuvwxyz <&\\'\\\"> 0123456789&<\\'\\\">";
+                "<>&'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&'\\\" \\u0163\\uD840\\uDC00\\uD835\\uDCCD-\\u0163-\\uD840\\uDC00-\\uD835\\uDCCD\\u00E0\\u00E1\\u00E2\\u00E3\\u00E4\\u00E5\\u00E6abcdefghijklmnopqrstuvwxyz <&'\\\"> 0123456789&<'\\\">";
         final String textLevel3 =
                 "\\u003C\\u003E\\u0026\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\u0020\\u003C\\u003E\\u0026\\'\\\"\\u0020\\u0163\\uD840\\uDC00\\uD835\\uDCCD\\u002D\\u0163\\u002D\\uD840\\uDC00\\u002D\\uD835\\uDCCD\\u00E0\\u00E1\\u00E2\\u00E3\\u00E4\\u00E5\\u00E6abcdefghijklmnopqrstuvwxyz\\u0020\\u003C\\u0026\\'\\\"\\u003E\\u00200123456789\\u0026\\u003C\\'\\\"\\u003E";
         final String textLevel4 =
