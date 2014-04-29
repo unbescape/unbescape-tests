@@ -44,4 +44,4 @@ several inputs. For each of them, you will be able to see:
   * The **time required** for the execution (in nanosecs).
   * The **comparison** between the time required by Unbescape and other technologies (in percent, e.g. `[350,14%]`).
   * Whether the returned output was exactly the **same object** as the input (`true` = `(*)`), in order to improve performance.
-  * The **result of the escape/unescape operation itself**, so that you can check it's correctness.
+  * The **result of the escape/unescape operation itself**, so that you can check its correctness.
