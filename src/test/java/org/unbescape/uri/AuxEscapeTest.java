@@ -37,9 +37,6 @@ public class AuxEscapeTest {
 
 
 
-
-
-
     @Test
     public void testHexa() throws Exception {
 
@@ -65,8 +62,8 @@ public class AuxEscapeTest {
                 if (codepoint == ' ') {
                     // URI/URLs should escape whitespace as '%20'
                     // Form data (application/x-www-form-urlencoded) escape whitespace as '+'
-                    // Java's URLEncoder uses '+', even if it is used for URLs (wrong?!)
-                    // So we just avoid the test in this case
+                    // Java's URLEncoder uses '+', even if it is used for URLs and not form data,
+                    // so we just avoid the test in this case
                     continue;
                 }
                 if (Character.isHighSurrogate((char)codepoint) || Character.isLowSurrogate((char)codepoint)) {
