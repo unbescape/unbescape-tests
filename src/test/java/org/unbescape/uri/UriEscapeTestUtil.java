@@ -72,12 +72,12 @@ public class UriEscapeTestUtil {
 
     public static void testEscapeFragmentId(final String text, final String expected)
             throws IOException {
-        testEscape(text, expected, UriEscapeUtil.UriEscapeType.FRAGMENT, "UTF-8");
+        testEscape(text, expected, UriEscapeUtil.UriEscapeType.FRAGMENT_ID, "UTF-8");
     }
 
     public static void testUnescapeFragmentId(final String text, final String expected)
             throws IOException {
-        testUnescape(text, expected, UriEscapeUtil.UriEscapeType.FRAGMENT, "UTF-8");
+        testUnescape(text, expected, UriEscapeUtil.UriEscapeType.FRAGMENT_ID, "UTF-8");
     }
 
 

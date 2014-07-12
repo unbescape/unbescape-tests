@@ -62,7 +62,7 @@ public class WhitespaceEscapeTest {
          */
 
         testWhitespaceForEscapeType(UriEscapeUtil.UriEscapeType.QUERY_PARAM, true);
-        testWhitespaceForEscapeType(UriEscapeUtil.UriEscapeType.FRAGMENT, false);
+        testWhitespaceForEscapeType(UriEscapeUtil.UriEscapeType.FRAGMENT_ID, false);
         testWhitespaceForEscapeType(UriEscapeUtil.UriEscapeType.PATH, false);
         testWhitespaceForEscapeType(UriEscapeUtil.UriEscapeType.PATH_SEGMENT, false);
 
