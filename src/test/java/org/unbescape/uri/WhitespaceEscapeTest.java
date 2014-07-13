@@ -29,7 +29,7 @@ import org.junit.Test;
  * 
  * @author Daniel Fern&aacute;ndez
  * 
- * @since 1.0
+ * @since 1.1
  *
  */
 public class WhitespaceEscapeTest {

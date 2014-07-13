@@ -34,7 +34,7 @@ import static org.unbescape.uri.UriEscapeTestUtil.testUnescapeQueryParam;
  * 
  * @author Daniel Fern&aacute;ndez
  * 
- * @since 1.0
+ * @since 1.1
  *
  */
 public class UriEscape00Test {
