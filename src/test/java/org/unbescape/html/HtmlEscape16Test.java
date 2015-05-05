@@ -37,6 +37,13 @@ public class HtmlEscape16Test {
     private static final String NCR_END = ";";
     private static final String REPLACEMENT = "\uFFFD";
 
+    /* This actually represents the range 0x007F-0x009F, but some of
+       these codepoints are already being replaced by their
+       Windows-1252 codes in HtmlEscapeUtil.translateIllFormedCodepoint. */
+    private static final int[] REPLACED_CODEPOINTS = {
+        0x007F, 0x0081, 0x008D, 0x008F, 0x0090, 0x009D
+    };
+
     private static final int[] RESTRICTED_CODEPOINTS = {
         0x000B, 0xFFFE, 0xFFFF, 0x1FFFE, 0x1FFFF, 0x2FFFE, 0x2FFFF, 0x3FFFE,
         0x3FFFF, 0x4FFFE, 0x4FFFF, 0x5FFFE, 0x5FFFF, 0x6FFFE, 0x6FFFF, 0x7FFFE,
@@ -66,11 +73,11 @@ public class HtmlEscape16Test {
             testUnescape(builder.toString(), REPLACEMENT);
         }
 
-        for (int i = 0x007F; i <= 0x009F; ++i) {
+        for (int codepoint : REPLACED_CODEPOINTS) {
             final StringBuilder builder = new StringBuilder();
             builder.append(NCR_START);
             builder.append(HEX);
-            builder.append(Integer.toString(i, 16));
+            builder.append(Integer.toString(codepoint, 16));
             builder.append(NCR_END);
             testUnescape(builder.toString(), REPLACEMENT);
         }
@@ -114,10 +121,10 @@ public class HtmlEscape16Test {
             testUnescape(builder.toString(), REPLACEMENT);
         }
 
-        for (int i = 0x007F; i <= 0x009F; ++i) {
+        for (int codepoint : REPLACED_CODEPOINTS) {
             final StringBuilder builder = new StringBuilder();
             builder.append(NCR_START);
-            builder.append(Integer.toString(i));
+            builder.append(Integer.toString(codepoint));
             builder.append(NCR_END);
             testUnescape(builder.toString(), REPLACEMENT);
         }
