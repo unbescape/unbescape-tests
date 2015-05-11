@@ -35,16 +35,16 @@ public class HtmlEscape16Test {
     private static final String NCR_START = "&#";
     private static final String HEX = "x";
     private static final String NCR_END = ";";
-    private static final String REPLACEMENT = "\uFFFD";
-
-    /* This actually represents the range 0x007F-0x009F, but some of
-       these codepoints are already being replaced by their
-       Windows-1252 codes in HtmlEscapeUtil.translateIllFormedCodepoint. */
-    private static final int[] REPLACED_CODEPOINTS = {
-        0x007F, 0x0081, 0x008D, 0x008F, 0x0090, 0x009D
-    };
 
     private static final int[] RESTRICTED_CODEPOINTS = {
+        /* This actually represents the range 0x007F-0x009F, but some
+           of these codepoints are already being replaced by their
+           Windows-1252 codes in HtmlEscapeUtil.translateIllFormedCodepoint. */
+        0x007F, 0x0081, 0x008D, 0x008F, 0x0090, 0x009D,
+
+        /* This represents the set of characters that result in parse
+           errors for HTML5 documents as listed here:
+           http://www.w3.org/TR/html5/syntax.html#consume-a-character-reference. */
         0x000B, 0xFFFE, 0xFFFF, 0x1FFFE, 0x1FFFF, 0x2FFFE, 0x2FFFF, 0x3FFFE,
         0x3FFFF, 0x4FFFE, 0x4FFFF, 0x5FFFE, 0x5FFFF, 0x6FFFE, 0x6FFFF, 0x7FFFE,
         0x7FFFF, 0x8FFFE, 0x8FFFF, 0x9FFFE, 0x9FFFF, 0xAFFFE, 0xAFFFF, 0xBFFFE,
@@ -55,40 +55,31 @@ public class HtmlEscape16Test {
     @Test
     public void testUnescapeHex() throws Exception {
 
-        for (int i = 0x0001; i <= 0x0008; ++i) {
-            final StringBuilder builder = new StringBuilder();
-            builder.append(NCR_START);
-            builder.append(HEX);
-            builder.append(Integer.toString(i, 16));
-            builder.append(NCR_END);
-            testUnescape(builder.toString(), REPLACEMENT);
-        }
-
-        for (int i = 0x000D; i <= 0x001F; ++i) {
-            final StringBuilder builder = new StringBuilder();
-            builder.append(NCR_START);
-            builder.append(HEX);
-            builder.append(Integer.toString(i, 16));
-            builder.append(NCR_END);
-            testUnescape(builder.toString(), REPLACEMENT);
-        }
-
-        for (int codepoint : REPLACED_CODEPOINTS) {
+        for (int codepoint = 0x0001; codepoint <= 0x0008; ++codepoint) {
             final StringBuilder builder = new StringBuilder();
             builder.append(NCR_START);
             builder.append(HEX);
             builder.append(Integer.toString(codepoint, 16));
             builder.append(NCR_END);
-            testUnescape(builder.toString(), REPLACEMENT);
+            testUnescape(builder.toString(), codepointToString(codepoint));
         }
 
-        for (int i = 0xFDD0; i <= 0xFDEF; ++i) {
+        for (int codepoint = 0x000D; codepoint <= 0x001F; ++codepoint) {
             final StringBuilder builder = new StringBuilder();
             builder.append(NCR_START);
             builder.append(HEX);
-            builder.append(Integer.toString(i, 16));
+            builder.append(Integer.toString(codepoint, 16));
             builder.append(NCR_END);
-            testUnescape(builder.toString(), REPLACEMENT);
+            testUnescape(builder.toString(), codepointToString(codepoint));
+        }
+
+        for (int codepoint = 0xFDD0; codepoint <= 0xFDEF; ++codepoint) {
+            final StringBuilder builder = new StringBuilder();
+            builder.append(NCR_START);
+            builder.append(HEX);
+            builder.append(Integer.toString(codepoint, 16));
+            builder.append(NCR_END);
+            testUnescape(builder.toString(), codepointToString(codepoint));
         }
 
         for (int codepoint : RESTRICTED_CODEPOINTS) {
@@ -97,7 +88,7 @@ public class HtmlEscape16Test {
             builder.append(HEX);
             builder.append(Integer.toString(codepoint, 16));
             builder.append(NCR_END);
-            testUnescape(builder.toString(), REPLACEMENT);
+            testUnescape(builder.toString(), codepointToString(codepoint));
         }
 
     }
@@ -105,36 +96,28 @@ public class HtmlEscape16Test {
     @Test
     public void testUnescapeDec() throws Exception {
 
-        for (int i = 0x0001; i <= 0x0008; ++i) {
-            final StringBuilder builder = new StringBuilder();
-            builder.append(NCR_START);
-            builder.append(Integer.toString(i));
-            builder.append(NCR_END);
-            testUnescape(builder.toString(), REPLACEMENT);
-        }
-
-        for (int i = 0x000D; i <= 0x001F; ++i) {
-            final StringBuilder builder = new StringBuilder();
-            builder.append(NCR_START);
-            builder.append(Integer.toString(i));
-            builder.append(NCR_END);
-            testUnescape(builder.toString(), REPLACEMENT);
-        }
-
-        for (int codepoint : REPLACED_CODEPOINTS) {
+        for (int codepoint = 0x0001; codepoint <= 0x0008; ++codepoint) {
             final StringBuilder builder = new StringBuilder();
             builder.append(NCR_START);
             builder.append(Integer.toString(codepoint));
             builder.append(NCR_END);
-            testUnescape(builder.toString(), REPLACEMENT);
+            testUnescape(builder.toString(), codepointToString(codepoint));
         }
 
-        for (int i = 0xFDD0; i <= 0xFDEF; ++i) {
+        for (int codepoint = 0x000D; codepoint <= 0x001F; ++codepoint) {
             final StringBuilder builder = new StringBuilder();
             builder.append(NCR_START);
-            builder.append(Integer.toString(i));
+            builder.append(Integer.toString(codepoint));
             builder.append(NCR_END);
-            testUnescape(builder.toString(), REPLACEMENT);
+            testUnescape(builder.toString(), codepointToString(codepoint));
+        }
+
+        for (int codepoint = 0xFDD0; codepoint <= 0xFDEF; ++codepoint) {
+            final StringBuilder builder = new StringBuilder();
+            builder.append(NCR_START);
+            builder.append(Integer.toString(codepoint));
+            builder.append(NCR_END);
+            testUnescape(builder.toString(), codepointToString(codepoint));
         }
 
         for (int codepoint : RESTRICTED_CODEPOINTS) {
@@ -142,9 +125,13 @@ public class HtmlEscape16Test {
             builder.append(NCR_START);
             builder.append(Integer.toString(codepoint));
             builder.append(NCR_END);
-            testUnescape(builder.toString(), REPLACEMENT);
+            testUnescape(builder.toString(), codepointToString(codepoint));
         }
 
+    }
+
+    private String codepointToString(int codepoint) {
+        return new String(Character.toChars(codepoint));
     }
 
     public HtmlEscape16Test() {
