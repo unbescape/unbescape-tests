@@ -20,6 +20,8 @@
 package org.unbescape.properties;
 
 import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 import java.io.StringWriter;
 
 import org.junit.Assert;
@@ -90,6 +92,15 @@ public class PropertiesValueEscapeTestUtil {
             Assert.assertEquals("", stringWriter.toString());
         } else {
             Assert.assertEquals(expected,stringWriter.toString());
+        }
+
+        final Reader textReader2 = (text == null? null : new StringReader(text));
+        StringWriter stringWriter2 = new StringWriter();
+        PropertiesValueEscapeUtil.escape(textReader2, stringWriter2, level);
+        if (textReader2 == null) {
+            Assert.assertEquals("", stringWriter2.toString());
+        } else {
+            Assert.assertEquals(expected,stringWriter2.toString());
         }
 
         if (textCharArray == null) {

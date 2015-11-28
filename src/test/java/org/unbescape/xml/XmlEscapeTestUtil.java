@@ -20,6 +20,8 @@
 package org.unbescape.xml;
 
 import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 import java.io.StringWriter;
 
 import org.junit.Assert;
@@ -238,7 +240,7 @@ public class XmlEscapeTestUtil {
                                    final XmlEscapeType type, final XmlEscapeLevel level)
                                    throws IOException {
 
-        final String resultStr = XmlEscape.escapeXml11(text, type, level);
+        final String resultStr = XmlEscapeUtil.escape(text, XmlEscapeSymbols.XML11_SYMBOLS, type, level);
         Assert.assertEquals(expected, resultStr);
         if (resultStr != null && resultStr.equals(text)) {
             Assert.assertSame(text, resultStr);
@@ -246,11 +248,20 @@ public class XmlEscapeTestUtil {
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        XmlEscape.escapeXml11(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, type, level);
+        XmlEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, XmlEscapeSymbols.XML11_SYMBOLS, type, level);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
             Assert.assertEquals(expected,stringWriter.toString());
+        }
+
+        final Reader textReader2 = (text == null? null : new StringReader(text));
+        StringWriter stringWriter2 = new StringWriter();
+        XmlEscapeUtil.escape(textReader2, stringWriter2, XmlEscapeSymbols.XML11_SYMBOLS, type, level);
+        if (textReader2 == null) {
+            Assert.assertEquals("", stringWriter2.toString());
+        } else {
+            Assert.assertEquals(expected,stringWriter2.toString());
         }
 
         if (textCharArray == null) {
@@ -269,7 +280,7 @@ public class XmlEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            XmlEscape.escapeXml11(array, i, textCharArray.length, stringWriter, type, level);
+            XmlEscapeUtil.escape(array, i, textCharArray.length, stringWriter, XmlEscapeSymbols.XML11_SYMBOLS, type, level);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
@@ -285,7 +296,7 @@ public class XmlEscapeTestUtil {
                                   final XmlEscapeType type, final XmlEscapeLevel level)
             throws IOException {
 
-        final String resultStr = XmlEscape.escapeXml10(text, type, level);
+        final String resultStr = XmlEscapeUtil.escape(text, XmlEscapeSymbols.XML10_SYMBOLS, type, level);
         Assert.assertEquals(expected, resultStr);
         if (resultStr != null && resultStr.equals(text)) {
             Assert.assertSame(text, resultStr);
@@ -293,11 +304,20 @@ public class XmlEscapeTestUtil {
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        XmlEscape.escapeXml10(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, type, level);
+        XmlEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, XmlEscapeSymbols.XML10_SYMBOLS, type, level);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
             Assert.assertEquals(expected,stringWriter.toString());
+        }
+
+        final Reader textReader2 = (text == null? null : new StringReader(text));
+        StringWriter stringWriter2 = new StringWriter();
+        XmlEscapeUtil.escape(textReader2, stringWriter2, XmlEscapeSymbols.XML10_SYMBOLS, type, level);
+        if (textReader2 == null) {
+            Assert.assertEquals("", stringWriter2.toString());
+        } else {
+            Assert.assertEquals(expected,stringWriter2.toString());
         }
 
         if (textCharArray == null) {
@@ -316,7 +336,7 @@ public class XmlEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            XmlEscape.escapeXml10(array, i, textCharArray.length, stringWriter, type, level);
+            XmlEscapeUtil.escape(array, i, textCharArray.length, stringWriter, XmlEscapeSymbols.XML10_SYMBOLS, type, level);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
