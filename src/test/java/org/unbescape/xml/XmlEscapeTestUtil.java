@@ -355,7 +355,7 @@ public class XmlEscapeTestUtil {
     public static void testUnescape(final String text, final String expected)
                                     throws IOException {
 
-        final String resultStr = XmlEscape.unescapeXml(text);
+        final String resultStr = XmlEscapeUtil.unescape(text, XmlEscapeSymbols.XML11_SYMBOLS);
         Assert.assertEquals(expected, resultStr);
         if (resultStr != null && resultStr.equals(text)) {
             Assert.assertSame(text, resultStr);
@@ -363,11 +363,20 @@ public class XmlEscapeTestUtil {
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
-        XmlEscape.unescapeXml(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
+        XmlEscapeUtil.unescape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, XmlEscapeSymbols.XML11_SYMBOLS);
         if (textCharArray == null) {
             Assert.assertEquals("", stringWriter.toString());
         } else {
             Assert.assertEquals(expected,stringWriter.toString());
+        }
+
+        final Reader textReader2 = (text == null? null : new StringReader(text));
+        StringWriter stringWriter2 = new StringWriter();
+        XmlEscapeUtil.unescape(textReader2, stringWriter2, XmlEscapeSymbols.XML11_SYMBOLS);
+        if (textReader2 == null) {
+            Assert.assertEquals("", stringWriter2.toString());
+        } else {
+            Assert.assertEquals(expected,stringWriter2.toString());
         }
 
         if (textCharArray == null) {
@@ -386,7 +395,7 @@ public class XmlEscapeTestUtil {
             }
 
             stringWriter = new StringWriter();
-            XmlEscape.unescapeXml(array, i, textCharArray.length, stringWriter);
+            XmlEscapeUtil.unescape(array, i, textCharArray.length, stringWriter, XmlEscapeSymbols.XML11_SYMBOLS);
             if (textCharArray == null) {
                 Assert.assertEquals("", stringWriter.toString());
             } else {
