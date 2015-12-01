@@ -242,6 +242,15 @@ public class CssStringEscapeTestUtil {
             Assert.assertEquals(expected,stringWriter.toString());
         }
 
+        final Reader textReader2 = (text == null? null : new StringReader(text));
+        StringWriter stringWriter2 = new StringWriter();
+        CssUnescapeUtil.unescape(textReader2, stringWriter2);
+        if (textReader2 == null) {
+            Assert.assertEquals("", stringWriter2.toString());
+        } else {
+            Assert.assertEquals(expected,stringWriter2.toString());
+        }
+
         if (textCharArray == null) {
             return;
         }

@@ -166,6 +166,15 @@ public class UriEscapeTestUtil {
             Assert.assertEquals(expected,stringWriter.toString());
         }
 
+        final Reader textReader2 = (text == null? null : new StringReader(text));
+        StringWriter stringWriter2 = new StringWriter();
+        UriEscapeUtil.unescape(textReader2, stringWriter2, escapeType, encoding);
+        if (textReader2 == null) {
+            Assert.assertEquals("", stringWriter2.toString());
+        } else {
+            Assert.assertEquals(expected,stringWriter2.toString());
+        }
+
         if (textCharArray == null) {
             return;
         }
