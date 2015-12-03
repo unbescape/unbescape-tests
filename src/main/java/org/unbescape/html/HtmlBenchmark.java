@@ -151,24 +151,40 @@ public final class HtmlBenchmark {
         final long ustart = System.nanoTime();
         for (int i = 0; i < BENCHMARK_EXECS; i++) {
             final String result = HtmlEscape.escapeHtml5(ESCAPE_TEXTS[n]);
+            if (result == "\u0000") {
+                // Just to make sure this is not simplified by the JVM
+                throw new RuntimeException();
+            }
         }
         final long ufinish = System.nanoTime();
 
         final long cstart = System.nanoTime();
         for (int i = 0; i < BENCHMARK_EXECS; i++) {
             final String result = StringEscapeUtils.escapeHtml4(ESCAPE_TEXTS[n]);
+            if (result == "\u0000") {
+                // Just to make sure this is not simplified by the JVM
+                throw new RuntimeException();
+            }
         }
         final long cfinish = System.nanoTime();
 
         final long sstart = System.nanoTime();
         for (int i = 0; i < BENCHMARK_EXECS; i++) {
             final String result = HtmlUtils.htmlEscape(ESCAPE_TEXTS[n]);
+            if (result == "\u0000") {
+                // Just to make sure this is not simplified by the JVM
+                throw new RuntimeException();
+            }
         }
         final long sfinish = System.nanoTime();
 
         final long estart = System.nanoTime();
         for (int i = 0; i < BENCHMARK_EXECS; i++) {
             final String result = htmlEntityCodec.encode(immune, ESCAPE_TEXTS[n]);
+            if (result == "\u0000") {
+                // Just to make sure this is not simplified by the JVM
+                throw new RuntimeException();
+            }
         }
         final long efinish = System.nanoTime();
 
