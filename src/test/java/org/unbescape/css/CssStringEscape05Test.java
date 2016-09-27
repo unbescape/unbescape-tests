@@ -59,9 +59,9 @@ public class CssStringEscape05Test {
     public void testBECompact() throws Exception {
 
         final String textBECompactLevel1 =
-                "<>&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\'\\\" \u0163\uD840\uDC00\ud835\udccd-\u0163-\uD840\uDC00-\ud835\udccd\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <&\\'\\\"> 0123456789&<\\'\\\">";
+                "<>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\&\\'\\\" \u0163\uD840\uDC00\ud835\udccd-\u0163-\uD840\uDC00-\ud835\udccd\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <\\&\\'\\\"> 0123456789\\&<\\'\\\">";
         final String textBECompactLevel2 =
-                "<>&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\'\\\" \\163\\20000\\1D4CD-\\163-\\20000-\\1D4CD\\E0\\E1\\E2\\E3\\E4\\E5\\E6 abcdefghijklmnopqrstuvwxyz <&\\'\\\"> 0123456789&<\\'\\\">";
+                "<>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\&\\'\\\" \\163\\20000\\1D4CD-\\163-\\20000-\\1D4CD\\E0\\E1\\E2\\E3\\E4\\E5\\E6 abcdefghijklmnopqrstuvwxyz <\\&\\'\\\"> 0123456789\\&<\\'\\\">";
         final String textBECompactLevel3 =
                 "\\<\\>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ \\<\\>\\&\\'\\\"\\ \\163\\20000\\1D4CD\\-\\163\\-\\20000\\-\\1D4CD\\E0\\E1\\E2\\E3\\E4\\E5\\E6 abcdefghijklmnopqrstuvwxyz\\ \\<\\&\\'\\\"\\>\\ 0123456789\\&\\<\\'\\\"\\>";
         final String textBECompactLevel4 =
@@ -87,9 +87,9 @@ public class CssStringEscape05Test {
     public void testBESixDigit() throws Exception {
 
         final String textBESixDigitLevel1 =
-                "<>&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\'\\\" \u0163\uD840\uDC00\ud835\udccd-\u0163-\uD840\uDC00-\ud835\udccd\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <&\\'\\\"> 0123456789&<\\'\\\">";
+                "<>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\&\\'\\\" \u0163\uD840\uDC00\ud835\udccd-\u0163-\uD840\uDC00-\ud835\udccd\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <\\&\\'\\\"> 0123456789\\&<\\'\\\">";
         final String textBESixDigitLevel2 =
-                "<>&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\'\\\" \\000163\\020000\\01D4CD-\\000163-\\020000-\\01D4CD\\0000E0\\0000E1\\0000E2\\0000E3\\0000E4\\0000E5\\0000E6abcdefghijklmnopqrstuvwxyz <&\\'\\\"> 0123456789&<\\'\\\">";
+                "<>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\&\\'\\\" \\000163\\020000\\01D4CD-\\000163-\\020000-\\01D4CD\\0000E0\\0000E1\\0000E2\\0000E3\\0000E4\\0000E5\\0000E6abcdefghijklmnopqrstuvwxyz <\\&\\'\\\"> 0123456789\\&<\\'\\\">";
         final String textBESixDigitLevel3 =
                 "\\<\\>\\&\\'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\ \\<\\>\\&\\'\\\"\\ \\000163\\020000\\01D4CD\\-\\000163\\-\\020000\\-\\01D4CD\\0000E0\\0000E1\\0000E2\\0000E3\\0000E4\\0000E5\\0000E6abcdefghijklmnopqrstuvwxyz\\ \\<\\&\\'\\\"\\>\\ 0123456789\\&\\<\\'\\\"\\>";
         final String textBESixDigitLevel4 =
@@ -115,9 +115,9 @@ public class CssStringEscape05Test {
     public void testCompact() throws Exception {
 
         final String textCompactLevel1 =
-                "<>&\\27\\22 ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\27\\22  \u0163\uD840\uDC00\ud835\udccd-\u0163-\uD840\uDC00-\ud835\udccd\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <&\\27\\22> 0123456789&<\\27\\22>";
+                "<>\\26\\27\\22 ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\26\\27\\22  \u0163\uD840\uDC00\ud835\udccd-\u0163-\uD840\uDC00-\ud835\udccd\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <\\26\\27\\22> 0123456789\\26<\\27\\22>";
         final String textCompactLevel2 =
-                "<>&\\27\\22 ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\27\\22  \\163\\20000\\1D4CD-\\163-\\20000-\\1D4CD\\E0\\E1\\E2\\E3\\E4\\E5\\E6 abcdefghijklmnopqrstuvwxyz <&\\27\\22> 0123456789&<\\27\\22>";
+                "<>\\26\\27\\22 ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\26\\27\\22  \\163\\20000\\1D4CD-\\163-\\20000-\\1D4CD\\E0\\E1\\E2\\E3\\E4\\E5\\E6 abcdefghijklmnopqrstuvwxyz <\\26\\27\\22> 0123456789\\26<\\27\\22>";
         final String textCompactLevel3 =
                 "\\3C\\3E\\26\\27\\22 ABCDEFGHIJKLMNOPQRSTUVWXYZ\\20\\3C\\3E\\26\\27\\22\\20\\163\\20000\\1D4CD\\2D\\163\\2D\\20000\\2D\\1D4CD\\E0\\E1\\E2\\E3\\E4\\E5\\E6 abcdefghijklmnopqrstuvwxyz\\20\\3C\\26\\27\\22\\3E\\20 0123456789\\26\\3C\\27\\22\\3E";
         final String textCompactLevel4 =
@@ -143,9 +143,9 @@ public class CssStringEscape05Test {
     public void testSixDigit() throws Exception {
 
         final String textSixDigitLevel1 =
-                "<>&\\000027\\000022ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\000027\\000022  \u0163\uD840\uDC00\ud835\udccd-\u0163-\uD840\uDC00-\ud835\udccd\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <&\\000027\\000022> 0123456789&<\\000027\\000022>";
+                "<>\\000026\\000027\\000022ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\000026\\000027\\000022  \u0163\uD840\uDC00\ud835\udccd-\u0163-\uD840\uDC00-\ud835\udccd\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <\\000026\\000027\\000022> 0123456789\\000026<\\000027\\000022>";
         final String textSixDigitLevel2 =
-                "<>&\\000027\\000022ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&\\000027\\000022  \\000163\\020000\\01D4CD-\\000163-\\020000-\\01D4CD\\0000E0\\0000E1\\0000E2\\0000E3\\0000E4\\0000E5\\0000E6abcdefghijklmnopqrstuvwxyz <&\\000027\\000022> 0123456789&<\\000027\\000022>";
+                "<>\\000026\\000027\\000022ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\000026\\000027\\000022  \\000163\\020000\\01D4CD-\\000163-\\020000-\\01D4CD\\0000E0\\0000E1\\0000E2\\0000E3\\0000E4\\0000E5\\0000E6abcdefghijklmnopqrstuvwxyz <\\000026\\000027\\000022> 0123456789\\000026<\\000027\\000022>";
         final String textSixDigitLevel3 =
                 "\\00003C\\00003E\\000026\\000027\\000022ABCDEFGHIJKLMNOPQRSTUVWXYZ\\000020\\00003C\\00003E\\000026\\000027\\000022\\000020\\000163\\020000\\01D4CD\\00002D\\000163\\00002D\\020000\\00002D\\01D4CD\\0000E0\\0000E1\\0000E2\\0000E3\\0000E4\\0000E5\\0000E6abcdefghijklmnopqrstuvwxyz\\000020\\00003C\\000026\\000027\\000022\\00003E\\0000200123456789\\000026\\00003C\\000027\\000022\\00003E";
         final String textSixDigitLevel4 =

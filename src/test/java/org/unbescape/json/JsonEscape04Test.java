@@ -51,9 +51,9 @@ public class JsonEscape04Test {
     public void testSECUHexa() throws Exception {
 
         final String textSECUHexaLevel1 =
-                "<>&'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&'\\\" \u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <&'\\\"> 0123456789&<'\\\">";
+                "<>\\u0026'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\u0026'\\\" \u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <\\u0026'\\\"> 0123456789\\u0026<'\\\">";
         final String textSECUHexaLevel2 =
-                "<>&'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&'\\\" \\u00E0\\u00E1\\u00E2\\u00E3\\u00E4\\u00E5\\u00E6abcdefghijklmnopqrstuvwxyz <&'\\\"> 0123456789&<'\\\">";
+                "<>\\u0026'\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\u0026'\\\" \\u00E0\\u00E1\\u00E2\\u00E3\\u00E4\\u00E5\\u00E6abcdefghijklmnopqrstuvwxyz <\\u0026'\\\"> 0123456789\\u0026<'\\\">";
         final String textSECUHexaLevel3 =
                 "\\u003C\\u003E\\u0026\\u0027\\\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\\u0020\\u003C\\u003E\\u0026\\u0027\\\"\\u0020\\u00E0\\u00E1\\u00E2\\u00E3\\u00E4\\u00E5\\u00E6abcdefghijklmnopqrstuvwxyz\\u0020\\u003C\\u0026\\u0027\\\"\\u003E\\u00200123456789\\u0026\\u003C\\u0027\\\"\\u003E";
         final String textSECUHexaLevel4 =
@@ -86,9 +86,9 @@ public class JsonEscape04Test {
     public void testUHexa() throws Exception {
 
         final String textUHexaLevel1 =
-                "<>&'\\u0022ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&'\\u0022 \u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <&'\\u0022> 0123456789&<'\\u0022>";
+                "<>\\u0026'\\u0022ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\u0026'\\u0022 \u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6abcdefghijklmnopqrstuvwxyz <\\u0026'\\u0022> 0123456789\\u0026<'\\u0022>";
         final String textUHexaLevel2 =
-                "<>&'\\u0022ABCDEFGHIJKLMNOPQRSTUVWXYZ <>&'\\u0022 \\u00E0\\u00E1\\u00E2\\u00E3\\u00E4\\u00E5\\u00E6abcdefghijklmnopqrstuvwxyz <&'\\u0022> 0123456789&<'\\u0022>";
+                "<>\\u0026'\\u0022ABCDEFGHIJKLMNOPQRSTUVWXYZ <>\\u0026'\\u0022 \\u00E0\\u00E1\\u00E2\\u00E3\\u00E4\\u00E5\\u00E6abcdefghijklmnopqrstuvwxyz <\\u0026'\\u0022> 0123456789\\u0026<'\\u0022>";
         final String textUHexaLevel3 =
                 "\\u003C\\u003E\\u0026\\u0027\\u0022ABCDEFGHIJKLMNOPQRSTUVWXYZ\\u0020\\u003C\\u003E\\u0026\\u0027\\u0022\\u0020\\u00E0\\u00E1\\u00E2\\u00E3\\u00E4\\u00E5\\u00E6abcdefghijklmnopqrstuvwxyz\\u0020\\u003C\\u0026\\u0027\\u0022\\u003E\\u00200123456789\\u0026\\u003C\\u0027\\u0022\\u003E";
         final String textUHexaLevel4 =

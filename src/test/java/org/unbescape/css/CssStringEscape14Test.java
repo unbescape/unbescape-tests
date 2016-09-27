@@ -59,8 +59,8 @@ public class CssStringEscape14Test {
     @Test
     public void testBECompact() throws Exception {
 
-        final String textBECompactLevel1 = "/something</script></anything> but http://example.com";
-        final String textBECompactLevel2 = "/something</script></anything> but http://example.com";
+        final String textBECompactLevel1 = "\\/something<\\/script><\\/anything> but http:\\/\\/example.com";
+        final String textBECompactLevel2 = "\\/something<\\/script><\\/anything> but http:\\/\\/example.com";
         final String textBECompactLevel3 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\3A\\/\\/example\\.com";
         final String textBECompactLevel4 = "\\/\\73\\6F\\6D\\65\\74\\68\\69\\6E\\67\\<\\/\\73\\63\\72\\69\\70\\74\\>\\<\\/\\61\\6E\\79\\74\\68\\69\\6E\\67\\>\\ \\62\\75\\74\\ \\68\\74\\74\\70\\3A\\/\\/\\65\\78\\61\\6D\\70\\6C\\65\\.\\63\\6F\\6D";
 
@@ -83,8 +83,8 @@ public class CssStringEscape14Test {
     @Test
     public void testBESixDigit() throws Exception {
 
-        final String textBESixDigitLevel1 = "/something</script></anything> but http://example.com";
-        final String textBESixDigitLevel2 = "/something</script></anything> but http://example.com";
+        final String textBESixDigitLevel1 = "\\/something<\\/script><\\/anything> but http:\\/\\/example.com";
+        final String textBESixDigitLevel2 = "\\/something<\\/script><\\/anything> but http:\\/\\/example.com";
         final String textBESixDigitLevel3 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\00003A\\/\\/example\\.com";
         final String textBESixDigitLevel4 = "\\/\\000073\\00006F\\00006D\\000065\\000074\\000068\\000069\\00006E\\000067\\<\\/\\000073\\000063\\000072\\000069\\000070\\000074\\>\\<\\/\\000061\\00006E\\000079\\000074\\000068\\000069\\00006E\\000067\\>\\ \\000062\\000075\\000074\\ \\000068\\000074\\000074\\000070\\00003A\\/\\/\\000065\\000078\\000061\\00006D\\000070\\00006C\\000065\\.\\000063\\00006F\\00006D";
 
@@ -107,8 +107,8 @@ public class CssStringEscape14Test {
     @Test
     public void testCompact() throws Exception {
 
-        final String textCompactLevel1 = "/something</script></anything> but http://example.com";
-        final String textCompactLevel2 = "/something</script></anything> but http://example.com";
+        final String textCompactLevel1 = "\\2Fsomething<\\2Fscript><\\2F anything> but http:\\2F\\2F example.com";
+        final String textCompactLevel2 = "\\2Fsomething<\\2Fscript><\\2F anything> but http:\\2F\\2F example.com";
         final String textCompactLevel3 = "\\2Fsomething\\3C\\2Fscript\\3E\\3C\\2F anything\\3E\\20 but\\20http\\3A\\2F\\2F example\\2E com";
         final String textCompactLevel4 = "\\2F\\73\\6F\\6D\\65\\74\\68\\69\\6E\\67\\3C\\2F\\73\\63\\72\\69\\70\\74\\3E\\3C\\2F\\61\\6E\\79\\74\\68\\69\\6E\\67\\3E\\20\\62\\75\\74\\20\\68\\74\\74\\70\\3A\\2F\\2F\\65\\78\\61\\6D\\70\\6C\\65\\2E\\63\\6F\\6D";
 
@@ -131,8 +131,8 @@ public class CssStringEscape14Test {
     @Test
     public void testSixDigit() throws Exception {
 
-        final String textSixDigitLevel1 = "/something</script></anything> but http://example.com";
-        final String textSixDigitLevel2 = "/something</script></anything> but http://example.com";
+        final String textSixDigitLevel1 = "\\00002Fsomething<\\00002Fscript><\\00002Fanything> but http:\\00002F\\00002Fexample.com";
+        final String textSixDigitLevel2 = "\\00002Fsomething<\\00002Fscript><\\00002Fanything> but http:\\00002F\\00002Fexample.com";
         final String textSixDigitLevel3 = "\\00002Fsomething\\00003C\\00002Fscript\\00003E\\00003C\\00002Fanything\\00003E\\000020but\\000020http\\00003A\\00002F\\00002Fexample\\00002Ecom";
         final String textSixDigitLevel4 = "\\00002F\\000073\\00006F\\00006D\\000065\\000074\\000068\\000069\\00006E\\000067\\00003C\\00002F\\000073\\000063\\000072\\000069\\000070\\000074\\00003E\\00003C\\00002F\\000061\\00006E\\000079\\000074\\000068\\000069\\00006E\\000067\\00003E\\000020\\000062\\000075\\000074\\000020\\000068\\000074\\000074\\000070\\00003A\\00002F\\00002F\\000065\\000078\\000061\\00006D\\000070\\00006C\\000065\\00002E\\000063\\00006F\\00006D";
 
