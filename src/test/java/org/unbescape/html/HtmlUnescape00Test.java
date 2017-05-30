@@ -45,6 +45,16 @@ public class HtmlUnescape00Test {
     }
 
 
+    @Test
+    public void testHtml4() throws Exception {
+        final HtmlEscapeSymbols symbols = HtmlEscapeSymbols.HTML4_SYMBOLS;
+        final char[][] sortedNCRs = symbols.SORTED_NCRS;
+        for (final char[] ncr : sortedNCRs) {
+            checkNCR(ncr);
+        }
+    }
+
+
 
     private static void checkNCR(final char[] ncr) throws IOException {
         checkNCRString(new String(ncr));
