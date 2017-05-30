@@ -64,6 +64,8 @@ public class HtmlUnescape00Test {
 
     private static void checkNCRString(final String ncr) {
 
+        Assert.assertFalse("Not being unescaped: " + ncr, ncr.equals(HtmlEscape.unescapeHtml(ncr)));
+
         final String unescapedLettersLow = "aeiou" + HtmlEscape.unescapeHtml(ncr) + "aeiou";
 
         final StringBuilder strBuilderEscapedLettersLow = new StringBuilder();
@@ -101,6 +103,11 @@ public class HtmlUnescape00Test {
 
 
     private static void checkNCRChar(final char[] ncr) throws IOException {
+
+        final String ncrStr = new String(ncr);
+        final StringWriter ncrWriter = new StringWriter();
+        HtmlEscape.unescapeHtml(ncr, 0, ncr.length, ncrWriter);
+        Assert.assertFalse("Not being unescaped: " + ncrStr, ncrStr.equals(ncrWriter.toString()));
 
         final StringWriter writerLow = new StringWriter();
         HtmlEscape.unescapeHtml(ncr, 0, ncr.length, writerLow);
