@@ -21,6 +21,10 @@ package org.unbescape.xml;
 
 import org.junit.Test;
 
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeAttributeDecimal1;
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeAttributeDecimal2;
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeAttributeHexa1;
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeAttributeHexa2;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeDecimal1;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeDecimal2;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeDecimal3;
@@ -29,6 +33,10 @@ import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeHexa1;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeHexa2;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeHexa3;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeHexa4;
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10AttributeDecimal1;
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10AttributeDecimal2;
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10AttributeHexa1;
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10AttributeHexa2;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10Decimal1;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10Decimal2;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10Decimal3;
@@ -37,6 +45,10 @@ import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10Hexa1;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10Hexa2;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10Hexa3;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml10Hexa4;
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml11AttributeDecimal1;
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml11AttributeDecimal2;
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml11AttributeHexa1;
+import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml11AttributeHexa2;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml11Decimal1;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml11Decimal2;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeXml11Decimal3;
@@ -77,6 +89,16 @@ public class XmlI18nEscapeTest {
                 "Gira prost&#345;ednictv&#237;m na&#353;ich autorizovan&#253;ch dealer&#367; v " +
                 "&#268;ech&#225;ch a na Morav&#283;, kter&#233; prob&#283;hnou v pr&#367;b&#283;hu " +
                 "z&#225;&#345;&#237; a &#345;&#237;jna.";
+        final String textXml11AttributeDecLevel1 =
+                "Jako efektivn\u0115j\u0161\u00ED se n\u00E1m jev\u00ED po\u0159\u00E1d\u00E1n\u00ED tzv.&#10;" +
+                "Gira prost\u0159ednictv\u00EDm na\u0161ich autorizovan\u00FDch dealer\u016F v " +
+                "\u010Cech\u00E1ch a na Morav\u011B, kter\u00E9 prob\u011Bhnou v pr\u016Fb\u011Bhu " +
+                "z\u00E1\u0159\u00ED a \u0159\u00EDjna.";
+        final String textXml11AttributeDecLevel2 =
+                "Jako efektivn&#277;j&#353;&#237; se n&#225;m jev&#237; po&#345;&#225;d&#225;n&#237; tzv.&#10;" +
+                "Gira prost&#345;ednictv&#237;m na&#353;ich autorizovan&#253;ch dealer&#367; v " +
+                "&#268;ech&#225;ch a na Morav&#283;, kter&#233; prob&#283;hnou v pr&#367;b&#283;hu " +
+                "z&#225;&#345;&#237; a &#345;&#237;jna.";
         final String textXml11DecLevel3 =
                 "Jako&#32;efektivn&#277;j&#353;&#237;&#32;se&#32;n&#225;m&#32;jev&#237;&#32;po&#345;&#225;d&#225;n&#237;&#32;tzv&#46;&#10;" +
                 "Gira&#32;prost&#345;ednictv&#237;m&#32;na&#353;ich&#32;autorizovan&#253;ch&#32;dealer&#367;&#32;v&#32;" +
@@ -93,11 +115,15 @@ public class XmlI18nEscapeTest {
 
         testEscapeXml11Decimal1(TEXT, textXml11DecLevel1);
         testEscapeXml11Decimal2(TEXT, textXml11DecLevel2);
+        testEscapeXml11AttributeDecimal1(TEXT, textXml11AttributeDecLevel1);
+        testEscapeXml11AttributeDecimal2(TEXT, textXml11AttributeDecLevel2);
         testEscapeXml11Decimal3(TEXT, textXml11DecLevel3);
         testEscapeXml11Decimal4(TEXT, textXml11DecLevel4);
 
         testUnescape(textXml11DecLevel1, TEXT);
         testUnescape(textXml11DecLevel2, TEXT);
+        testUnescape(textXml11AttributeDecLevel1, TEXT);
+        testUnescape(textXml11AttributeDecLevel2, TEXT);
         testUnescape(textXml11DecLevel3, TEXT);
         testUnescape(textXml11DecLevel4, TEXT);
 
@@ -105,6 +131,16 @@ public class XmlI18nEscapeTest {
         final String textXml11HexaLevel1 = TEXT;
         final String textXml11HexaLevel2 =
                 "Jako efektivn&#x115;j&#x161;&#xed; se n&#xe1;m jev&#xed; po&#x159;&#xe1;d&#xe1;n&#xed; tzv.\n" +
+                "Gira prost&#x159;ednictv&#xed;m na&#x161;ich autorizovan&#xfd;ch dealer&#x16f; v " +
+                "&#x10c;ech&#xe1;ch a na Morav&#x11b;, kter&#xe9; prob&#x11b;hnou v pr&#x16f;b&#x11b;hu " +
+                "z&#xe1;&#x159;&#xed; a &#x159;&#xed;jna.";
+        final String textXml11AttributeHexaLevel1 =
+                "Jako efektivn\u0115j\u0161\u00ED se n\u00E1m jev\u00ED po\u0159\u00E1d\u00E1n\u00ED tzv.&#xa;" +
+                "Gira prost\u0159ednictv\u00EDm na\u0161ich autorizovan\u00FDch dealer\u016F v " +
+                "\u010Cech\u00E1ch a na Morav\u011B, kter\u00E9 prob\u011Bhnou v pr\u016Fb\u011Bhu " +
+                "z\u00E1\u0159\u00ED a \u0159\u00EDjna.";
+        final String textXml11AttributeHexaLevel2 =
+                "Jako efektivn&#x115;j&#x161;&#xed; se n&#xe1;m jev&#xed; po&#x159;&#xe1;d&#xe1;n&#xed; tzv.&#xa;" +
                 "Gira prost&#x159;ednictv&#xed;m na&#x161;ich autorizovan&#xfd;ch dealer&#x16f; v " +
                 "&#x10c;ech&#xe1;ch a na Morav&#x11b;, kter&#xe9; prob&#x11b;hnou v pr&#x16f;b&#x11b;hu " +
                 "z&#xe1;&#x159;&#xed; a &#x159;&#xed;jna.";
@@ -127,11 +163,15 @@ public class XmlI18nEscapeTest {
 
         testEscapeXml11Hexa1(TEXT, textXml11HexaLevel1);
         testEscapeXml11Hexa2(TEXT, textXml11HexaLevel2);
+        testEscapeXml11AttributeHexa1(TEXT, textXml11AttributeHexaLevel1);
+        testEscapeXml11AttributeHexa2(TEXT, textXml11AttributeHexaLevel2);
         testEscapeXml11Hexa3(TEXT, textXml11HexaLevel3);
         testEscapeXml11Hexa4(TEXT, textXml11HexaLevel4);
 
         testUnescape(textXml11HexaLevel1, TEXT);
         testUnescape(textXml11HexaLevel2, TEXT);
+        testUnescape(textXml11AttributeHexaLevel1, TEXT);
+        testUnescape(textXml11AttributeHexaLevel2, TEXT);
         testUnescape(textXml11HexaLevel3, TEXT);
         testUnescape(textXml11HexaLevel4, TEXT);
 
@@ -147,6 +187,16 @@ public class XmlI18nEscapeTest {
         final String textXml10DecLevel1 = TEXT;
         final String textXml10DecLevel2 =
                 "Jako efektivn&#277;j&#353;&#237; se n&#225;m jev&#237; po&#345;&#225;d&#225;n&#237; tzv.\n" +
+                "Gira prost&#345;ednictv&#237;m na&#353;ich autorizovan&#253;ch dealer&#367; v " +
+                "&#268;ech&#225;ch a na Morav&#283;, kter&#233; prob&#283;hnou v pr&#367;b&#283;hu " +
+                "z&#225;&#345;&#237; a &#345;&#237;jna.";
+        final String textXml10AttributeDecLevel1 =
+                "Jako efektivn\u0115j\u0161\u00ED se n\u00E1m jev\u00ED po\u0159\u00E1d\u00E1n\u00ED tzv.&#10;" +
+                "Gira prost\u0159ednictv\u00EDm na\u0161ich autorizovan\u00FDch dealer\u016F v " +
+                "\u010Cech\u00E1ch a na Morav\u011B, kter\u00E9 prob\u011Bhnou v pr\u016Fb\u011Bhu " +
+                "z\u00E1\u0159\u00ED a \u0159\u00EDjna.";
+        final String textXml10AttributeDecLevel2 =
+                "Jako efektivn&#277;j&#353;&#237; se n&#225;m jev&#237; po&#345;&#225;d&#225;n&#237; tzv.&#10;" +
                 "Gira prost&#345;ednictv&#237;m na&#353;ich autorizovan&#253;ch dealer&#367; v " +
                 "&#268;ech&#225;ch a na Morav&#283;, kter&#233; prob&#283;hnou v pr&#367;b&#283;hu " +
                 "z&#225;&#345;&#237; a &#345;&#237;jna.";
@@ -166,11 +216,15 @@ public class XmlI18nEscapeTest {
 
         testEscapeXml10Decimal1(TEXT, textXml10DecLevel1);
         testEscapeXml10Decimal2(TEXT, textXml10DecLevel2);
+        testEscapeXml10AttributeDecimal1(TEXT, textXml10AttributeDecLevel1);
+        testEscapeXml10AttributeDecimal2(TEXT, textXml10AttributeDecLevel2);
         testEscapeXml10Decimal3(TEXT, textXml10DecLevel3);
         testEscapeXml10Decimal4(TEXT, textXml10DecLevel4);
 
         testUnescape(textXml10DecLevel1, TEXT);
         testUnescape(textXml10DecLevel2, TEXT);
+        testUnescape(textXml10AttributeDecLevel1, TEXT);
+        testUnescape(textXml10AttributeDecLevel2, TEXT);
         testUnescape(textXml10DecLevel3, TEXT);
         testUnescape(textXml10DecLevel4, TEXT);
 
@@ -178,6 +232,16 @@ public class XmlI18nEscapeTest {
         final String textXml10HexaLevel1 = TEXT;
         final String textXml10HexaLevel2 =
                 "Jako efektivn&#x115;j&#x161;&#xed; se n&#xe1;m jev&#xed; po&#x159;&#xe1;d&#xe1;n&#xed; tzv.\n" +
+                "Gira prost&#x159;ednictv&#xed;m na&#x161;ich autorizovan&#xfd;ch dealer&#x16f; v " +
+                "&#x10c;ech&#xe1;ch a na Morav&#x11b;, kter&#xe9; prob&#x11b;hnou v pr&#x16f;b&#x11b;hu " +
+                "z&#xe1;&#x159;&#xed; a &#x159;&#xed;jna.";
+        final String textXml10AttributeHexaLevel1 =
+                "Jako efektivn\u0115j\u0161\u00ED se n\u00E1m jev\u00ED po\u0159\u00E1d\u00E1n\u00ED tzv.&#xa;" +
+                "Gira prost\u0159ednictv\u00EDm na\u0161ich autorizovan\u00FDch dealer\u016F v " +
+                "\u010Cech\u00E1ch a na Morav\u011B, kter\u00E9 prob\u011Bhnou v pr\u016Fb\u011Bhu " +
+                "z\u00E1\u0159\u00ED a \u0159\u00EDjna.";
+        final String textXml10AttributeHexaLevel2 =
+                "Jako efektivn&#x115;j&#x161;&#xed; se n&#xe1;m jev&#xed; po&#x159;&#xe1;d&#xe1;n&#xed; tzv.&#xa;" +
                 "Gira prost&#x159;ednictv&#xed;m na&#x161;ich autorizovan&#xfd;ch dealer&#x16f; v " +
                 "&#x10c;ech&#xe1;ch a na Morav&#x11b;, kter&#xe9; prob&#x11b;hnou v pr&#x16f;b&#x11b;hu " +
                 "z&#xe1;&#x159;&#xed; a &#x159;&#xed;jna.";
@@ -200,11 +264,15 @@ public class XmlI18nEscapeTest {
 
         testEscapeXml10Hexa1(TEXT, textXml10HexaLevel1);
         testEscapeXml10Hexa2(TEXT, textXml10HexaLevel2);
+        testEscapeXml10AttributeHexa1(TEXT, textXml10AttributeHexaLevel1);
+        testEscapeXml10AttributeHexa2(TEXT, textXml10AttributeHexaLevel2);
         testEscapeXml10Hexa3(TEXT, textXml10HexaLevel3);
         testEscapeXml10Hexa4(TEXT, textXml10HexaLevel4);
 
         testUnescape(textXml10HexaLevel1, TEXT);
         testUnescape(textXml10HexaLevel2, TEXT);
+        testUnescape(textXml10AttributeHexaLevel1, TEXT);
+        testUnescape(textXml10AttributeHexaLevel2, TEXT);
         testUnescape(textXml10HexaLevel3, TEXT);
         testUnescape(textXml10HexaLevel4, TEXT);
 
@@ -220,6 +288,16 @@ public class XmlI18nEscapeTest {
         final String textDecLevel1 = TEXT;
         final String textDecLevel2 =
                 "Jako efektivn&#277;j&#353;&#237; se n&#225;m jev&#237; po&#345;&#225;d&#225;n&#237; tzv.\n" +
+                "Gira prost&#345;ednictv&#237;m na&#353;ich autorizovan&#253;ch dealer&#367; v " +
+                "&#268;ech&#225;ch a na Morav&#283;, kter&#233; prob&#283;hnou v pr&#367;b&#283;hu " +
+                "z&#225;&#345;&#237; a &#345;&#237;jna.";
+        final String textDecAttributeLevel1 =
+                "Jako efektivn\u0115j\u0161\u00ED se n\u00E1m jev\u00ED po\u0159\u00E1d\u00E1n\u00ED tzv.&#10;" +
+                "Gira prost\u0159ednictv\u00EDm na\u0161ich autorizovan\u00FDch dealer\u016F v " +
+                "\u010Cech\u00E1ch a na Morav\u011B, kter\u00E9 prob\u011Bhnou v pr\u016Fb\u011Bhu " +
+                "z\u00E1\u0159\u00ED a \u0159\u00EDjna.";
+        final String textDecAttributeLevel2 =
+                "Jako efektivn&#277;j&#353;&#237; se n&#225;m jev&#237; po&#345;&#225;d&#225;n&#237; tzv.&#10;" +
                 "Gira prost&#345;ednictv&#237;m na&#353;ich autorizovan&#253;ch dealer&#367; v " +
                 "&#268;ech&#225;ch a na Morav&#283;, kter&#233; prob&#283;hnou v pr&#367;b&#283;hu " +
                 "z&#225;&#345;&#237; a &#345;&#237;jna.";
@@ -239,6 +317,8 @@ public class XmlI18nEscapeTest {
 
         testEscapeDecimal1(TEXT, textDecLevel1);
         testEscapeDecimal2(TEXT, textDecLevel2);
+        testEscapeAttributeDecimal1(TEXT, textDecAttributeLevel1);
+        testEscapeAttributeDecimal2(TEXT, textDecAttributeLevel2);
         testEscapeDecimal3(TEXT, textDecLevel3);
         testEscapeDecimal4(TEXT, textDecLevel4);
 
@@ -262,6 +342,16 @@ public class XmlI18nEscapeTest {
                 "Gira prost&#x159;ednictv&#xed;m na&#x161;ich autorizovan&#xfd;ch dealer&#x16f; v " +
                 "&#x10c;ech&#xe1;ch a na Morav&#x11b;, kter&#xe9; prob&#x11b;hnou v pr&#x16f;b&#x11b;hu " +
                 "z&#xe1;&#x159;&#xed; a &#x159;&#xed;jna.";
+        final String textHexaAttributeLevel1 =
+                "Jako efektivn\u0115j\u0161\u00ED se n\u00E1m jev\u00ED po\u0159\u00E1d\u00E1n\u00ED tzv.&#xa;" +
+                "Gira prost\u0159ednictv\u00EDm na\u0161ich autorizovan\u00FDch dealer\u016F v " +
+                "\u010Cech\u00E1ch a na Morav\u011B, kter\u00E9 prob\u011Bhnou v pr\u016Fb\u011Bhu " +
+                "z\u00E1\u0159\u00ED a \u0159\u00EDjna.";
+        final String textHexaAttributeLevel2 =
+                "Jako efektivn&#x115;j&#x161;&#xed; se n&#xe1;m jev&#xed; po&#x159;&#xe1;d&#xe1;n&#xed; tzv.&#xa;" +
+                "Gira prost&#x159;ednictv&#xed;m na&#x161;ich autorizovan&#xfd;ch dealer&#x16f; v " +
+                "&#x10c;ech&#xe1;ch a na Morav&#x11b;, kter&#xe9; prob&#x11b;hnou v pr&#x16f;b&#x11b;hu " +
+                "z&#xe1;&#x159;&#xed; a &#x159;&#xed;jna.";
         final String textHexaLevel3 =
                 "Jako&#x20;efektivn&#x115;j&#x161;&#xed;&#x20;se&#x20;n&#xe1;m&#x20;jev&#xed;&#x20;po&#x159;&#xe1;d&#xe1;n&#xed;&#x20;tzv&#x2e;&#xa;" +
                 "Gira&#x20;prost&#x159;ednictv&#xed;m&#x20;na&#x161;ich&#x20;autorizovan&#xfd;ch&#x20;dealer&#x16f;&#x20;v&#x20;" +
@@ -281,11 +371,15 @@ public class XmlI18nEscapeTest {
 
         testEscapeHexa1(TEXT, textHexaLevel1);
         testEscapeHexa2(TEXT, textHexaLevel2);
+        testEscapeAttributeHexa1(TEXT, textHexaAttributeLevel1);
+        testEscapeAttributeHexa2(TEXT, textHexaAttributeLevel2);
         testEscapeHexa3(TEXT, textHexaLevel3);
         testEscapeHexa4(TEXT, textHexaLevel4);
 
         testUnescape(textHexaLevel1, TEXT);
         testUnescape(textHexaLevel2, TEXT);
+        testUnescape(textHexaAttributeLevel1, TEXT);
+        testUnescape(textHexaAttributeLevel2, TEXT);
         testUnescape(textHexaLevel3, TEXT);
         testUnescape(textHexaLevel4, TEXT);
 
