@@ -52,7 +52,7 @@ public class JavaScriptEscape08Test {
 
     // JavaScript LineTerminators. Not allowed in strings, not allowed in escape sequences either (except '\\\n' which is a LineContinuator). Let the JavaScript engine fail if needed.
     private static final String TEXT_ESC_5 = "\\\n\\\r\\\u2028\\\u2029";
-    private static final String TEXT_UNESC_5 = "\\\n\\\r\\\u2028\\\u2029";
+    private static final String TEXT_UNESC_5 = "\\\r\\\u2028\\\u2029";
 
     private static final String TEXT_ESC_6 = "\\x";
     private static final String TEXT_UNESC_6 = "\\x";
