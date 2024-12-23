@@ -22,8 +22,8 @@ package org.unbescape.html;
 import java.io.IOException;
 import java.io.StringWriter;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * 
@@ -64,7 +64,7 @@ public class HtmlUnescape00Test {
 
     private static void checkNCRString(final String ncr) {
 
-        Assert.assertFalse("Not being unescaped: " + ncr, ncr.equals(HtmlEscape.unescapeHtml(ncr)));
+        Assertions.assertFalse(ncr.equals(HtmlEscape.unescapeHtml(ncr)), "Not being unescaped: " + ncr);
 
         final String unescapedLettersLow = "aeiou" + HtmlEscape.unescapeHtml(ncr) + "aeiou";
 
@@ -75,7 +75,7 @@ public class HtmlUnescape00Test {
 
         final String resultLettersLow = HtmlEscape.unescapeHtml(strBuilderEscapedLettersLow.toString());
 
-        Assert.assertEquals(unescapedLettersLow, resultLettersLow);
+        Assertions.assertEquals(unescapedLettersLow, resultLettersLow);
 
         final String unescapedLettersUp = "AEIOU" + HtmlEscape.unescapeHtml(ncr) + "AEIOU";
 
@@ -86,7 +86,7 @@ public class HtmlUnescape00Test {
 
         final String resultLettersUp = HtmlEscape.unescapeHtml(strBuilderEscapedLettersUp.toString());
 
-        Assert.assertEquals(unescapedLettersUp, resultLettersUp);
+        Assertions.assertEquals(unescapedLettersUp, resultLettersUp);
 
         final String unescapedLettersNum = "01234" + HtmlEscape.unescapeHtml(ncr) + "01234";
 
@@ -97,7 +97,7 @@ public class HtmlUnescape00Test {
 
         final String resultLettersNum = HtmlEscape.unescapeHtml(strBuilderEscapedLettersNum.toString());
 
-        Assert.assertEquals(unescapedLettersNum, resultLettersNum);
+        Assertions.assertEquals(unescapedLettersNum, resultLettersNum);
 
     }
 
@@ -107,7 +107,7 @@ public class HtmlUnescape00Test {
         final String ncrStr = new String(ncr);
         final StringWriter ncrWriter = new StringWriter();
         HtmlEscape.unescapeHtml(ncr, 0, ncr.length, ncrWriter);
-        Assert.assertFalse("Not being unescaped: " + ncrStr, ncrStr.equals(ncrWriter.toString()));
+        Assertions.assertFalse(ncrStr.equals(ncrWriter.toString()), "Not being unescaped: " + ncrStr);
 
         final StringWriter writerLow = new StringWriter();
         HtmlEscape.unescapeHtml(ncr, 0, ncr.length, writerLow);
@@ -122,7 +122,7 @@ public class HtmlUnescape00Test {
         final StringWriter writerResultLow = new StringWriter();
         HtmlEscape.unescapeHtml(escapedLettersLow.toCharArray(), 0, escapedLettersLow.length(), writerResultLow);
 
-        Assert.assertEquals(unescapedLettersLow, writerResultLow.toString());
+        Assertions.assertEquals(unescapedLettersLow, writerResultLow.toString());
 
         final StringWriter writerUp = new StringWriter();
         HtmlEscape.unescapeHtml(ncr, 0, ncr.length, writerUp);
@@ -137,7 +137,7 @@ public class HtmlUnescape00Test {
         final StringWriter writerResultUp = new StringWriter();
         HtmlEscape.unescapeHtml(escapedLettersUp.toCharArray(), 0, escapedLettersUp.length(), writerResultUp);
 
-        Assert.assertEquals(unescapedLettersUp, writerResultUp.toString());
+        Assertions.assertEquals(unescapedLettersUp, writerResultUp.toString());
 
         final StringWriter writerNum = new StringWriter();
         HtmlEscape.unescapeHtml(ncr, 0, ncr.length, writerNum);
@@ -152,7 +152,7 @@ public class HtmlUnescape00Test {
         final StringWriter writerResultNum = new StringWriter();
         HtmlEscape.unescapeHtml(escapedLettersNum.toCharArray(), 0, escapedLettersNum.length(), writerResultNum);
 
-        Assert.assertEquals(unescapedLettersNum, writerResultNum.toString());
+        Assertions.assertEquals(unescapedLettersNum, writerResultNum.toString());
 
     }
 

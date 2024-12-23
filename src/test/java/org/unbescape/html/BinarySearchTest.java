@@ -22,8 +22,8 @@ package org.unbescape.html;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * 
@@ -112,12 +112,12 @@ public class BinarySearchTest {
                 if (j > i) {
                     if (result.indexOf(PARTIAL_FOUND) != -1) {
                         final String found = result.substring(0,result.indexOf('-'));
-                        Assert.assertTrue(TEXTS[j].startsWith(found));
+                        Assertions.assertTrue(TEXTS[j].startsWith(found));
                     } else {
-                        Assert.assertEquals(NOT_FOUND, result);
+                        Assertions.assertEquals(NOT_FOUND, result);
                     }
                 } else {
-                    Assert.assertEquals(TEXTS[j], result);
+                    Assertions.assertEquals(TEXTS[j], result);
                 }
             }
         }

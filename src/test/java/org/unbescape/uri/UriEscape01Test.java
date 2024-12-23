@@ -19,7 +19,7 @@
  */
 package org.unbescape.uri;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.unbescape.uri.UriEscapeTestUtil.testEscapeFragmentId;
 import static org.unbescape.uri.UriEscapeTestUtil.testEscapePath;

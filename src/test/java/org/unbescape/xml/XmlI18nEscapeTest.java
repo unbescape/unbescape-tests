@@ -19,7 +19,7 @@
  */
 package org.unbescape.xml;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeAttributeDecimal1;
 import static org.unbescape.xml.XmlEscapeTestUtil.testEscapeAttributeDecimal2;

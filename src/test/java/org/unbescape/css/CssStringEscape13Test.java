@@ -19,7 +19,7 @@
  */
 package org.unbescape.css;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBECompact1;
 import static org.unbescape.css.CssStringEscapeTestUtil.testEscapeBECompact2;

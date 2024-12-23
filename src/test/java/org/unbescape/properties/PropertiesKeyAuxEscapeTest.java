@@ -19,8 +19,8 @@
  */
 package org.unbescape.properties;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * 
@@ -50,7 +50,7 @@ public class PropertiesKeyAuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(uhexa2FF, result);
+            Assertions.assertEquals(uhexa2FF, result);
         }
 
         {
@@ -63,7 +63,7 @@ public class PropertiesKeyAuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(uhexaFFFF, result);
+            Assertions.assertEquals(uhexaFFFF, result);
         }
 
     }

@@ -22,8 +22,8 @@ package org.unbescape.uri;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * 
@@ -50,7 +50,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(uhexaFF, result);
+            Assertions.assertEquals(uhexaFF, result);
         }
 
         {
@@ -80,12 +80,12 @@ public class AuxEscapeTest {
                 final String result = strBuilder.toString();
                 final String encoded = URLEncoder.encode(new String(Character.toChars(codepoint)), "UTF-8");
                 final String decoded = URLDecoder.decode(result, "UTF-8");
-                Assert.assertEquals(
-                        "Error testing encoded version of codepoint: " + Integer.toHexString(codepoint) + " [" + original + "|" + result + "|" + encoded + "|" + decoded + "]",
-                        encoded, result);
-                Assert.assertEquals(
-                        "Error testing decoded version of codepoint: " + Integer.toHexString(codepoint) + " [" + original + "|" + result + "|" + encoded + "|" + decoded + "]",
-                        original, decoded);
+                Assertions.assertEquals(
+                        encoded, result,
+                        "Error testing encoded version of codepoint: " + Integer.toHexString(codepoint) + " [" + original + "|" + result + "|" + encoded + "|" + decoded + "]");
+                Assertions.assertEquals(
+                        original, decoded,
+                        "Error testing decoded version of codepoint: " + Integer.toHexString(codepoint) + " [" + original + "|" + result + "|" + encoded + "|" + decoded + "]");
 
 
 
@@ -97,9 +97,9 @@ public class AuxEscapeTest {
                 }
                 String parseResult = new String(bytes, "UTF-8");
 
-                Assert.assertEquals(
-                        "Error testing decoded version of codepoint: " + Integer.toHexString(codepoint) + " [" + original + "|" + result + "|" + parseResult + "|" + encoded + "|" + decoded + "]",
-                        original, parseResult);
+                Assertions.assertEquals(
+                        original, parseResult,
+                        "Error testing decoded version of codepoint: " + Integer.toHexString(codepoint) + " [" + original + "|" + result + "|" + parseResult + "|" + encoded + "|" + decoded + "]");
 
 
                 bytes = new byte[result.length()/3];
@@ -110,9 +110,9 @@ public class AuxEscapeTest {
                 }
                 parseResult = new String(bytes, "UTF-8");
 
-                Assert.assertEquals(
-                        "Error testing decoded version of codepoint: " + Integer.toHexString(codepoint) + " [" + original + "|" + result + "|" + parseResult + "|" + encoded + "|" + decoded + "]",
-                        original, parseResult);
+                Assertions.assertEquals(
+                        original, parseResult,
+                        "Error testing decoded version of codepoint: " + Integer.toHexString(codepoint) + " [" + original + "|" + result + "|" + parseResult + "|" + encoded + "|" + decoded + "]");
 
             }
 

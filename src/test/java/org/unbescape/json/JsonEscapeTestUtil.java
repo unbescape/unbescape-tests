@@ -24,7 +24,7 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 /**
  * 
@@ -113,27 +113,27 @@ public class JsonEscapeTestUtil {
                                    throws IOException {
 
         final String resultStr = JsonEscapeUtil.escape(text, type, level);
-        Assert.assertEquals(expected, resultStr);
+        Assertions.assertEquals(expected, resultStr);
         if (resultStr != null && resultStr.equals(text)) {
-            Assert.assertSame(text, resultStr);
+            Assertions.assertSame(text, resultStr);
         }
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
         JsonEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter, type, level);
         if (textCharArray == null) {
-            Assert.assertEquals("", stringWriter.toString());
+            Assertions.assertEquals("", stringWriter.toString());
         } else {
-            Assert.assertEquals(expected,stringWriter.toString());
+            Assertions.assertEquals(expected,stringWriter.toString());
         }
 
         final Reader textReader2 = (text == null? null : new StringReader(text));
         StringWriter stringWriter2 = new StringWriter();
         JsonEscapeUtil.escape(textReader2, stringWriter2, type, level);
         if (textReader2 == null) {
-            Assert.assertEquals("", stringWriter2.toString());
+            Assertions.assertEquals("", stringWriter2.toString());
         } else {
-            Assert.assertEquals(expected,stringWriter2.toString());
+            Assertions.assertEquals(expected,stringWriter2.toString());
         }
 
         if (textCharArray == null) {
@@ -154,9 +154,9 @@ public class JsonEscapeTestUtil {
             stringWriter = new StringWriter();
             JsonEscapeUtil.escape(array, i, textCharArray.length, stringWriter, type, level);
             if (textCharArray == null) {
-                Assert.assertEquals("", stringWriter.toString());
+                Assertions.assertEquals("", stringWriter.toString());
             } else {
-                Assert.assertEquals(expected,stringWriter.toString());
+                Assertions.assertEquals(expected,stringWriter.toString());
             }
 
         }
@@ -172,27 +172,27 @@ public class JsonEscapeTestUtil {
                                     throws IOException {
 
         final String resultStr = JsonEscapeUtil.unescape(text);
-        Assert.assertEquals(expected, resultStr);
+        Assertions.assertEquals(expected, resultStr);
         if (resultStr != null && resultStr.equals(text)) {
-            Assert.assertSame(text, resultStr);
+            Assertions.assertSame(text, resultStr);
         }
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
         JsonEscapeUtil.unescape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
         if (textCharArray == null) {
-            Assert.assertEquals("", stringWriter.toString());
+            Assertions.assertEquals("", stringWriter.toString());
         } else {
-            Assert.assertEquals(expected,stringWriter.toString());
+            Assertions.assertEquals(expected,stringWriter.toString());
         }
 
         final Reader textReader2 = (text == null? null : new StringReader(text));
         StringWriter stringWriter2 = new StringWriter();
         JsonEscapeUtil.unescape(textReader2, stringWriter2);
         if (textReader2 == null) {
-            Assert.assertEquals("", stringWriter2.toString());
+            Assertions.assertEquals("", stringWriter2.toString());
         } else {
-            Assert.assertEquals(expected,stringWriter2.toString());
+            Assertions.assertEquals(expected,stringWriter2.toString());
         }
 
         if (textCharArray == null) {
@@ -213,9 +213,9 @@ public class JsonEscapeTestUtil {
             stringWriter = new StringWriter();
             JsonEscapeUtil.unescape(array, i, textCharArray.length, stringWriter);
             if (textCharArray == null) {
-                Assert.assertEquals("", stringWriter.toString());
+                Assertions.assertEquals("", stringWriter.toString());
             } else {
-                Assert.assertEquals(expected,stringWriter.toString());
+                Assertions.assertEquals(expected,stringWriter.toString());
             }
 
         }

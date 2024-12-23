@@ -19,8 +19,8 @@
  */
 package org.unbescape.javascript;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * 
@@ -50,7 +50,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(uhexa2FF, result);
+            Assertions.assertEquals(uhexa2FF, result);
         }
 
         {
@@ -63,7 +63,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(uhexaFFFF, result);
+            Assertions.assertEquals(uhexaFFFF, result);
         }
 
     }
@@ -89,7 +89,7 @@ public class AuxEscapeTest {
         }
 
         final String result = strBuilder.toString();
-        Assert.assertEquals(xhexa, result);
+        Assertions.assertEquals(xhexa, result);
 
     }
 
@@ -97,13 +97,13 @@ public class AuxEscapeTest {
 
 
     private static void isOctalEscape(final String text, final int start, final int end) throws Exception {
-        Assert.assertTrue(JavaScriptEscapeUtil.isOctalEscape(text, start, end));
-        Assert.assertTrue(JavaScriptEscapeUtil.isOctalEscape(text.toCharArray(), start, end));
+        Assertions.assertTrue(JavaScriptEscapeUtil.isOctalEscape(text, start, end));
+        Assertions.assertTrue(JavaScriptEscapeUtil.isOctalEscape(text.toCharArray(), start, end));
     }
 
     private static void isNotOctalEscape(final String text, final int start, final int end) throws Exception {
-        Assert.assertFalse(JavaScriptEscapeUtil.isOctalEscape(text, start, end));
-        Assert.assertFalse(JavaScriptEscapeUtil.isOctalEscape(text.toCharArray(), start, end));
+        Assertions.assertFalse(JavaScriptEscapeUtil.isOctalEscape(text, start, end));
+        Assertions.assertFalse(JavaScriptEscapeUtil.isOctalEscape(text.toCharArray(), start, end));
     }
 
 

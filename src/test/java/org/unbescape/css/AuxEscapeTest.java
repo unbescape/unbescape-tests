@@ -19,8 +19,8 @@
  */
 package org.unbescape.css;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * 
@@ -50,7 +50,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
         {
@@ -63,7 +63,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
         {
@@ -76,7 +76,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
         {
@@ -89,7 +89,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
     }
@@ -109,7 +109,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
         {
@@ -122,7 +122,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
         {
@@ -135,7 +135,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
 
@@ -149,7 +149,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
     }
@@ -172,7 +172,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
         {
@@ -185,7 +185,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
         {
@@ -198,7 +198,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
         {
@@ -211,7 +211,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
     }
@@ -231,7 +231,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
         {
@@ -244,7 +244,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
         {
@@ -257,7 +257,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
 
@@ -271,7 +271,7 @@ public class AuxEscapeTest {
             }
 
             final String result = strBuilder.toString();
-            Assert.assertEquals(hexa, result);
+            Assertions.assertEquals(hexa, result);
         }
 
     }

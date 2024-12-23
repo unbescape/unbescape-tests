@@ -21,7 +21,7 @@ package org.unbescape.uri;
 
 import java.net.URLEncoder;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.web.util.UriUtils;
 
 import static org.unbescape.uri.UriEscapeTestUtil.testEscapeFragmentId;

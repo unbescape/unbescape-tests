@@ -24,7 +24,7 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 /**
  * 
@@ -44,27 +44,27 @@ public class CsvEscapeTestUtil {
                                    throws IOException {
 
         final String resultStr = CsvEscapeUtil.escape(text);
-        Assert.assertEquals(expected, resultStr);
+        Assertions.assertEquals(expected, resultStr);
         if (resultStr != null && resultStr.equals(text)) {
-            Assert.assertSame(text, resultStr);
+            Assertions.assertSame(text, resultStr);
         }
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
         CsvEscapeUtil.escape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
         if (textCharArray == null) {
-            Assert.assertEquals("", stringWriter.toString());
+            Assertions.assertEquals("", stringWriter.toString());
         } else {
-            Assert.assertEquals(expected,stringWriter.toString());
+            Assertions.assertEquals(expected,stringWriter.toString());
         }
 
         final Reader textReader2 = (text == null? null : new StringReader(text));
         StringWriter stringWriter2 = new StringWriter();
         CsvEscapeUtil.escape(textReader2, stringWriter2);
         if (textReader2 == null) {
-            Assert.assertEquals("", stringWriter2.toString());
+            Assertions.assertEquals("", stringWriter2.toString());
         } else {
-            Assert.assertEquals(expected,stringWriter2.toString());
+            Assertions.assertEquals(expected,stringWriter2.toString());
         }
 
         if (textCharArray == null) {
@@ -85,9 +85,9 @@ public class CsvEscapeTestUtil {
             stringWriter = new StringWriter();
             CsvEscapeUtil.escape(array, i, textCharArray.length, stringWriter);
             if (textCharArray == null) {
-                Assert.assertEquals("", stringWriter.toString());
+                Assertions.assertEquals("", stringWriter.toString());
             } else {
-                Assert.assertEquals(expected,stringWriter.toString());
+                Assertions.assertEquals(expected,stringWriter.toString());
             }
 
         }
@@ -103,27 +103,27 @@ public class CsvEscapeTestUtil {
                                     throws IOException {
 
         final String resultStr = CsvEscapeUtil.unescape(text);
-        Assert.assertEquals(expected, resultStr);
+        Assertions.assertEquals(expected, resultStr);
         if (resultStr != null && resultStr.equals(text)) {
-            Assert.assertSame(text, resultStr);
+            Assertions.assertSame(text, resultStr);
         }
 
         final char[] textCharArray = (text == null? null : text.toCharArray());
         StringWriter stringWriter = new StringWriter();
         CsvEscapeUtil.unescape(textCharArray, 0, (textCharArray == null ? 0 : textCharArray.length), stringWriter);
         if (textCharArray == null) {
-            Assert.assertEquals("", stringWriter.toString());
+            Assertions.assertEquals("", stringWriter.toString());
         } else {
-            Assert.assertEquals(expected,stringWriter.toString());
+            Assertions.assertEquals(expected,stringWriter.toString());
         }
 
         final Reader textReader2 = (text == null? null : new StringReader(text));
         StringWriter stringWriter2 = new StringWriter();
         CsvEscapeUtil.unescape(textReader2, stringWriter2);
         if (textReader2 == null) {
-            Assert.assertEquals("", stringWriter2.toString());
+            Assertions.assertEquals("", stringWriter2.toString());
         } else {
-            Assert.assertEquals(expected,stringWriter2.toString());
+            Assertions.assertEquals(expected,stringWriter2.toString());
         }
 
         if (textCharArray == null) {
@@ -144,9 +144,9 @@ public class CsvEscapeTestUtil {
             stringWriter = new StringWriter();
             CsvEscapeUtil.unescape(array, i, textCharArray.length, stringWriter);
             if (textCharArray == null) {
-                Assert.assertEquals("", stringWriter.toString());
+                Assertions.assertEquals("", stringWriter.toString());
             } else {
-                Assert.assertEquals(expected,stringWriter.toString());
+                Assertions.assertEquals(expected,stringWriter.toString());
             }
 
         }

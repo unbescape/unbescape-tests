@@ -19,7 +19,7 @@
  */
 package org.unbescape.properties;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testEscape1;
 import static org.unbescape.properties.PropertiesValueEscapeTestUtil.testEscape2;

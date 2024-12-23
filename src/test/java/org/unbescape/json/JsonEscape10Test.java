@@ -19,7 +19,7 @@
  */
 package org.unbescape.json;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.unbescape.json.JsonEscapeTestUtil.testUnescape;
 

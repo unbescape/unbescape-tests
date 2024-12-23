@@ -22,8 +22,8 @@ package org.unbescape.uri;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * 
@@ -99,27 +99,27 @@ public class WhitespaceEscapeTest {
         final String result2_5 = URLDecoder.decode(result2_1, "UTF-8");
         final String result2_6 = URLDecoder.decode(result2_2, "UTF-8");
 
-        Assert.assertEquals(outputMsg1_1, result1_1);
-        Assert.assertEquals(outputMsg1_2, result1_2);
-        Assert.assertEquals(outputMsg1_3, result1_3);
+        Assertions.assertEquals(outputMsg1_1, result1_1);
+        Assertions.assertEquals(outputMsg1_2, result1_2);
+        Assertions.assertEquals(outputMsg1_3, result1_3);
         if (plusEscapingAllowed) {
-            Assert.assertEquals(outputMsg1_3, result1_4);
+            Assertions.assertEquals(outputMsg1_3, result1_4);
         } else {
-            Assert.assertEquals(outputMsg1_4, result1_4);
+            Assertions.assertEquals(outputMsg1_4, result1_4);
         }
-        Assert.assertEquals(outputMsg1_3, result1_5);
-        Assert.assertEquals(outputMsg1_3, result1_6);
+        Assertions.assertEquals(outputMsg1_3, result1_5);
+        Assertions.assertEquals(outputMsg1_3, result1_6);
 
-        Assert.assertEquals(outputMsg2_1, result2_1);
-        Assert.assertEquals(outputMsg2_2, result2_2);
-        Assert.assertEquals(outputMsg2_3, result2_3);
+        Assertions.assertEquals(outputMsg2_1, result2_1);
+        Assertions.assertEquals(outputMsg2_2, result2_2);
+        Assertions.assertEquals(outputMsg2_3, result2_3);
         if (plusEscapingAllowed) {
-            Assert.assertEquals(outputMsg2_3, result2_4);
+            Assertions.assertEquals(outputMsg2_3, result2_4);
         } else {
-            Assert.assertEquals(outputMsg2_4, result2_4);
+            Assertions.assertEquals(outputMsg2_4, result2_4);
         }
-        Assert.assertEquals(outputMsg2_3, result2_5);
-        Assert.assertEquals(outputMsg2_3, result2_6);
+        Assertions.assertEquals(outputMsg2_3, result2_5);
+        Assertions.assertEquals(outputMsg2_3, result2_6);
 
     }
 
