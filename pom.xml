@@ -59,27 +59,13 @@
     <developerConnection>scm:git:git@github.com:unbescape/unbescape-tests</developerConnection>
   </scm>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-    </repository>
-  </distributionManagement>
-
   <repositories>
     <repository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
+      <id>central-portal-snapshots</id>
+      <name>Central Portal Snapshots</name>
+      <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+      <releases><enabled>false</enabled></releases>
+      <snapshots><enabled>true</enabled></snapshots>
     </repository>
   </repositories>
 
@@ -101,20 +87,20 @@
     <!-- DEPENDENCY versions        -->
     <!-- ======================     -->
     <unbescape.version>1.1.7.BUILD-SNAPSHOT</unbescape.version>
-    <commons-text.version>1.13.0</commons-text.version>
-    <commons-io.version>2.18.0</commons-io.version>
+    <commons-text.version>1.15.0</commons-text.version>
+    <commons-io.version>2.22.0</commons-io.version>
     <spring-web.version>4.0.2.RELEASE</spring-web.version>
     <esapi.version>2.1.0</esapi.version>
-    <junit.version>5.11.3</junit.version>
+    <junit.version>5.14.4</junit.version>
     <!-- ======================     -->
     <!-- MAVEN PLUGIN versions      -->
     <!-- ======================     -->
-    <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
-    <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
-    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
-    <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-    <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
-    <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
+    <maven-clean-plugin.version>3.5.0</maven-clean-plugin.version>
+    <maven-dependency-plugin.version>3.11.0</maven-dependency-plugin.version>
+    <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
+    <maven-resources-plugin.version>3.5.0</maven-resources-plugin.version>
+    <maven-surefire-plugin.version>3.6.1</maven-surefire-plugin.version>
+    <maven-failsafe-plugin.version>3.6.1</maven-failsafe-plugin.version>
   </properties>
 
 
