@@ -116,23 +116,24 @@ public class AuxEscapeTest {
         isNotOctalEscape("8", 0, 1);
         isNotOctalEscape("a0", 1, 2);
         isNotOctalEscape("a00", 1, 2);
-        isNotOctalEscape("a00", 1, 3);
-        isNotOctalEscape("a000", 1, 4);
+        isOctalEscape("a00", 1, 3);
+        isOctalEscape("a000", 1, 4);
         isOctalEscape("a001", 1, 4);
         isOctalEscape("a01", 1, 3);
         isNotOctalEscape("0a", 0, 1);
         isNotOctalEscape("a0a", 1, 2);
         isNotOctalEscape("a00a", 1, 2);
-        isNotOctalEscape("a00a", 1, 3);
-        isNotOctalEscape("a000a", 1, 4);
+        isOctalEscape("a00a", 1, 3);
+        isOctalEscape("a000a", 1, 4);
         isOctalEscape("a001a", 1, 4);
         isOctalEscape("a01a", 1, 3);
-        isNotOctalEscape("a001a", 1, 3);
+        isOctalEscape("a001a", 1, 3);
         isOctalEscape("01", 0, 2);
         isOctalEscape("a001a", 1, 4);
         isOctalEscape("a01a", 1, 4);
-        isNotOctalEscape("a00a", 1, 4);
-        isNotOctalEscape("a008a", 1, 4);
+        isOctalEscape("a00a", 1, 4);
+        isOctalEscape("a008a", 1, 4);
+        isNotOctalEscape("a08a", 1, 4);
 
     }
 

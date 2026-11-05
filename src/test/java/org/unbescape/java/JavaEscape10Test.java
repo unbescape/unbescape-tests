@@ -34,7 +34,7 @@ public class JavaEscape10Test {
 
 
     private static final String TEXT_ESC = "\\00";
-    private static final String TEXT_UNESC = "\u00000";
+    private static final String TEXT_UNESC = "\u0000";
 
 
 
