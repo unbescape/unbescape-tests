@@ -34,19 +34,19 @@ public class CssIdentifierEscape10Test {
 
 
     private static final String TEXT_ESC_1 = "\\00";
-    private static final String TEXT_UNESC_1 = "\u0000";
+    private static final String TEXT_UNESC_1 = "\uFFFD";
     private static final String TEXT_ESC_2 = "\\0 0";
-    private static final String TEXT_UNESC_2 = "\u00000";
+    private static final String TEXT_UNESC_2 = "\uFFFD0";
     private static final String TEXT_ESC_3 = "\\0000000";
-    private static final String TEXT_UNESC_3 = "\u00000";
+    private static final String TEXT_UNESC_3 = "\uFFFD0";
     private static final String TEXT_ESC_4 = "\\0h";
-    private static final String TEXT_UNESC_4 = "\u0000h";
+    private static final String TEXT_UNESC_4 = "\uFFFDh";
     private static final String TEXT_ESC_5 = "\\0 h";
-    private static final String TEXT_UNESC_5 = "\u0000h";
+    private static final String TEXT_UNESC_5 = "\uFFFDh";
     private static final String TEXT_ESC_6 = "\\000000 0";
-    private static final String TEXT_UNESC_6 = "\u00000";
+    private static final String TEXT_UNESC_6 = "\uFFFD0";
     private static final String TEXT_ESC_7 = "\\000000 h";
-    private static final String TEXT_UNESC_7 = "\u0000h";
+    private static final String TEXT_UNESC_7 = "\uFFFDh";
 
 
 

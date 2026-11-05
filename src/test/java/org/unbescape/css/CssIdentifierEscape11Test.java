@@ -38,6 +38,7 @@ public class CssIdentifierEscape11Test {
 
     private static final String TEXT_UNESC;
     private static final String TEXT_ESC;
+    private static final String TEXT_UNESC_FROM_ESC;
     private static final String TEXT_ESC_3;
 
 
@@ -48,6 +49,8 @@ public class CssIdentifierEscape11Test {
             textUnescBuilder.append((char)i);
         }
         TEXT_UNESC = textUnescBuilder.toString();
+        // The escape for U+0000 is unescaped as U+FFFD, as established by the CSS Syntax specification
+        TEXT_UNESC_FROM_ESC = "\uFFFD" + TEXT_UNESC.substring(1);
 
         final StringBuilder textEscBuilder = new StringBuilder();
         final StringBuilder textEsc3Builder = new StringBuilder();
@@ -124,9 +127,9 @@ public class CssIdentifierEscape11Test {
         testEscapeBECompact2(TEXT_UNESC, textBECompactLevel2);
         testEscapeBECompact3(TEXT_UNESC, textBECompactLevel3);
 
-        testUnescape(textBECompactLevel1, TEXT_UNESC);
-        testUnescape(textBECompactLevel2, TEXT_UNESC);
-        testUnescape(textBECompactLevel3, TEXT_UNESC);
+        testUnescape(textBECompactLevel1, TEXT_UNESC_FROM_ESC);
+        testUnescape(textBECompactLevel2, TEXT_UNESC_FROM_ESC);
+        testUnescape(textBECompactLevel3, TEXT_UNESC_FROM_ESC);
 
     }
 

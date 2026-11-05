@@ -34,7 +34,7 @@ public class CssIdentifierEscape09Test {
 
 
     private static final String TEXT_ESC = "\\0";
-    private static final String TEXT_UNESC = "\u0000";
+    private static final String TEXT_UNESC = "\uFFFD";
 
 
 

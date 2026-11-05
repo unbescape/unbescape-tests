@@ -48,11 +48,11 @@ public class CssIdentifierEscape08Test {
 
     // '\\8' and '\\9' are invalid because the slash is forbidden in JavaScript strings, but they are not valid escape sequences, so it's up to the JavaScript engine to raise an error.
     private static final String TEXT_ESC_4 = "\\0\\1\\2\\3\\4\\5\\6\\7\\8\\9";
-    private static final String TEXT_UNESC_4 = "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0008\u0009";
+    private static final String TEXT_UNESC_4 = "\uFFFD\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0008\u0009";
 
-    // JavaScript LineTerminators. Not allowed in strings, not allowed in escape sequences either (except '\\\n' which is a LineContinuator). Let the JavaScript engine fail if needed.
+    // Escaped newlines (LF, CR, CR LF, FF) are line continuations, ignored in output. U+2028 and U+2029 are not newlines in CSS.
     private static final String TEXT_ESC_5 = "\\\n\\\r\\\u2028\\\u2029";
-    private static final String TEXT_UNESC_5 = "\\\r\u2028\u2029";
+    private static final String TEXT_UNESC_5 = "\u2028\u2029";
 
     private static final String TEXT_ESC_6 = "\\x";
     private static final String TEXT_UNESC_6 = "x";

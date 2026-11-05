@@ -37,6 +37,7 @@ public class CssStringEscape11Test {
 
     private static final String TEXT_UNESC;
     private static final String TEXT_ESC;
+    private static final String TEXT_UNESC_FROM_ESC;
 
 
 
@@ -46,6 +47,8 @@ public class CssStringEscape11Test {
             textUnescBuilder.append((char)i);
         }
         TEXT_UNESC = textUnescBuilder.toString();
+        // The escape for U+0000 is unescaped as U+FFFD, as established by the CSS Syntax specification
+        TEXT_UNESC_FROM_ESC = "\uFFFD" + TEXT_UNESC.substring(1);
 
         final StringBuilder textEscBuilder = new StringBuilder();
         for (int i = 0; i <= '~'; i++) {
@@ -82,8 +85,8 @@ public class CssStringEscape11Test {
         testEscapeBECompact1(TEXT_UNESC, textBECompactLevel1);
         testEscapeBECompact2(TEXT_UNESC, textBECompactLevel2);
 
-        testUnescape(textBECompactLevel1, TEXT_UNESC);
-        testUnescape(textBECompactLevel2, TEXT_UNESC);
+        testUnescape(textBECompactLevel1, TEXT_UNESC_FROM_ESC);
+        testUnescape(textBECompactLevel2, TEXT_UNESC_FROM_ESC);
 
     }
 
