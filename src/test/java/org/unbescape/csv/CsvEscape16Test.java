@@ -62,6 +62,22 @@ public class CsvEscape16Test {
 
 
 
+    @Test
+    public void testDoubleQuotesInUnquotedValue() throws Exception {
+
+        testUnescape("a\"\"b", "a\"\"b");
+        testUnescape("a\"\"", "a\"\"");
+        testUnescape("a \"\" b \"\"", "a \"\" b \"\"");
+        testUnescape("a\"b", "a\"b");
+
+        // Positive control: quoted value
+        testUnescape("\"a\"\"b\"", "a\"b");
+
+    }
+
+
+
+
     public CsvEscape16Test() {
         super();
     }
