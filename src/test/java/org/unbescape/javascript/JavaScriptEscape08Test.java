@@ -46,9 +46,9 @@ public class JavaScriptEscape08Test {
     private static final String TEXT_ESC_3 = "\\a\\b\\c\\d\\e\\f\\g\\h\\i\\j\\k\\l\\m\\n\\o\\p\\q\\r\\s\\t\\u\\v\\w\\x\\y\\z";
     private static final String TEXT_UNESC_3 = "a\bcde\fghijklm\nopq\rs\t\\u\u000Bw\\xyz";
 
-    // '\\8' and '\\9' are invalid because the slash is forbidden in JavaScript strings, but they are not valid escape sequences, so it's up to the JavaScript engine to raise an error.
+    // '\\8' and '\\9' are not octal escapes: '8' and '9' are not octal digits, so they are unescaped as normal chars (NonEscapeCharacter).
     private static final String TEXT_ESC_4 = "\\0\\1\\2\\3\\4\\5\\6\\7\\8\\9";
-    private static final String TEXT_UNESC_4 = "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\\8\\9";
+    private static final String TEXT_UNESC_4 = "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u000789";
 
     // JavaScript LineTerminators. Not allowed in strings, not allowed in escape sequences either (except '\\\n' which is a LineContinuator). Let the JavaScript engine fail if needed.
     private static final String TEXT_ESC_5 = "\\\n\\\r\\\u2028\\\u2029";
