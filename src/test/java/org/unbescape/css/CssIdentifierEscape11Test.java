@@ -63,13 +63,14 @@ public class CssIdentifierEscape11Test {
             } else {
                 switch(i) {
                     case '<':textEscBuilder.append("\\3C"); textEsc3Builder.append("\\3C"); continue;
+                    case '&':textEscBuilder.append("\\26"); textEsc3Builder.append("\\26"); continue;
+                    case '>':textEscBuilder.append("\\3E"); textEsc3Builder.append("\\3E"); continue;
                     case ' ':
                     case '!':
                     case '"':
                     case '#':
                     case '$':
                     case '%':
-                    case '&':
                     case '\'':
                     case '(':
                     case ')':
@@ -80,7 +81,6 @@ public class CssIdentifierEscape11Test {
                     case '/':
                     case ';':
                     case '=':
-                    case '>':
                     case '?':
                     case '@':
                     case '[':

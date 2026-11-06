@@ -61,11 +61,12 @@ public class CssStringEscape11Test {
                     case ' ':textEscBuilder.append("  "); continue;
                     case '\\':
                     case '"':
-                    case '&':
                     case '/':
                     case ';':
                     case '\'':textEscBuilder.append("\\" + (char)i); continue;
                     case '<':textEscBuilder.append("\\3C"); continue;
+                    case '&':textEscBuilder.append("\\26"); continue;
+                    case '>':textEscBuilder.append("\\3E"); continue;
                 }
 
             }
