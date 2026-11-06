@@ -59,10 +59,10 @@ public class CssIdentifierEscape14Test {
     @Test
     public void testBECompact() throws Exception {
 
-        final String textBECompactLevel1 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\3A\\/\\/example\\.com";
-        final String textBECompactLevel2 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\3A\\/\\/example\\.com";
-        final String textBECompactLevel3 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\3A\\/\\/example\\.com";
-        final String textBECompactLevel4 = "\\/\\73\\6F\\6D\\65\\74\\68\\69\\6E\\67\\<\\/\\73\\63\\72\\69\\70\\74\\>\\<\\/\\61\\6E\\79\\74\\68\\69\\6E\\67\\>\\ \\62\\75\\74\\ \\68\\74\\74\\70\\3A\\/\\/\\65\\78\\61\\6D\\70\\6C\\65\\.\\63\\6F\\6D";
+        final String textBECompactLevel1 = "\\/something\\3C\\/script\\>\\3C\\/anything\\>\\ but\\ http\\3A\\/\\/example\\.com";
+        final String textBECompactLevel2 = "\\/something\\3C\\/script\\>\\3C\\/anything\\>\\ but\\ http\\3A\\/\\/example\\.com";
+        final String textBECompactLevel3 = "\\/something\\3C\\/script\\>\\3C\\/anything\\>\\ but\\ http\\3A\\/\\/example\\.com";
+        final String textBECompactLevel4 = "\\/\\73\\6F\\6D\\65\\74\\68\\69\\6E\\67\\3C\\/\\73\\63\\72\\69\\70\\74\\>\\3C\\/\\61\\6E\\79\\74\\68\\69\\6E\\67\\>\\ \\62\\75\\74\\ \\68\\74\\74\\70\\3A\\/\\/\\65\\78\\61\\6D\\70\\6C\\65\\.\\63\\6F\\6D";
 
         testEscapeBECompact1(TEXT, textBECompactLevel1);
         testEscapeBECompact2(TEXT, textBECompactLevel2);
@@ -83,10 +83,10 @@ public class CssIdentifierEscape14Test {
     @Test
     public void testBESixDigit() throws Exception {
 
-        final String textBESixDigitLevel1 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\00003A\\/\\/example\\.com";
-        final String textBESixDigitLevel2 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\00003A\\/\\/example\\.com";
-        final String textBESixDigitLevel3 = "\\/something\\<\\/script\\>\\<\\/anything\\>\\ but\\ http\\00003A\\/\\/example\\.com";
-        final String textBESixDigitLevel4 = "\\/\\000073\\00006F\\00006D\\000065\\000074\\000068\\000069\\00006E\\000067\\<\\/\\000073\\000063\\000072\\000069\\000070\\000074\\>\\<\\/\\000061\\00006E\\000079\\000074\\000068\\000069\\00006E\\000067\\>\\ \\000062\\000075\\000074\\ \\000068\\000074\\000074\\000070\\00003A\\/\\/\\000065\\000078\\000061\\00006D\\000070\\00006C\\000065\\.\\000063\\00006F\\00006D";
+        final String textBESixDigitLevel1 = "\\/something\\00003C\\/script\\>\\00003C\\/anything\\>\\ but\\ http\\00003A\\/\\/example\\.com";
+        final String textBESixDigitLevel2 = "\\/something\\00003C\\/script\\>\\00003C\\/anything\\>\\ but\\ http\\00003A\\/\\/example\\.com";
+        final String textBESixDigitLevel3 = "\\/something\\00003C\\/script\\>\\00003C\\/anything\\>\\ but\\ http\\00003A\\/\\/example\\.com";
+        final String textBESixDigitLevel4 = "\\/\\000073\\00006F\\00006D\\000065\\000074\\000068\\000069\\00006E\\000067\\00003C\\/\\000073\\000063\\000072\\000069\\000070\\000074\\>\\00003C\\/\\000061\\00006E\\000079\\000074\\000068\\000069\\00006E\\000067\\>\\ \\000062\\000075\\000074\\ \\000068\\000074\\000074\\000070\\00003A\\/\\/\\000065\\000078\\000061\\00006D\\000070\\00006C\\000065\\.\\000063\\00006F\\00006D";
 
         testEscapeBESixDigit1(TEXT, textBESixDigitLevel1);
         testEscapeBESixDigit2(TEXT, textBESixDigitLevel2);

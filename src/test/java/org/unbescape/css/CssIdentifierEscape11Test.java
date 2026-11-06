@@ -62,6 +62,7 @@ public class CssIdentifierEscape11Test {
                 continue;
             } else {
                 switch(i) {
+                    case '<':textEscBuilder.append("\\3C"); textEsc3Builder.append("\\3C"); continue;
                     case ' ':
                     case '!':
                     case '"':
@@ -78,7 +79,6 @@ public class CssIdentifierEscape11Test {
                     case '.':
                     case '/':
                     case ';':
-                    case '<':
                     case '=':
                     case '>':
                     case '?':

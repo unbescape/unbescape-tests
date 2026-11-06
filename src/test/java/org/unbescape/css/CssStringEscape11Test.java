@@ -65,6 +65,7 @@ public class CssStringEscape11Test {
                     case '/':
                     case ';':
                     case '\'':textEscBuilder.append("\\" + (char)i); continue;
+                    case '<':textEscBuilder.append("\\3C"); continue;
                 }
 
             }
