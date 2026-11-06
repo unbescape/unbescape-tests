@@ -59,8 +59,8 @@ public class JavaScriptEscape14Test {
     @Test
     public void testSECXHexaUHexa() throws Exception {
 
-        final String textSECXHexaUHexaLevel1 = "/something<\\/script><\\/anything> but http://example.com";
-        final String textSECXHexaUHexaLevel2 = "/something<\\/script><\\/anything> but http://example.com";
+        final String textSECXHexaUHexaLevel1 = "/something\\x3C\\/script>\\x3C\\/anything> but http://example.com";
+        final String textSECXHexaUHexaLevel2 = "/something\\x3C\\/script>\\x3C\\/anything> but http://example.com";
         final String textSECXHexaUHexaLevel3 = "\\/something\\x3C\\/script\\x3E\\x3C\\/anything\\x3E\\x20but\\x20http\\x3A\\/\\/example\\x2Ecom";
         final String textSECXHexaUHexaLevel4 = "\\/\\x73\\x6F\\x6D\\x65\\x74\\x68\\x69\\x6E\\x67\\x3C\\/\\x73\\x63\\x72\\x69\\x70\\x74\\x3E\\x3C\\/\\x61\\x6E\\x79\\x74\\x68\\x69\\x6E\\x67\\x3E\\x20\\x62\\x75\\x74\\x20\\x68\\x74\\x74\\x70\\x3A\\/\\/\\x65\\x78\\x61\\x6D\\x70\\x6C\\x65\\x2E\\x63\\x6F\\x6D";
 
@@ -83,8 +83,8 @@ public class JavaScriptEscape14Test {
     @Test
     public void testSECUHexa() throws Exception {
 
-        final String textSECUHexaLevel1 = "/something<\\/script><\\/anything> but http://example.com";
-        final String textSECUHexaLevel2 = "/something<\\/script><\\/anything> but http://example.com";
+        final String textSECUHexaLevel1 = "/something\\u003C\\/script>\\u003C\\/anything> but http://example.com";
+        final String textSECUHexaLevel2 = "/something\\u003C\\/script>\\u003C\\/anything> but http://example.com";
         final String textSECUHexaLevel3 = "\\/something\\u003C\\/script\\u003E\\u003C\\/anything\\u003E\\u0020but\\u0020http\\u003A\\/\\/example\\u002Ecom";
         final String textSECUHexaLevel4 = "\\/\\u0073\\u006F\\u006D\\u0065\\u0074\\u0068\\u0069\\u006E\\u0067\\u003C\\/\\u0073\\u0063\\u0072\\u0069\\u0070\\u0074\\u003E\\u003C\\/\\u0061\\u006E\\u0079\\u0074\\u0068\\u0069\\u006E\\u0067\\u003E\\u0020\\u0062\\u0075\\u0074\\u0020\\u0068\\u0074\\u0074\\u0070\\u003A\\/\\/\\u0065\\u0078\\u0061\\u006D\\u0070\\u006C\\u0065\\u002E\\u0063\\u006F\\u006D";
 
@@ -107,8 +107,8 @@ public class JavaScriptEscape14Test {
     @Test
     public void testXHexaUHexa() throws Exception {
 
-        final String textXHexaUHexaLevel1 = "/something<\\x2Fscript><\\x2Fanything> but http://example.com";
-        final String textXHexaUHexaLevel2 = "/something<\\x2Fscript><\\x2Fanything> but http://example.com";
+        final String textXHexaUHexaLevel1 = "/something\\x3C\\x2Fscript>\\x3C\\x2Fanything> but http://example.com";
+        final String textXHexaUHexaLevel2 = "/something\\x3C\\x2Fscript>\\x3C\\x2Fanything> but http://example.com";
         final String textXHexaUHexaLevel3 = "\\x2Fsomething\\x3C\\x2Fscript\\x3E\\x3C\\x2Fanything\\x3E\\x20but\\x20http\\x3A\\x2F\\x2Fexample\\x2Ecom";
         final String textXHexaUHexaLevel4 = "\\x2F\\x73\\x6F\\x6D\\x65\\x74\\x68\\x69\\x6E\\x67\\x3C\\x2F\\x73\\x63\\x72\\x69\\x70\\x74\\x3E\\x3C\\x2F\\x61\\x6E\\x79\\x74\\x68\\x69\\x6E\\x67\\x3E\\x20\\x62\\x75\\x74\\x20\\x68\\x74\\x74\\x70\\x3A\\x2F\\x2F\\x65\\x78\\x61\\x6D\\x70\\x6C\\x65\\x2E\\x63\\x6F\\x6D";
 
@@ -131,8 +131,8 @@ public class JavaScriptEscape14Test {
     @Test
     public void testUHexa() throws Exception {
 
-        final String textUHexaLevel1 = "/something<\\u002Fscript><\\u002Fanything> but http://example.com";
-        final String textUHexaLevel2 = "/something<\\u002Fscript><\\u002Fanything> but http://example.com";
+        final String textUHexaLevel1 = "/something\\u003C\\u002Fscript>\\u003C\\u002Fanything> but http://example.com";
+        final String textUHexaLevel2 = "/something\\u003C\\u002Fscript>\\u003C\\u002Fanything> but http://example.com";
         final String textUHexaLevel3 = "\\u002Fsomething\\u003C\\u002Fscript\\u003E\\u003C\\u002Fanything\\u003E\\u0020but\\u0020http\\u003A\\u002F\\u002Fexample\\u002Ecom";
         final String textUHexaLevel4 = "\\u002F\\u0073\\u006F\\u006D\\u0065\\u0074\\u0068\\u0069\\u006E\\u0067\\u003C\\u002F\\u0073\\u0063\\u0072\\u0069\\u0070\\u0074\\u003E\\u003C\\u002F\\u0061\\u006E\\u0079\\u0074\\u0068\\u0069\\u006E\\u0067\\u003E\\u0020\\u0062\\u0075\\u0074\\u0020\\u0068\\u0074\\u0074\\u0070\\u003A\\u002F\\u002F\\u0065\\u0078\\u0061\\u006D\\u0070\\u006C\\u0065\\u002E\\u0063\\u006F\\u006D";
 
