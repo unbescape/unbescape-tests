@@ -42,11 +42,11 @@ public class CssStringEscape08Test {
     private static final String TEXT_ESC_2 = "\\u";
     private static final String TEXT_UNESC_2 = "u";
 
-    // '\\u' and '\\x' are invalid because the slash is forbidden in JavaScript strings, but they are not valid escape sequences, so it's up to the JavaScript engine to raise an error.
+    // In CSS, a backslash followed by a hexadecimal digit (0-9, a-f) is a hexadecimal escape, and followed by any other char it just escapes that char.
     private static final String TEXT_ESC_3 = "\\a\\b\\c\\d\\e\\f\\g\\h\\i\\j\\k\\l\\m\\n\\o\\p\\q\\r\\s\\t\\u\\v\\w\\x\\y\\z";
     private static final String TEXT_UNESC_3 = "\n\u000B\u000C\r\u000E\u000Fghijklmnopqrstuvwxyz";
 
-    // '\\8' and '\\9' are invalid because the slash is forbidden in JavaScript strings, but they are not valid escape sequences, so it's up to the JavaScript engine to raise an error.
+    // Digits are hexadecimal escapes too (and '\\0', the escape for U+0000, is unescaped as U+FFFD).
     private static final String TEXT_ESC_4 = "\\0\\1\\2\\3\\4\\5\\6\\7\\8\\9";
     private static final String TEXT_UNESC_4 = "\uFFFD\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0008\u0009";
 
