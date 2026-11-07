@@ -86,7 +86,7 @@
     <!-- ======================     -->
     <!-- DEPENDENCY versions        -->
     <!-- ======================     -->
-    <unbescape.version>1.1.8-SNAPSHOT</unbescape.version>
+    <unbescape.version>1.1.9-SNAPSHOT</unbescape.version>
     <commons-text.version>1.15.0</commons-text.version>
     <commons-io.version>2.22.0</commons-io.version>
     <spring-web.version>4.0.2.RELEASE</spring-web.version>
